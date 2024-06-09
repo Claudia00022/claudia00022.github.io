@@ -27,10 +27,10 @@ const data = [
 
 const NavBar = () => {
   return (
-    <div>
+    <div class= 'border w-1/6 mt-10 ms-10'>
       <ul>
        {data.map((item, key) => (
-        <li key={key}><Link to={item.to}>{item.label}</Link></li>
+        <li key={key}  ><Link to={item.to} class = 'flex flex-row items-center '><div style={{width: '8px', height: '8px', backgroundColor: 'black', display: 'inline-block'}} class= 'me-1' ></div>{item.label}</Link></li>
        )) 
         
        }
