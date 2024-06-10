@@ -7,12 +7,14 @@ import Home from "./pages/home";
 import Work from "./pages/work";
 import About from "./pages/about";
 import NavBar from "./components/nav";
+import Rectangle from "./components/rectangle";
 
 
 
 function App() {
   return (
     <div className="App">
+    <Rectangle></Rectangle>
     <NavBar></NavBar>
       <Routes>
         <Route index path="/" element = {<Home />}></Route>
