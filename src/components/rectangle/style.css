@@ -1,7 +1,7 @@
 
 
 .rec{
-    position: absolute;
+    position: relative;
     right: 0;
     left: 0;
     top: 0;
@@ -11,4 +11,18 @@
     width: 95vw;
     height: 90vh;
     border: 1px solid black;
+   overflow: hidden;
+}
+
+.anim{
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 80%;
+    height: 100%;
+    /* background-color: red; */
+    border-radius: 50%;
+    /* opacity: 0.3; */
+    overflow: hidden;
+    /* transform: rotate(deg); */
 }

@@ -7,14 +7,17 @@
     margin: 0;
     scroll-behavior: smooth;
 }
-/* 
-html{
-    height: 100%;
-}
 
 body{
     height: 100%;
-} */
+    /* opacity: 0.2; */
+
+}
+ 
+html{
+    height: 100%;
+    /* opacity: 0.3; */
+}
 
 #root{
     height: 100%;
