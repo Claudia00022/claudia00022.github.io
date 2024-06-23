@@ -1,135 +1,240 @@
-import React from "react";
-import './style.css'
-import * as THREE from 'three';
-import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
-import { Canvas, extend, useFrame, useLoader, useThree } from '@react-three/fiber';
-import circleImg from '../../assets/circle.png';
-import { Suspense, useCallback, useMemo, useRef } from 'react';
-// import './about.style.css'
-extend({OrbitControls})
+// import React from "react";
+// import './style.css'
+// import * as THREE from 'three';
+// import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
+// import { Canvas, extend, useFrame, useLoader, useThree } from '@react-three/fiber';
+// import circleImg from '../../assets/circle.png';
+// import { Suspense, useCallback, useMemo, useRef } from 'react';
+// extend({OrbitControls})
 
 
-function CameraControls(){
-    const {
-      camera,
-      gl: {domElement}
-    } = useThree();
+// function CameraControls(){
+//     const {
+//       camera,
+//       gl: {domElement}
+//     } = useThree();
   
-    const controlsRef = useRef();
-    useFrame(() => controlsRef.current.update())
+//     const controlsRef = useRef();
+//     useFrame(() => controlsRef.current.update())
   
-    return (
-      <orbitControls
-        ref={controlsRef}
-        args={[camera, domElement]}
-        autoRotate
-        autoRotateSpeed={0.2}
-      />
-    );
-  }
+//     return (
+//       <orbitControls
+//         ref={controlsRef}
+//         args={[camera, domElement]}
+//         autoRotate
+//         autoRotateSpeed={0.2}
+//       />
+//     );
+//   }
   
-  function Points() {
-    const imgTex = useLoader(THREE.TextureLoader, circleImg);
-    const bufferRef = useRef();
+//   function Points() {
+//     const imgTex = useLoader(THREE.TextureLoader, circleImg);
+//     const bufferRef = useRef();
   
-    let t = 0;
-    let f = 0.003;
-    let a = 3;
-    const graph = useCallback((x, z) => {
-      return Math.sin(f * (x ** 2 + z ** 2 + t)) * a;
-    }, [t, f, a])
+//     let t = 0;
+//     let f = 0.001;
+//     let a = 6;
+//     const graph = useCallback((x, z) => {
+//       return Math.sin(f * (x ** 2 + z ** 2 + t)) * a;
+//     }, [t, f, a])
   
-    const count = 100
-    const sep = 10
-    let positions = useMemo(() => {
-      let positions = []
+//     const count = 10
+//     const sep = 3
+//     let positions = useMemo(() => {
+//       let positions = []
   
-      for (let xi = 0; xi < count; xi++) {
-        for (let zi = 0; zi < count; zi++) {
-          let x = sep * (xi - count / 2);
-          let z = sep * (zi - count / 2);
-          let y = graph(x, z);
-          positions.push(x, y, z);
-        }
-      }
+//       for (let xi = 0; xi < count; xi++) {
+//         for (let zi = 0; zi < count; zi++) {
+//           let x = sep * (xi - count / 2);
+//           let z = sep * (zi - count / 2);
+//           let y = graph(x, z);
+//           positions.push(x, y, z);
+//         }
+//       }
   
-      return new Float32Array(positions);
-    }, [count, sep, graph])
+//       return new Float32Array(positions);
+//     }, [count, sep, graph])
   
-    useFrame(() => {
-      t += 15
-    //   a+=0.2
+//     useFrame(() => {
+//       t += 15
+
+      
     
       
-      const positions = bufferRef.current.array;
+//       const positions = bufferRef.current.array;
   
-      let i = 0;
-      for (let xi = 0; xi < count; xi++) {
-        for (let zi = 0; zi < count; zi++) {
-          let x = sep * (xi - count / 2);
-          let z = sep * (zi - count / 2);
+//       let i = 0;
+//       for (let xi = 0; xi < count; xi++) {
+//         for (let zi = 0; zi < count; zi++) {
+//           let x = sep * (xi - count / 2);
+//           let z = sep * (zi - count / 2);
   
-          positions[i + 1] = graph(x, z);
-          i += 3;
-        }
-      }
+//           positions[i + 1] = graph(x, z);
+//           i += 3;
+//         }
+//       }
   
-      bufferRef.current.needsUpdate = true;
-    })
+//       bufferRef.current.needsUpdate = true;
+//     })
   
-    return (
-      <points>
-        <bufferGeometry attach="geometry">
-          <bufferAttribute
-            ref={bufferRef}
-            attach= 'attributes-position'
-            array={positions}
-            count={positions.length / 3}
-            itemSize={3}
-          />
-        </bufferGeometry>
+//     return (
+//       <points>
+//         <bufferGeometry attach="geometry">
+//           <bufferAttribute
+//             ref={bufferRef}
+//             attach= 'attributes-position'
+//             array={positions}
+//             count={positions.length / 3}
+//             itemSize={3}
+//           />
+//         </bufferGeometry>
   
-        <pointsMaterial
-          attach="material"
-          map={imgTex}
-          color = 'black'
-          size={5}
-          sizeAttenuation
-          transparent={false}
-          alphaTest={0.5}
-          opacity={1.0}
-        />
-      </points>
-    );
-  }
+//         <pointsMaterial
+//           attach="material"
+//           map={imgTex}
+//           color = 'black'
+//           size={50}
+//           sizeAttenuation
+//           transparent={false}
+//           alphaTest={0.1}
+//           opacity={1.0}
+//         />
+//       </points>
+//     );
+//   }
   
-  function AnimationCanvas() {
-    return (
-      <Canvas
-        colorManagement={false}
-        camera={{ position: [100, 10, 0], fov: 75 }}
-      >
-        <Suspense fallback={null}>
-          <Points />
-        </Suspense>
-        {/* <CameraControls/> */}
-      </Canvas>
-    );
-  }
+//   function AnimationCanvas() {
+//     return (
+//       <Canvas
+//         colorManagement={false}
+//         camera={{ position: [0, 50, 0], fov: 75 }}
+//       >
+//         <Suspense fallback={null}>
+//           <Points />
+//         </Suspense>
+//         {/* <CameraControls/> */}
+//       </Canvas>
+//     );
+//   }
 
-const Rectangle = ()=>{
-    return(
-        <div className="rec">
-        <div className="anim">
+// const Rectangle = ()=>{
+//     return(
+//         <div className="rec">
+//         <div className="anim">
        
-      <Suspense fallback={<div>Loading...</div>}>
-        <AnimationCanvas />
-      </Suspense>
-      </div>
-    </div>
+//       <Suspense fallback={<div>Loading...</div>}>
+//         <AnimationCanvas />
+//       </Suspense>
+//       </div>
+//     </div>
    
 
-    )
+//     )
+// };
+
+// export default Rectangle;
+
+
+
+import * as THREE from "three";
+import React, { useRef, Suspense } from "react";
+import { Canvas, extend, useFrame, useLoader } from "@react-three/fiber";
+// import { extend } from '@react-three/fiber';
+// import { PlaneBufferGeometry } from 'three';
+import { shaderMaterial } from "@react-three/drei";
+import glsl from "babel-plugin-glsl/macro";
+import "./style.css";
+import noiseImg from '../../assets/noise.jpg'
+
+// extend({ PlaneBufferGeometry });
+
+const WaveShaderMaterial = shaderMaterial(
+  // Uniform
+  {
+    uTime: 0,
+    uColor: new THREE.Color(0.0, 0.0, 0.0),
+    uTexture: new THREE.Texture(),
+  },
+  // Vertex Shader
+  glsl`
+    precision mediump float;
+
+    varying vec2 vUv;
+    varying float vWave;
+
+    uniform float uTime;
+
+    #pragma glslify: snoise3 = require(glsl-noise/simplex/3d);
+
+
+    void main() {
+      vUv = uv;
+
+      vec3 pos = position;
+      float noiseFreq = 3.0;
+      float noiseAmp = 0.4;
+      vec3 noisePos = vec3(pos.x * noiseFreq + uTime, pos.y, pos.z);
+      pos.z += snoise3(noisePos) * noiseAmp;
+      vWave = pos.z;
+
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);  
+    }
+  `,
+  // Fragment Shader
+  glsl`
+    precision mediump float;
+
+    uniform vec3 uColor;
+    uniform float uTime;
+    uniform sampler2D uTexture;
+
+    varying vec2 vUv;
+    varying float vWave;
+
+    void main() {
+      float wave = vWave * 0.2;
+      vec3 texture = texture2D(uTexture, vUv + wave).rgb;
+      gl_FragColor = vec4(texture, 1.0); 
+    }
+  `
+);
+
+extend({ WaveShaderMaterial });
+
+const Wave = () => {
+  const ref = useRef();
+  useFrame(({ clock }) => (ref.current.uTime = clock.getElapsedTime()));
+
+  const [image] = useLoader(THREE.TextureLoader, [noiseImg] );
+
+  return (
+    <mesh>
+      <planeGeometry args={[0.6, 0.5, 16, 16]} />
+      <waveShaderMaterial uColor={"hotpink"} ref={ref} uTexture={image} />
+    </mesh>
+  );
+};
+
+const Scene = () => {
+  return (
+    <Canvas camera={{ fov: 5, position: [0, 0, 5] }}>
+      <Suspense fallback={null}>
+        <Wave />
+      </Suspense>
+    </Canvas>
+  );
+};
+
+const Rectangle = () => {
+  return (
+    <>
+    <div className="rec">
+    <div className="anim">
+      <Scene />
+      </div>
+      </div>
+    </>
+  );
 };
 
 export default Rectangle;
