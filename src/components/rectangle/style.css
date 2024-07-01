@@ -16,13 +16,13 @@
 
 .anim{
     position: absolute;
-    top: -40%;
-    left: -30%;
+    top: -18%;
+    left: -20%;
     width: 100%;
-    height: 200%;
-    /* background-color: red; */
+    height: 150%;
     border-radius: 50%;
-    /* opacity: 0.1; */
     overflow: hidden;
-    /* transform: rotate(deg); */
+    background-color: red;
+ 
+
 }
