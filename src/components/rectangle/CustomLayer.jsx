@@ -9,9 +9,9 @@ class CustomLayer extends Abstract {
     // Assign them their default value.
     // Any unifroms here will automatically be set as properties on the class as setters and getters.
     // There setters and getters will update the underlying unifrom.
-    static u_colorA = "transparent";
-    static u_colorB = "transparent";
-    static u_cloudTint = "transparent";
+    static u_colorA = "black";
+    static u_colorB = "#E2E2E2";
+    static u_cloudTint = "rgba(0,0,0,0)";
     static u_gain = 0.5;
     static u_lacunarity = 3.0;
     static u_time = 0.5;
@@ -50,7 +50,7 @@ class CustomLayer extends Abstract {
     // Classic Perlin noise
     float cnoise(vec2 P)
     {
-      vec4 Pi = floor(P.xyxy) + vec4(0.0, 0.0, 1.0, 1.0);
+      vec4 Pi = floor(P.xyxy) + vec4(0.0, 0.0, 1.0, 0.3);
       vec4 Pf = fract(P.xyxy) - vec4(0.0, 0.0, 1.0, 1.0);
       Pi = mod289(Pi); // To avoid truncation effects in permutation
       vec4 ix = Pi.xzxz;
@@ -88,11 +88,11 @@ class CustomLayer extends Abstract {
     }
   
     float fbm(vec2 st) {
-      const int OCTAVES = 5;
+      const int OCTAVES = 10;
       // Initial values
-      float value = 0.0;
-      float amplitude = 0.6;
-      // float frequency = 0.5;
+      float value = 0.2;
+      float amplitude = 0.9;
+      // float frequency = 0.3;
       // Loop of octaves
       for (int i = 0; i < OCTAVES; i++) {
         value += amplitude * abs(cnoise(st));
@@ -104,8 +104,8 @@ class CustomLayer extends Abstract {
     
     void main() {
       vec3 f_color = vec3(0.0);
-      vec2 st = v_Uv * 0.250;
-      float speed = 0.1;
+      vec2 st = v_Uv * 0.200;
+      float speed = 0.3;
       float f_time = u_time * speed;
   
       vec2 q = vec2(0.);
@@ -120,15 +120,11 @@ class CustomLayer extends Abstract {
   
         f_color = mix(vec3(u_colorA),
                     vec3(u_colorB),
-                    clamp((f*f)*4.0,0.0,1.0));
+                    clamp((f*f)*3.0,0.0,1.0));
   
         f_color = mix(f_color,
-                    u_cloudTint,
-                    clamp(length(q),0.0,1.0));
-  
-        f_color *= mix(f_color,
                     u_colorA,
-                    clamp(length(r.x),0.0,1.0));
+                    clamp(length(r.x),3.0,0.0));
   
   
       vec4 f_colorfrag = vec4(f_color,1.0);

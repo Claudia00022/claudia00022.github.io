@@ -12,17 +12,18 @@
     height: 90vh;
     border: 1px solid black;
    overflow: hidden;
+   background-color:#DEDEDE ;
 }
 
 .anim{
     position: absolute;
     top: -18%;
-    left: -20%;
+    left: -30%;
     width: 100%;
     height: 150%;
     border-radius: 50%;
     overflow: hidden;
-    background-color: red;
+    /* background-color: red; */
  
 
 }

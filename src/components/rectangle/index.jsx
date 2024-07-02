@@ -2,7 +2,7 @@ import {React, useRef} from "react";
 import * as THREE from 'three';
 
 import { Canvas, extend, useFrame, useThree} from '@react-three/fiber';
-import { LayerMaterial, Depth, Fresnel } from "lamina";
+import { LayerMaterial, Depth, Fresnel, Noise } from "lamina";
 import './style.css'
 import CustomLayer from "./CustomLayer";
 import { OrbitControls } from "@react-three/drei";
@@ -52,17 +52,20 @@ function Foo() {
  const materialRef = useRef();
 
  useFrame(({ clock }) => {
-  materialRef.current.rotation.x = clock.getElapsedTime();
-  materialRef.current.rotation.y = clock.getElapsedTime()
-})
+  const elapsedTime = clock.getElapsedTime();
+  const speedFactor = 0.15; // Adjust this factor to control the speed
+  materialRef.current.rotation.x = elapsedTime * speedFactor;
+  materialRef.current.rotation.y = elapsedTime * speedFactor;
+});
 
   return(
-      <mesh ref={materialRef} position={[0, 0, 0]} rotation={[0, Math.PI, 0]} scale={2.0}>
-    <sphereGeometry args={[1, 32, 16]} />
-//     <LayerMaterial wireframe = {true}  >
-//       <customLayer  time={0.5} lacunarity={4.5}  />
-{/* //       <Depth colorA="black" colorB="white" alpha={0.1} mode="add" /> */}
-{/* //       <Fresnel color="#FEB3D9" mode="add" /> */}
+      <mesh ref={materialRef} position={[0, 0, 0]} rotation={[0, Math.PI, 0]} >
+    <sphereGeometry args={[3.0,64,32]} />
+//     <LayerMaterial  >  
+//       <customLayer  time={0.0} lacunarity={4.5}  />
+//      
+        
+//     
 //     </LayerMaterial> 
 //   </mesh>
 
