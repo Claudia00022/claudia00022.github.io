@@ -8,14 +8,19 @@ import Work from "./pages/work";
 import About from "./pages/about";
 import NavBar from "./components/nav";
 import Rectangle from "./components/rectangle";
+import Media from "./components/media";
 
 
 
 function App() {
   return (
     <div className="App">
-    <Rectangle></Rectangle>
-    <NavBar></NavBar>
+      
+  <NavBar /> 
+
+   <Rectangle></Rectangle>
+  
+  
       <Routes>
         <Route index path="/" element = {<Home />}></Route>
         <Route path="/about"  element = {<About />}></Route>
@@ -23,6 +28,7 @@ function App() {
         <Route path="/art"  element = {<Art />}></Route>
         <Route path="/contact"  element = {<Contact />}></Route>
       </Routes>
+      
     </div>
   );
 }

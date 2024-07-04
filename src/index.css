@@ -10,13 +10,14 @@
 
 body{
     height: 100%;
-    /* opacity: 0.2; */
+    background-color: black;
+    
 
 }
  
 html{
     height: 100%;
-    /* opacity: 0.3; */
+    
 }
 
 #root{

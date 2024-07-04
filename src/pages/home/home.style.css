@@ -1,0 +1,33 @@
+/* .mask{
+   
+       position: relative;
+       overflow: auto;
+       
+        height: 60vh;
+       background-color: red ;
+      
+   
+} */
+
+.abs{
+        position: absolute;
+       
+        right: 3rem;
+        bottom: 3rem;
+        z-index: 3;
+        height: 75vh;
+        width: 30vw;
+        background-color:transparent;
+        
+        /* overflow: auto; */
+
+        overflow-x: hidden;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        
+}
+
+.classname::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari and Opera */
+    }

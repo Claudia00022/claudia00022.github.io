@@ -105,7 +105,7 @@ class CustomLayer extends Abstract {
     void main() {
       vec3 f_color = vec3(0.0);
       vec2 st = v_Uv * 0.200;
-      float speed = 0.3;
+      float speed = 0.15;
       float f_time = u_time * speed;
   
       vec2 q = vec2(0.);

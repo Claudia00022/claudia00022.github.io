@@ -1,0 +1,10 @@
+.high{
+    position:sticky;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    background-color: #4b5563;
+    overflow: scroll;
+ 
+}
