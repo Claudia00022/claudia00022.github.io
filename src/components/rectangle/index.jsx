@@ -14,11 +14,11 @@ function Foo() {
   });
 
   return (
-    <mesh position={[0, 0, 0]} rotation={[0, Math.PI, 0]}>
-      <sphereGeometry args={[3.0, 64, 32]} />
+    <mesh  position={[0, 0, 0]} rotation={[0, Math.PI, 0]}>
+      <sphereGeometry  args={[3.0, 64, 32]} />
       //{" "}
-      <LayerMaterial>
-        // <customLayer ref={materialRef} time={0.0} lacunarity={4.5} />
+      <LayerMaterial  >
+        // <customLayer ref={materialRef} time={0.0}  lacunarity={4.5} />
         // // //{" "}
       </LayerMaterial>
       //{" "}
@@ -43,4 +43,3 @@ const Rectangle = () => {
 };
 
 export default Rectangle;
-s
