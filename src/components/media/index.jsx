@@ -60,18 +60,19 @@ function Mesh(props) {
  function Media() {
   return (
     <>
-    <p className="text-9xl">Test</p>
-    <p className="text-9xl">Test</p>
-    <p className="text-9xl">Test</p>
-    <p className="text-9xl">Test</p>
-    <p className="text-9xl">Test</p>
-    <p className="text-9xl">Test</p>
-    <p className="text-9xl">Test</p>
-    <p className="text-9xl">Test</p>
-    <p className="text-9xl">Test</p>
-    <p className="text-9xl">Test</p>
-    <p className="text-9xl">Test</p>
-    <p className="text-9xl">Test</p>
+    <div className="test"> <p className="text-9xl text-center ">Test</p> </div>
+   
+    <p className="text-9xl text-center">Test</p>
+    <p className="text-9xl text-center">Test</p>
+    <p className="text-9xl text-center">Test</p>
+    <p className="text-9xl text-center">Test</p>
+    <p className="text-9xl text-center">Test</p>
+    <p className="text-9xl text-center">Test</p>
+    <p className="text-9xl text-center">Test</p>
+    <p className="text-9xl text-center">Test</p>
+    <p className="text-9xl text-center">Test</p>
+    <p className="text-9xl text-center">Test</p>
+    <p className="text-9xl text-center">Test</p>
     {/* <div className="high"></div> */}
  
       {/* {boxCount.map((box, index) => (

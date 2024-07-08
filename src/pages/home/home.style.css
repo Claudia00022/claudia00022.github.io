@@ -1,58 +1,55 @@
-.rel{
-        position: relative;
-        width: 100%;
-        height: 100%;
-        z-index: 8;
-        /* background-color: aqua; */
+.rel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  /* background-color: aqua; */
 }
 
-.cont{
-        
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-  
-        width:100vw;
-        height: 100vh;
-      
-        overflow-x: hidden;
-      
+.cont {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow-x: hidden;
 }
-.opac{ 
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        width: 100vw;
-        height: 5vh;
-      
-        border-top: 1px solid black;
-        background-color: #DEDEDE;
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(3px);
-        background-color: rgba(222, 222, 222, 0.3);  
+.opac {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100vw;
+  height: 5vh;
+
+  border-top: 1px solid #c3c3c3;
+  background-color: #dedede;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(3px);
+  background-color: rgba(222, 222, 222, 0.3);
 }
-.opac-top{ 
-        position: fixed;
-       top: 0;
-        right: 0;
-        left: 0;
-        width: 100vw;
-        height: 5vh;
-        border-bottom: 1px solid black;
-        background-color: #DEDEDE;
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(3px);
-        background-color: rgba(222, 222, 222, 0.3);  
-        
+.opac-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100vw;
+  height: 5vh;
+  border-bottom: 1px solid #c3c3c3;
+  background-color: #dedede;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(3px);
+  background-color: rgba(222, 222, 222, 0.3);
 }
 
 .abs {
   position: absolute;
-  right: 30rem;
-  bottom: 0rem;
+  right: 8rem;
+  bottom: 0;
   z-index: 0;
   height: 100vh;
   width: 20vw;
@@ -60,8 +57,32 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-.classname::-webkit-scrollbar {
-  display: none; 
-}
 /* for Chrome, Safari and Opera */
+.classname::-webkit-scrollbar {
+  display: none;
+}
+
+.almarai-light {
+        font-family: "Almarai", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+      }
+      
+      .almarai-regular {
+        font-family: "Almarai", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+      .almarai-bold {
+        font-family: "Almarai", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+      
+      .almarai-extrabold {
+        font-family: "Almarai", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+      }
+      

@@ -29,6 +29,7 @@ function Foo() {
 const Rectangle = () => {
   return (
     <>
+    <div className="mask">
       <div className="rec">
         <div className="anim">
           <Canvas>
@@ -37,6 +38,7 @@ const Rectangle = () => {
             <Foo />
           </Canvas>
         </div>
+      </div>
       </div>
     </>
   );

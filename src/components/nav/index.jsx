@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './nav.style.css'
 
 
 const data = [
@@ -30,7 +31,7 @@ const NavBar = () => {
     <div className= 'absolute z-20 w-1/6 mt-20 ms-32'>
       <ul>
        {data.map((item, key) => (
-        <li key={key}  ><Link to={item.to} className = 'flex flex-row items-center '><div style={{width: '5px', height: '5px', backgroundColor: 'black', display: 'inline-block'}} className= 'me-1' ></div>{item.label}</Link></li>
+        <li key={key}  ><Link to={item.to} className = 'flex flex-row items-center main-font mt-2'><div style={{width: '5px', height: '5px', backgroundColor: 'black', display: 'inline-block'}} className= 'me-2' ></div>{item.label}</Link></li>
        )) 
         
        }
