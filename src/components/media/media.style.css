@@ -39,4 +39,24 @@
     background-color: aqua;
     border: 1px solid black;
   }
+
+  .main-font {
+    font-family: "Almarai", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 13px;
+    opacity: 0.8;
+   
+  }
+
+  .link-font{
+    display: block;
+    margin-bottom: 2rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 4rem;
+    opacity: 0.8;
+    
+  }
   

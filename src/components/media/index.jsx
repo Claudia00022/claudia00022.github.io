@@ -60,26 +60,18 @@ function Mesh(props) {
  function Media() {
   return (
     <>
-    <div className="test"> <p className="text-9xl text-center ">Test</p> </div>
-   
-    <p className="text-9xl text-center">Test</p>
-    <p className="text-9xl text-center">Test</p>
-    <p className="text-9xl text-center">Test</p>
-    <p className="text-9xl text-center">Test</p>
-    <p className="text-9xl text-center">Test</p>
-    <p className="text-9xl text-center">Test</p>
-    <p className="text-9xl text-center">Test</p>
-    <p className="text-9xl text-center">Test</p>
-    <p className="text-9xl text-center">Test</p>
-    <p className="text-9xl text-center">Test</p>
-    <p className="text-9xl text-center">Test</p>
-    {/* <div className="high"></div> */}
- 
-      {/* {boxCount.map((box, index) => (
-        <Box key={index} />
-      ))} */}
-      
-   </>
+     <h1 className="main-font mt-32 ms-40 text-5xl text-gray-950 font-light mb-3 ">Klaudia Forysiak</h1>
+     <p className="main-font ms-40 font-light">Freelancer Designer & Fronten Developer</p>
+
+    <h1 className="main-font mt-64 ms-40"><div  style={{width: '5px', height: '5px', backgroundColor: 'black', display: 'inline-block'}} className= 'me-2'></div>Projects</h1>
+    <a href="#" className="link-font ms-40">v-pm studio</a>
+    <a href="#" className="link-font ms-40">j&l Gradzkie</a>
+
+    <h1 className="main-font mt-64 ms-40"><div  style={{width: '5px', height: '5px', backgroundColor: 'black', display: 'inline-block'}} className= 'me-2'></div>Contact</h1>
+    <a href="#" className="link-font ms-40">email</a>
+    <a href="#" className="link-font ms-40">instagram</a>
+    <a href="#" className="link-font ms-40">linkIn</a>
+    </>
   );
 }
 

@@ -18,8 +18,10 @@ function Foo() {
       <sphereGeometry  args={[3.0, 64, 32]} />
       //{" "}
       <LayerMaterial  >
-        // <customLayer ref={materialRef} time={0.0}  lacunarity={4.5} />
+        // <customLayer ref={materialRef} time={0.2}  lacunarity={4.5} />
         // // //{" "}
+        {/* <Depth colorA="black" colorB="#E2E2E2" alpha={0.9} mode="add" /> */}
+        {/* <Fresnel color="white" mode="add" ></Fresnel> */}
       </LayerMaterial>
       //{" "}
     </mesh>
@@ -33,8 +35,6 @@ const Rectangle = () => {
       <div className="rec">
         <div className="anim">
           <Canvas>
-            <ambientLight intensity={0.1} />
-            <directionalLight color="red" position={[0, 0, 5]} />
             <Foo />
           </Canvas>
         </div>

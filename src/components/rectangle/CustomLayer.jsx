@@ -11,7 +11,7 @@ class CustomLayer extends Abstract {
     // There setters and getters will update the underlying unifrom.
     static u_colorA = "black";
     static u_colorB = "#E2E2E2";
-    static u_cloudTint = "rgba(0,0,0,0)";
+    static u_cloudTint = "#E2E2E2";
     static u_gain = 0.5;
     static u_lacunarity = 3.0;
     static u_time = 0.5;
@@ -103,24 +103,26 @@ class CustomLayer extends Abstract {
   }
     
     void main() {
-      vec3 f_color = vec3(0.0);
-      vec2 st = v_Uv * 0.200;
-      float speed = 0.15;
+      vec3 f_color = vec3(0.5);
+      vec2 st = v_Uv * 0.500;
+      float speed = 0.50;
       float f_time = u_time * speed;
   
-      vec2 q = vec2(0.);
+      vec2 q = vec2(0.5);
       q.x = fbm( st + 0.00 * f_time);
       q.y = fbm( st + vec2(1.0));
   
-      vec2 r = vec2(0.);
-      r.x = fbm( st + 1.0 * q + vec2(1.7,9.2)+ 0.15 * f_time );
-      r.y = fbm( st + 1.0 * q + vec2(8.3,2.8)+ 0.126 * f_time);
+      vec2 r = vec2(0.5);
+      r.x = fbm( st + 2.0 * q + vec2(1.9,9.2)+ 0.15 * f_time );
+      r.y = fbm( st + 2.0 * q + vec2(8.5,2.8)+ 0.126 * f_time);
   
         float f = fbm(st+r);
   
         f_color = mix(vec3(u_colorA),
                     vec3(u_colorB),
                     clamp((f*f)*3.0,0.0,1.0));
+
+             
   
         f_color = mix(f_color,
                     u_colorA,
