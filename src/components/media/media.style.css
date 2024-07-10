@@ -9,36 +9,6 @@
  
 }
 
-.almarai-light {
-    font-family: "Almarai", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  .almarai-regular {
-    font-family: "Almarai", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .almarai-bold {
-    font-family: "Almarai", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  .almarai-extrabold {
-    font-family: "Almarai", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-
-  .test{
-    width: 100%;
-    height: 20%;
-    background-color: aqua;
-    border: 1px solid black;
-  }
 
   .main-font {
     font-family: "Almarai", sans-serif;
@@ -56,7 +26,31 @@
     font-weight: 100;
     font-style: normal;
     font-size: 4rem;
-    opacity: 0.8;
+    color: black;
     
+  }
+  
+  .link-font:hover{
+      color: #767272;
+      cursor:crosshair;
+      transition: .4s ease-out;
+    
+  }
+
+  @media only screen and (max-width: 600px) {
+     a.link-font{
+      font-size: 28px;
+      margin-left: 0;
+     }
+
+     h1.main-font{
+      margin-left: 0;
+      font-size: 34px;
+     }
+
+     p.main-font{
+      margin-left: 0;
+     }
+
   }
   
