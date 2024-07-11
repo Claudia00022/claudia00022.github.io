@@ -8,14 +8,15 @@ import Work from "./pages/work";
 import About from "./pages/about";
 import NavBar from "./components/nav";
 import Rectangle from "./components/rectangle";
-import Media from "./components/media";
+import Name from "./components/name/name";
+
 
 
 
 function App() {
   return (
     <div className="App">
-      
+      <Name />
   <NavBar /> 
 
    <Rectangle></Rectangle>

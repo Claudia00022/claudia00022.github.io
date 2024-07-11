@@ -8,7 +8,9 @@
     overflow: scroll;
  
 }
-
+  .marg-media{
+    margin-top: 30rem;
+  }
 
   .main-font {
     font-family: "Almarai", sans-serif;
@@ -18,6 +20,7 @@
     opacity: 0.8;
    
   }
+
 
   .link-font{
     display: block;
