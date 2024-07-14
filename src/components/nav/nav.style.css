@@ -1,18 +1,24 @@
-.main-font {
-  font-family: "Almarai", sans-serif;
+.main-font-nav {
+  font-family: "Red Hat Display", sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 13px;
-  opacity: 0.8;
+  font-size: 16px;
+ 
+}
+.main-font-nav:hover{
+    color: #767272;
+    cursor:crosshair;
+    transition: .4s ease-out;
+  
+
 }
 
 @media only screen and  (max-width: 600px) {
   div.absolute{
     margin-left: 40px;
   }
-
-  a.main-font{
-    font-size: 10px;
+a.main-font-nav{
+    font-size: 14px;
   }
 
 } 
@@ -20,5 +26,8 @@
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   div.absolute{
     margin-left: 40px;
+  }
+  a.main-font-nav{
+    font-size: 14px;
   }
 }

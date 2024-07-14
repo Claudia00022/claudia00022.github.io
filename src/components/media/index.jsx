@@ -6,7 +6,7 @@ import "./media.style.css";
 function Media() {
   return (
     <>
-      <p className="main-font marg-media ms-40">
+      <p className="main-font-media marg-media ms-40">
         <div
           style={{
             width: "5px",
@@ -25,7 +25,7 @@ function Media() {
         j&l Gradzkie
       </a>
 
-      <p className="main-font mt-36 ms-40">
+      <p className="main-font-media mt-36 ms-40">
         <div
           style={{
             width: "5px",

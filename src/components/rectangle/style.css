@@ -35,3 +35,25 @@
  }
 
 }
+
+@media only screen and (min-width: 600px) and (max-width: 768px){
+  .anim{
+    left:0;
+    top: 0;
+   }
+}
+
+@media only screen and (min-width : 769px) and (max-width:992px ){
+  .anim{
+    left:0;
+    top: 0;
+   }
+} 
+
+@media only screen and (min-width : 993px) and (max-width:1200px ){
+  .anim{
+    left:0;
+    top: 0;
+   }
+}
+

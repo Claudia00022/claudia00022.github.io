@@ -75,5 +75,11 @@
   div.absolute{
     margin-left: 40px;
   }
+  .abs{
+    right: 0;
+    width: 50vw;
+  }
 }
+
+
       

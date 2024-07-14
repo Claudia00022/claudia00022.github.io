@@ -1,7 +1,5 @@
 .high{
     position:sticky;
-    bottom: 0;
-    right: 0;
     height: 100vh;
     width: 50%;
     background-color: #4b5563;
@@ -12,7 +10,7 @@
     margin-top: 30rem;
   }
 
-  .main-font {
+  .main-font-media {
     font-family: "Red Hat Display", sans-serif;;
     font-weight: 600;
     font-style: normal;
@@ -46,14 +44,29 @@
       margin-left: 0;
      }
 
-     h1.main-font{
+     h1.main-font-media{
       margin-left: 0;
       font-size: 34px;
      }
 
-     p.main-font{
+     p.main-font-media{
       margin-left: 0;
      }
 
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 768px){
+    a.link-font{
+      font-size: 28px;
+      margin-left: 15vw;
+      width: 100%;
+     }
+
+     p.main-font-media{
+      width: 100%;
+      margin-left: 15vw;
+     }
+
+  
   }
   
