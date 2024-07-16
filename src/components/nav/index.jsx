@@ -6,7 +6,8 @@ const NavBar = () => {
   
 const [toggledLinks, setToggledLinks] = useState("home");
 const [toggledAbout, setToggledAbout] = useState("about");
-const [toggledContact, setToggledContact] = useState("contact")
+const [toggledContact, setToggledContact] = useState("contact");
+const [toggledArt, setToggledArt] = useState("art")
 
 function handleClick(){
   setToggledLinks(
@@ -18,6 +19,7 @@ function handleClick(){
   );
   setToggledAbout("about");
   setToggledContact("contact");
+  setToggledArt("art");
 }
 
 function handleAbout(){
@@ -28,6 +30,7 @@ function handleAbout(){
     </div>);
     setToggledLinks("home");
     setToggledContact("contact");
+    setToggledArt("art");
 }
 
 function handleContact(){
@@ -38,6 +41,19 @@ function handleContact(){
     </div>);
     setToggledAbout("about");
     setToggledLinks("home");
+    setToggledArt("art")
+}
+
+function handleArt(){
+  setToggledArt(<div 
+
+    style={{width: '5px', height: '5px', backgroundColor: 'black', display: 'inline-block'}}
+     className= 'me-2' >
+    </div>);
+    setToggledAbout("about");
+    setToggledContact("contact");
+    setToggledLinks("home");
+
 }
 
 
@@ -49,6 +65,9 @@ return (
 </li>
 <li onClick={handleAbout}>
   <Link to={"/about"} className="flex flex-row items-center main-font-nav mt-4">{toggledAbout}</Link>
+</li>
+<li onClick={handleArt}>
+  <Link to={"/art"} className="flex flex-row items-center main-font-nav mt-4">{toggledArt}</Link>
 </li>
 <li onClick={handleContact}>
   <Link to={"/contact"} className="flex flex-row items-center main-font-nav mt-4">{toggledContact}</Link>

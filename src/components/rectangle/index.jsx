@@ -16,14 +16,9 @@ function Foo() {
   return (
     <mesh  position={[0, 0, 0]} rotation={[0, Math.PI, 0]}>
       <sphereGeometry  args={[3.0, 64, 32]} />
-      //{" "}
       <LayerMaterial  >
-        // <customLayer ref={materialRef} time={0.2}  lacunarity={4.5} />
-        // // //{" "}
-        {/* <Depth colorA="black" colorB="#E2E2E2" alpha={0.9} mode="add" /> */}
-        {/* <Fresnel color="white" mode="add" ></Fresnel> */}
+      <customLayer ref={materialRef} time={0.0}  lacunarity={4.5} />
       </LayerMaterial>
-      //{" "}
     </mesh>
   );
 }
