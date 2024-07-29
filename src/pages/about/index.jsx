@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function About() {
-
-  // Initialize state with an empty array
-
-}
-
+function About(){
+    return(
+        <div>about</div>
+    )
+};
 
 export default About;

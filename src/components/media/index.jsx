@@ -7,7 +7,7 @@ function Media() {
   return (
     <>
       <p className="main-font-media marg-media ms-40">
-        <div
+        <span
           style={{
             width: "5px",
             height: "5px",
@@ -15,7 +15,7 @@ function Media() {
             display: "inline-block",
           }}
           className="me-2"
-        ></div>
+        ></span>
         Projects
       </p>
       <a href="#" className="link-font ms-40">
@@ -26,7 +26,7 @@ function Media() {
       </a>
 
       <p className="main-font-media mt-36 ms-40">
-        <div
+        <span
           style={{
             width: "5px",
             height: "5px",
@@ -34,7 +34,7 @@ function Media() {
             display: "inline-block",
           }}
           className="me-2"
-        ></div>
+        ></span>
         Contact
       </p>
       <a href="#" className="link-font ms-40">

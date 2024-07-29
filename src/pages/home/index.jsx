@@ -5,6 +5,7 @@ import "./home.style.css";
 const Home = () => {
   return (
     <>
+   
       <div className="cont">
         <div className="rel">
           <div className="abs classname">
@@ -14,6 +15,7 @@ const Home = () => {
           </div>
         </div>
       </div>{" "}
+
     </>
   );
 };

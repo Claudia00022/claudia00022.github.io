@@ -1,12 +1,11 @@
-import React, {useState, useEffect} from "react";
-import ReactLoading from 'react-loading';
+import './loading.style.css'
 
-function Loading(){
-  return (
-    <div>LOading....</div>
-  ) 
-
-
+function Loading(props){
+  return(
+    <div
+    style={{display: props.show}} 
+    className='enter'>Loading...</div>
+  )
 };
 
 export default Loading;

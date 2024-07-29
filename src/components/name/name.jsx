@@ -9,7 +9,8 @@ function Name(){
 <h1 className="main-font-name text-gray-950  mb-3 ">
 Klaudia Forysiak
 </h1>
-<p className="text-name font-light w-name">
+
+<div className="text-name font-light w-name">
 <Typical
   steps={[
     "I am a  Freelancer Designer & Fronten Developer",
@@ -24,7 +25,7 @@ Klaudia Forysiak
   loop={Infinity}
   wrapper="p"
 />
-</p>
+</div>
 </div>
 </>
     )
