@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDispaly ('none');
-    }, 2000);
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
   return (
