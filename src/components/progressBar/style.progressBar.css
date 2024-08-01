@@ -1,5 +1,8 @@
 .progressBar{
-    margin-left: 50vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
     appearance: none;
     height: 5px;
     border-radius: 100px;
@@ -13,7 +16,7 @@
   }
 
   ::-webkit-progress-value {
-    background-color: pink;
+    background-color: grey;
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
 
@@ -22,7 +25,7 @@
 
   /* Firefox */
   ::-moz-progress-bar {
-    background-color: pink;
+    background-color:grey;
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
   }

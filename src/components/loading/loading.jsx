@@ -8,7 +8,7 @@ function Loading(props){
     <div
     style={{display: props.show}} 
     className='enter'>
-    <p>Klaudia Forysiak Portfolio</p> 
+    <p className='text-name'><span className='main-font-name font-medium'>Klaudia Forysiak </span>Portfolio</p> 
     <ProgressBar />
     </div>
    
