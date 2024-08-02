@@ -2,12 +2,12 @@ import Typical from "react-typical";
 import './name.style.css';
 
 
-function Name(){
+function Name(props){
     return(
         <>
 <div className="absolute z-20 ms-32 mt-24 w-name  ">
 <h1 className="main-font-name text-gray-950  mb-3 ">
-Klaudia Forysiak
+{props.name}
 </h1>
 
 <div className="text-name font-light w-name">

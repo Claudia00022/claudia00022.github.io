@@ -2,7 +2,7 @@ import {React, useState} from "react";
 import { Link } from "react-router-dom";
 import './nav.style.css'
 
-const NavBar = () => {
+const NavBar = (props) => {
   
 const [toggledLinks, setToggledLinks] = useState("home");
 const [toggledAbout, setToggledAbout] = useState("about");
@@ -61,10 +61,10 @@ return (
   <div className="absolute z-20 w-1/6 mt-64 ms-32">
 <ul>
 <li onClick={handleClick}>
-  <Link to={"/"} className="flex flex-row items-center main-font-nav  mt-2">{toggledLinks}</Link>
+  <Link to={"/"} onClick={props.handleNameBack} className="flex flex-row items-center main-font-nav  mt-2">{toggledLinks}</Link>
 </li>
 <li onClick={handleAbout}>
-  <Link to={"/about"} className="flex flex-row items-center main-font-nav mt-4">{toggledAbout}</Link>
+  <Link to={"/about"} onClick={props.handleName} className="flex flex-row items-center main-font-nav mt-4">{toggledAbout}</Link>
 </li>
 <li onClick={handleArt}>
   <Link to={"/art"} className="flex flex-row items-center main-font-nav mt-4">{toggledArt}</Link>

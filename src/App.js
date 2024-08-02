@@ -15,6 +15,7 @@ import { Loader } from "@react-three/drei";
 
 function App() {
   const [display, setDispaly] = useState('block');
+  const[name, setName] = useState('Klaudia Forysiak')
   
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -22,13 +23,26 @@ function App() {
     }, 3000);
     return () => clearTimeout(timer);
   }, []);
+
+  function handleName(){
+    setName('Hello');
+    console.log('hello');
+  }
+  function handleNameBack(){
+    setName('Klaudia Forysiak');
+  }
   return (
     <>
       <div className="App">
       <Loading  show = {display}/>
 
-        <Name />
-        <NavBar />
+        <Name  
+          name = {name}
+        />
+        <NavBar 
+          handleName = {handleName}
+          handleNameBack = {handleNameBack}
+        />
         <Rectangle />
 
         <Routes>
