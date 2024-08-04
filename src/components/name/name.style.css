@@ -1,10 +1,10 @@
 .w-name{
-   width: 50%;
+   width: 80%;
 }
 
 
 .main-font-name {
-    font-family: "Red Hat Display", sans-serif;
+    font-family: "Roboto Mono", monospace;
     font-weight: 400;
     font-style: normal;
     font-size: 26px;
@@ -12,19 +12,19 @@
    
   }
   .text-name{
-    font-family: "Red Hat Display", sans-serif;
+    font-family: "Cutive Mono", monospace;
     font-weight: 400;
     font-style: normal;
     font-size: 15px;
-    opacity: 0.8;
+    /* opacity: 0.8; */
   }
 
 @media only screen and  (max-width: 600px) {
     h1.main-font-name{
         font-size: 20px;
     }
-    p.text-name{
-        font-size: 12px;
+    div.text-name{
+        font-size: 10px;
     }
   } 
 
@@ -35,4 +35,6 @@
   p.text-name{
       font-size: 12px;
   }
-  }
+  };
+
+

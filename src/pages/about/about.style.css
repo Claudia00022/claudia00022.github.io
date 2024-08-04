@@ -19,6 +19,7 @@
 @media only screen and  (max-width: 600px){
     .rectangle{
         right: 0;
+        bottom: 80px;
         width: 50vw;
         height: 50vh;
         margin-right: 2rem;
@@ -29,3 +30,25 @@
     }
    
 }
+
+@media only screen and (min-width: 600px) and (max-width: 768px){
+     .rectangle{
+        right: 0;
+        bottom: 80px;
+        width: 50vw;
+        height: 50vh;
+        margin-right: 2rem;
+        padding: 0;
+     }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1200px){
+    .rectangle{
+        right: 0;
+        bottom: 80px;
+        width: 50vw;
+        height: 50vh;
+        margin-right: 2rem;
+        padding: 0;
+     }
+} 

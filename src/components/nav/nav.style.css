@@ -1,8 +1,11 @@
 .main-font-nav {
-  font-family: "Red Hat Display", sans-serif;
+  font-family:"Cutive Mono", monospace;
   font-weight: 600;
   font-style: normal;
-  font-size: 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 1px;
  
 }
 .main-font-nav:hover{
@@ -18,7 +21,7 @@
     margin-left: 40px;
   }
 a.main-font-nav{
-    font-size: 14px;
+    font-size: 10px;
   }
 
 } 
@@ -28,7 +31,7 @@ a.main-font-nav{
     margin-left: 40px;
   }
   a.main-font-nav{
-    font-size: 14px;
+    font-size: 10px;
   }
 }
 

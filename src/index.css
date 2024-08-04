@@ -27,16 +27,16 @@ html{
 }
 
 .text{
-    font-family: "Red Hat Display", sans-serif;
+    font-family:  "Roboto Mono", monospace;
     font-weight: 400;
     font-style: normal;
     font-size: 15px;
     letter-spacing: 1px;
-    line-height: 28px
+    line-height: 20px
 }
 
 .title{
-    font-family: "Red Hat Display", sans-serif;
+    font-family: "Cutive Mono", monospace;
     font-weight: 400;
     font-style: normal;
     font-size: 3rem;
@@ -52,6 +52,28 @@ html{
     .title{
         font-size: 2rem;
     }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px){
+    .text{
+        font-size: 10px;
+        letter-spacing: normal;
+        line-height: normal;
+    }
+    .title{
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1200px){
+    .text{
+        font-size: 12px;
+        letter-spacing: normal;
+        line-height: normal;
+    }
+    .title{
+        font-size: 3rem;
+    } 
 }
 
 
