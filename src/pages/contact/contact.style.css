@@ -1,0 +1,11 @@
+.contact{
+    width: auto;
+    height: auto;
+}
+
+.contact_button{
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    border: 1px solid black;
+}
