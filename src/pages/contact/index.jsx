@@ -1,19 +1,17 @@
 import React from "react";
-import {Wave} from 'react-animated-text';
 import './contact.style.css';
 
 const Contact = () =>{
     return(
         <div className='rectangle contact'>
-         <button className=" contact_button"><a className='title'><Wave 
-            text = 'email'
-            effect = 'fadeOut'
-            speed = {4}
-            effectChange = {1.0}
-         /></a>
+      
+        <div style={{backgroundColor: 'transparent', width: '200px', position: 'absolute',  bottom:'0', right: '0'}}>
+         <button className=" contact_button"><a className='title title_contact' style={{color: 'white', fontSize:'1rem'}}>email</a>
          </button>
-         <button className=" contact_button"><a className='title'>instagram</a></button>
-         <button className=" contact_button"><a className='title'>linkedIn</a></button>
+         <button className=" contact_button"><a className='title'  style={{color: 'white', fontSize:'1rem'}}>instagram</a></button>
+         <button className=" contact_button"><a className='title'  style={{color: 'white', fontSize:'1rem'}}>linkedIn</a></button>
+      
+         </div>
     </div>
     )
 };

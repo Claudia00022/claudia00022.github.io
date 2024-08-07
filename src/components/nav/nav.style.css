@@ -9,7 +9,7 @@
  
 }
 .main-font-nav:hover{
-    color: #767272;
+    color: black;
     cursor:crosshair;
     transition: .4s ease-out;
   
