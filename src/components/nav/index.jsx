@@ -4,10 +4,10 @@ import './nav.style.css'
 
 const NavBar = (props) => {
   
-const [toggledLinks, setToggledLinks] = useState("Home");
-const [toggledAbout, setToggledAbout] = useState("About");
-const [toggledContact, setToggledContact] = useState("Contact");
-const [toggledArt, setToggledArt] = useState("Art")
+const [toggledLinks, setToggledLinks] = useState("home");
+const [toggledAbout, setToggledAbout] = useState("about");
+const [toggledContact, setToggledContact] = useState("contact");
+const [toggledArt, setToggledArt] = useState("art")
 
 function handleClick(){
   setToggledLinks(
@@ -17,9 +17,9 @@ function handleClick(){
          className= 'me-2' >
         </div>
   );
-  setToggledAbout("About");
-  setToggledContact("Contact");
-  setToggledArt("Art");
+  setToggledAbout("about");
+  setToggledContact("contact");
+  setToggledArt("art");
 }
 
 function handleAbout(){
@@ -28,9 +28,9 @@ function handleAbout(){
     style={{width: '5px', height: '5px', backgroundColor: 'black', display: 'inline-block'}}
      className= 'me-2' >
     </div>);
-    setToggledLinks("Home");
-    setToggledContact("Contact");
-    setToggledArt("Art");
+    setToggledLinks("home");
+    setToggledContact("contact");
+    setToggledArt("art");
 }
 
 function handleContact(){
@@ -39,9 +39,9 @@ function handleContact(){
     style={{width: '5px', height: '5px', backgroundColor: 'black', display: 'inline-block'}}
      className= 'me-2' >
     </div>);
-    setToggledAbout("About");
-    setToggledLinks("Home");
-    setToggledArt("Art")
+    setToggledAbout("about");
+    setToggledLinks("home");
+    setToggledArt("art")
 }
 
 function handleArt(){
@@ -50,27 +50,27 @@ function handleArt(){
     style={{width: '5px', height: '5px', backgroundColor: 'black', display: 'inline-block'}}
      className= 'me-2' >
     </div>);
-    setToggledAbout("About");
-    setToggledContact("Contact");
-    setToggledLinks("Home");
+    setToggledAbout("about");
+    setToggledContact("contact");
+    setToggledLinks("home");
 
 }
 
 
 return (
-  <div className="absolute z-20 w-1/6 mt-64 ms-32">
+  <div className="absolute z-20 w-1/6 mt-64 ms-32" >
 <ul>
 <li onClick={handleClick}>
-  <Link to={"/"} onClick={props.handleNameBack} className="flex flex-row items-center main-font-nav ">{toggledLinks}</Link>
+  <Link to={"/"} onClick={props.handleNameBack} className="flex flex-row items-center title " style={{ marginBottom: '10px', fontWeight:'bold', fontSize: '13px' }}>{toggledLinks}</Link>
 </li>
 <li onClick={handleAbout}>
-  <Link to={"/about"} onClick={props.handleName} className="flex flex-row items-center main-font-nav ">{toggledAbout}</Link>
+  <Link to={"/about"} onClick={props.handleName} className="flex flex-row items-center text " style={{ marginBottom: '10px', fontWeight:'bold', fontSize: '13px' }}>{toggledAbout}</Link>
 </li>
 <li onClick={handleArt}>
-  <Link to={"/art"} className="flex flex-row items-center main-font-nav ">{toggledArt}</Link>
+  <Link to={"/art"} className="flex flex-row items-center text " style={{ marginBottom: '10px', fontWeight:'bold', fontSize: '13px' }}>{toggledArt}</Link>
 </li>
 <li onClick={handleContact}>
-  <Link to={"/contact"} className="flex flex-row items-center main-font-nav ">{toggledContact}</Link>
+  <Link to={"/contact"} className="flex flex-row items-center text" style={{ marginBottom: '10px', fontWeight:'bold', fontSize: '13px' }}>{toggledContact}</Link>
 </li>
 </ul>
   </div>

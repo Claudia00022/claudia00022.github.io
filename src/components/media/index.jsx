@@ -6,7 +6,7 @@ import "./media.style.css";
 function Media() {
   return (
     <>
-      <p className="main-font-media marg-media ms-40">
+      <p className="text marg-media ms-40">
         <span
           style={{
             width: "5px",
@@ -18,14 +18,14 @@ function Media() {
         ></span>
         Projects
       </p>
-      <a href="#" className="link-font ms-40">
+      <a href="#" className="title ms-40 block">
         v-pm studio
       </a>
-      <a href="#" className="link-font ms-40">
+      <a href="#" className="title ms-40 block">
         j&l Gradzkie
       </a>
 
-      <p className="main-font-media mt-36 ms-40">
+      <p className="text mt-36 ms-40">
         <span
           style={{
             width: "5px",
@@ -37,13 +37,13 @@ function Media() {
         ></span>
         Contact
       </p>
-      <a href="#" className="link-font ms-40">
+      <a href="#" className="title ms-40 block">
         email
       </a>
-      <a href="#" className="link-font ms-40">
+      <a href="#" className="title ms-40 block">
         instagram
       </a>
-      <a href="#" className="link-font ms-40 mb-96">
+      <a href="#" className="title ms-40 block mb-96">
         linkIn
       </a>
     </>

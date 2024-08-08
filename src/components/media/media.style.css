@@ -10,28 +10,7 @@
     margin-top: 30rem;
   }
 
-  .main-font-media {
-    font-family: "Red Hat Display", sans-serif;;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 13px;
-    opacity: 0.8;
-   
-  }
-
-
-  .link-font{
-    display: block;
-    margin-bottom: 2rem;
-    font-family: "Inter", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 4rem;
-    color: black;
-    
-  }
-  
-  .link-font:hover{
+  .title:hover{
       color: #767272;
       cursor:crosshair;
       transition: .4s ease-out;
@@ -39,30 +18,30 @@
   }
 
   @media only screen and (max-width: 600px) {
-     a.link-font{
+     a.title{
       font-size: 28px;
       margin-left: 0;
      }
 
-     h1.main-font-media{
+     h1.text{
       margin-left: 0;
       font-size: 34px;
      }
 
-     p.main-font-media{
+     p.text{
       margin-left: 0;
      }
 
   }
 
   @media only screen and (min-width: 600px) and (max-width: 768px){
-    a.link-font{
+    a.title{
       font-size: 28px;
       margin-left: 15vw;
       width: 100%;
      }
 
-     p.main-font-media{
+     p.text{
       width: 100%;
       margin-left: 15vw;
      }
