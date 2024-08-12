@@ -12,11 +12,12 @@ const Art = () =>{
     return(
          <div className="cont">
         <div className="rel " >
-          <div  className="abs classname res " style={{height:'60vh', borderLeft: '1px solid #1B3F4C'}} >
-          <div className="opac-top"></div>
+          <div  
+          className="abs classname res " 
+          style={{ borderLeft: '1px solid #1B3F4C'}} >
           <div>
+    
           <p className="text ms-5">Art #01</p> 
-          {/* <hr className="mb-5" style={{borderColor: 'black'}}></hr> */}
           <img  src={PhotoOne}  className="object-contain ms-5" style={{ width: '500px'}}></img>
           </div>
 

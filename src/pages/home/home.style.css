@@ -18,16 +18,17 @@
 
 .opac {
   position: fixed;
+  margin: auto;
   bottom: 0;
   right: 0;
   left: 0;
-  width: 100vw;
+  width: 96vw;
   height: 5vh;
-  border-top: 1px solid #c3c3c3;
   background-color: #dedede;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(3px);
   background-color: rgba(222, 222, 222, 0.3);
+  border-top: 1px solid black;
 }
 .opac-top {
   position: fixed;
@@ -36,7 +37,6 @@
   left: 0;
   width: 100vw;
   height: 5vh;
-  border-bottom: 1px solid #c3c3c3;
   background-color: #dedede;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(3px);
@@ -45,16 +45,15 @@
 
 .abs {
   position: absolute;
-  right: 8rem;
+  right: 5rem;
   bottom: 0;
   z-index: 0;
-  height: 100vh;
+  height: 60vh;
   width: 40vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
-
 }
 
 

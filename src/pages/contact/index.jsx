@@ -3,6 +3,7 @@ import './contact.style.css';
 
 const Contact = () =>{
     return(
+        <>
         <div className='rectangle contact'>
       
         <div style={{backgroundColor: 'transparent', width: '200px', position: 'absolute',  bottom:'0', right: '0'}}>
@@ -13,6 +14,8 @@ const Contact = () =>{
       
          </div>
     </div>
+    <div className="opac"></div>
+    </>
     )
 };
 
