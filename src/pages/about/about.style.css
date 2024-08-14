@@ -1,16 +1,6 @@
 
 
-.rectangle{
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    border: 1px solid black;
-    width: 500px;
-    height: auto;
-    z-index: 21;
-    padding: 30px;
-    margin-right: 8rem;
-}
+
 
 .minus-margin{
     margin-left: -80px;

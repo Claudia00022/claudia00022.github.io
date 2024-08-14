@@ -1,22 +1,20 @@
 import React from "react";
-import './contact.style.css';
+import InstaIcon from '../../assets/photos/insta.png';
+import MailIcon from '../../assets/photos/mail.png';
+import LinkIcon from '../../assets/photos/linkedin.png';
+import "./contact.style.css";
 
-const Contact = () =>{
-    return(
-        <>
-        <div className='rectangle contact'>
-      
-        <div style={{backgroundColor: 'transparent', width: '200px', position: 'absolute',  bottom:'0', right: '0'}}>
-         <button className=" contact_button"><a className='title title_contact' style={{color: 'white', fontSize:'1rem'}}>email</a>
-         </button>
-         <button className=" contact_button"><a className='title'  style={{color: 'white', fontSize:'1rem'}}>instagram</a></button>
-         <button className=" contact_button"><a className='title'  style={{color: 'white', fontSize:'1rem'}}>linkedIn</a></button>
-      
-         </div>
-    </div>
-    <div className="opac"></div>
+const Contact = () => {
+  return (
+    <>
+      <div className="content_contact">
+        <div className="flex  items-center"><img src={MailIcon} alt="instagramIcon" className="icons"></img><a className="text title_contact">email</a></div>
+        <div className="flex items-center"><img src={InstaIcon} className="icons"></img><a className="text title_contact">instagram</a></div>
+        <div className="flex items-center"><img src={LinkIcon} className="icons"></img><a className="text title_contact">linkedIn</a></div>
+      </div>
+      <div className="opac"></div>
     </>
-    )
+  );
 };
 
 export default Contact;

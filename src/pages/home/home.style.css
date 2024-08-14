@@ -30,18 +30,6 @@
   background-color: rgba(222, 222, 222, 0.3);
   border-top: 1px solid black;
 }
-.opac-top {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 100vw;
-  height: 5vh;
-  background-color: #dedede;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(3px);
-  background-color: rgba(222, 222, 222, 0.3);
-}
 
 .abs {
   position: absolute;
