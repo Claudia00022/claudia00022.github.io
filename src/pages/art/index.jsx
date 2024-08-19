@@ -10,6 +10,7 @@ import PhotoSix from '../../assets/photos/man.JPG';
 
 const Art = () =>{
     return(
+      <>
          <div className="cont">
         <div className="rel " >
           <div  
@@ -41,10 +42,13 @@ const Art = () =>{
           <p className="text mt-3 ms-5">Art #06</p>
           <img  src={PhotoSix}  className="object-contain ms-5" style={{width:'500px'}}></img>
           </div>
-            <div className="opac"></div>
-          </div>
+          
+          </div> 
+         
         </div>
-      </div>
+      </div> 
+       <div className="opac"></div>
+       </>
     
 
     )

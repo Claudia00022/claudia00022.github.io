@@ -1,19 +1,21 @@
 .rel {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 96vw;
+  height: 90vh;
   z-index: 8;
+ 
 }
 
 .cont {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
+  top: 5vh;;
+  left: 2vw;
+  width: 96vw;
+  height: 90vh;
+  overflow: hidden;
+  border: 1px solid black;
+  /* border-bottom: none; */
+
 }
 
 .opac {
@@ -22,13 +24,15 @@
   bottom: 0;
   right: 0;
   left: 0;
-  width: 96vw;
+  width: 100vw;
   height: 5vh;
-  background-color: #dedede;
+  z-index: 100;
+  /* background-color: #dedede; */
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(3px);
   background-color: rgba(222, 222, 222, 0.3);
-  border-top: 1px solid black;
+  /* background-color: red; */
+  /* border-top: 1px solid black; */
 }
 
 .abs {
@@ -42,6 +46,7 @@
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
+
 }
 
 
