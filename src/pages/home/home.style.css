@@ -1,23 +1,27 @@
-.rel {
-  position: relative;
-  width: 96vw;
-  height: 90vh;
-  z-index: 8;
- 
-}
+
 
 .cont {
   position: absolute;
-  top: 5vh;;
-  left: 2vw;
-  width: 96vw;
-  height: 90vh;
+  top: 0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   /* border-bottom: none; */
+  /* background-color: beige; */
 
 }
+.rel {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index:8;
+  /* background-color: blue; */
+ 
+}
 
+/* 
 .opac {
   position: fixed;
   margin: auto;
@@ -26,18 +30,17 @@
   left: 0;
   width: 100vw;
   height: 5vh;
-  z-index: 100;
-  /* background-color: #dedede; */
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(3px);
+  z-index: 200;
+  background-color: #dedede;
   background-color: rgba(222, 222, 222, 0.3);
-  /* background-color: red; */
-  /* border-top: 1px solid black; */
-}
+   filter: blur(3px);
+     -webkit-filter: blur(10px);
+  
+} */
 
 .abs {
   position: absolute;
-  right: 5rem;
+  right: 0rem;
   bottom: 0;
   z-index: 0;
   height: 60vh;
@@ -46,6 +49,7 @@
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  /* background-color: bisque; */
 
 }
 

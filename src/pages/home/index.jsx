@@ -10,9 +10,9 @@ const Home = () => {
           <div className="abs">
             <Media></Media>
           </div>
+          <div className="opac"></div>
         </div>
       </div>{" "}
-      <div className="opac"></div>
     </>
   );
 };

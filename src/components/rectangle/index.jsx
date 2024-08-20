@@ -32,15 +32,23 @@ const Rectangle = () => {
   return (
     <>
  
-      <div className="mask">
-        <div className="rec">
-          <div className="anim">
-            <Canvas>
+      <div className="page">
+          <div className="background">
+            <Canvas style={{width : '100vw', height:'200vh'}}>
               <Foo />
             </Canvas>
           </div>
+          <div className="mask_two"> 
+           <div className="mask_bottom"></div>
+           </div>
+          <div className="frame">
+          <div className="frame_line frame_line_bottom"></div>
+          <div className="frame_line frame_line_top"></div>
+          <div className="frame_line frame_line_right"></div>
+          <div className="frame_line frame_line_left"></div>
+          </div>
+          
         </div>
-      </div>
     </>
   );
 };
