@@ -42,7 +42,6 @@ const Rectangle = () => {
            <div className="mask_bottom"></div>
            </div>
           <div className="frame">
-          <div className="frame_line frame_line_bottom"></div>
           <div className="frame_line frame_line_top"></div>
           <div className="frame_line frame_line_right"></div>
           <div className="frame_line frame_line_left"></div>
