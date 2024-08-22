@@ -1,29 +1,9 @@
 import React from "react";
-import InstaIcon from "../../assets/photos/insta.png";
-import MailIcon from "../../assets/photos/mail.png";
-import LinkIcon from "../../assets/photos/linkedin.png";
-import "./contact.style.css";
 
-const contacts_data = [
-  {
-    id: 1,
-    img_src: MailIcon,
-    title: "email",
-    link: "mailto:klaudiaforysiak@gmail.com",
-  },
-  {
-    id: 2,
-    img_src: InstaIcon,
-    title: "instagram",
-    link: "https://www.instagram.com/cla_udiaui/",
-  },
-  {
-    id: 3,
-    img_src: LinkIcon,
-    title: "linkedIn",
-    link: "https://www.linkedin.com/in/klaudia-forysiak-264895318/",
-  },
-];
+import "./contact.style.css";
+import contacts_data from "../../contactsData";
+
+
 
 const Contact = () => {
   return (
