@@ -6,48 +6,50 @@ import PhotoFour from '../../assets/photos/elephant.JPG';
 import PhotoFive from '../../assets/photos/womenInColor.JPG';
 import PhotoSix from '../../assets/photos/man.JPG';
 
+import './art.style.css';
+
 
 
 const Art = () =>{
     return(
       <>
-         <div className="cont">
-        <div className="rel " >
-          <div  
-          className="abs classname res " 
-          style={{ borderLeft: '1px solid #1B3F4C'}} >
-          <div>
-    
-          <p className="text ms-5">Art #01</p> 
-          <img  src={PhotoOne}  className="object-contain ms-5" style={{ width: '500px'}}></img>
-          </div>
+         <div className="right_bottom_rectangle">
+         <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-3 [&>img:not(:first-child)]:mt-8 ">
 
-          <div>
-          <p className="text mt-3 ms-5">Art #02</p>
-          <img  src={PhotoTwo}  className="object-contain ms-5" style={{ width: '500px'}}></img>
-          </div>
-          <div>
-          <p className="text mt-3 ms-5">Art #03</p>
-          <img  src={PhotoThree}  className="object-contain ms-5" style={{width:'500px'}}></img>
-          </div>
-          <div>
-          <p className="text mt-3 ms-5">Art #04</p>
-          <img  src={PhotoFour}  className="object-contain ms-5" style={{width:'500px'}}></img>
-          </div>
-          <div>
-          <p className="text mt-3 ms-5">Art #05</p>
-          <img  src={PhotoFive}  className="object-contain ms-5" style={{width:'500px'}}></img>
-          </div>
-          <div>
-          <p className="text mt-3 ms-5">Art #06</p>
-          <img  src={PhotoSix}  className="object-contain ms-5" style={{width:'500px'}}></img>
+     
+  
+          <img  src={PhotoOne}  className="object-contain"  ></img>
+  
+       
+      
+
+          
+          <img  src={PhotoTwo}  className="object-contain "></img>
+     
+
+     
+   
+          <img  src={PhotoThree}  className="object-contain "></img>
+    
+
+        
+         
+          <img  src={PhotoFour}  className="object-contain " ></img>
+      
+
+    
+          <img  src={PhotoFive}  className="object-contain " ></img>
+       
+
+         
+          <img  src={PhotoSix}  className="object-contain " ></img>
+    
           </div>
           
           </div> 
          
-        </div>
-      </div> 
-       <div className="opac"></div>
+
+       <div className="bottom_mask"></div>
        </>
     
 

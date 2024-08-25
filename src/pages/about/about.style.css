@@ -1,8 +1,8 @@
-
-
-
-
-.minus-margin{
+.rectangle_size_about{
+    width: 20vw;
+    height: 40vh;
+}
+.margin_minus{
     margin-left: -80px;
 }
 

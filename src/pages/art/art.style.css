@@ -1,2 +1,12 @@
+.columns-1{
+    columns:1
+}
 
+.gap-5{
+    gap:1.25rem
+}
+
+.p-5{
+   padding: 1.25rem; 
+}
   
