@@ -17,7 +17,7 @@ function PopUp(){
     }
 
   return(
-    <div className='popUp_container' style={{display: block}}>
+    <div className='popUp_container' style={{display : 'none'}}>
         <button onClick={handleBlock}>close</button>
     </div>
   )

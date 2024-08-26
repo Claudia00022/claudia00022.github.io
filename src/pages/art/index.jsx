@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PhotoOne from "../../assets/photos/marlyn.JPG";
 import PhotoTwo from "../../assets/photos/girl.JPG";
 import PhotoThree from "../../assets/photos/women.JPG";
@@ -37,29 +37,45 @@ const arts_data = [
     img_link: PhotoSix,
   },
   {
-   id:7,
-   img_link: PhotoSeven
-  }
+    id: 7,
+    img_link: PhotoSeven,
+  },
 ];
 
-const Art = () => {
-   
-function handleClick(event){
-   console.log(event.target)
-}
+const Art = (props) => {
+
+
+  function handleClickEvent(event) {
+    if (event.target.id === '1') {
+      props.handleOpenPopUp();
+    }
+    console.log(event.target.id);
+  }
+
+  function handleImageClick(event) {
+    handleClickEvent(event);
+  }
+
   return (
-    <> 
-    <PopUp></PopUp>
+    <>
+      <div className="popUp_container" style={{ display: props.openPopUp }}>
+        <img src={PhotoOne} className="object-contain"></img>
+
+        <button onClick={props.handleClose}>close</button>
+      </div>
       <div className="right_bottom_rectangle">
         <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-3 [&>img:not(:first-child)]:mt-8 ">
           {arts_data.map((art) => (
-            <img id = {art.id} src={art.img_link} onClick={handleClick}  className="object-contain"></img>
+            <img
+              id={art.id}
+              src={art.img_link}
+              onClick={handleClickEvent}
+              className="object-contain"
+            ></img>
           ))}
         </div>
-        
       </div>
       <div className="bottom_mask"> </div>{" "}
-     
     </>
   );
 };

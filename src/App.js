@@ -14,7 +14,8 @@ import { Loader } from "@react-three/drei";
 
 function App() {
   const [display, setDispaly] = useState('block');
-  const[name, setName] = useState('Klaudia Forysiak')
+  const[name, setName] = useState('Klaudia Forysiak');
+  const[openPopUp, setOpenPopUp] = useState('none')
   
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -29,6 +30,18 @@ function App() {
   }
   function handleNameBack(){
     setName('Klaudia Forysiak');
+  }
+
+
+ 
+
+  function handleOpenPopUp(){
+    setOpenPopUp('block');
+
+  }
+
+  function handleClose(){
+    setOpenPopUp('none');
   }
   return (
     <>
@@ -47,7 +60,11 @@ function App() {
         <Routes>
           <Route index path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
-          <Route path="/art" element={<Art />}></Route>
+          <Route path="/art" element={<Art 
+            handleOpenPopUp = {handleOpenPopUp}
+            handleClose = {handleClose}
+            openPopUp = {openPopUp}
+          />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
         </Routes>
       </div>
