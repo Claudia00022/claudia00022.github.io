@@ -11,6 +11,7 @@ import NavBar from "./components/nav";
 
 import Name from "./components/name/name";
 import { Loader } from "@react-three/drei";
+import arts_data from "./artsData";
 
 function App() {
   const [display, setDispaly] = useState('block');
@@ -43,6 +44,21 @@ function App() {
   function handleClose(){
     setOpenPopUp('none');
   }
+
+  function handleClickEvent(event) { 
+    const art = arts_data[event.target.id - 1].id;
+      arts_data.filter((a) => {
+      if (art === a.id ) {
+      handleOpenPopUp();
+      console.log(a.id)
+    };
+      })
+   
+    console.log(art);
+    
+  
+  }
+
   return (
     <>
       <div className="App">
@@ -64,6 +80,7 @@ function App() {
             handleOpenPopUp = {handleOpenPopUp}
             handleClose = {handleClose}
             openPopUp = {openPopUp}
+            handleClickEvent = {handleClickEvent}
           />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
         </Routes>
