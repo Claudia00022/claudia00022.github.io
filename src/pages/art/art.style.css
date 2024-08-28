@@ -9,4 +9,52 @@
 .p-5{
    padding: 1.25rem; 
 }
+
+.popUp_container{
+    width: 25vw;
+    height: 70vh;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    -ms-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+    z-index: 20;
+   
+
+}
+.container_fix{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.9;
+    z-index: 20;
+}
+
+.popUp_close_button{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-weight: bold;
+    z-index: 20;
+
+}
+
+.right_bottom_rectangle_art {
+    position: absolute;
+    right: 2vw;
+    top: 5vh;
+    height: 90vh;
+    width: 60vw;
+    padding-right: 1rem;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    border-color: white;
+  
+  }
   

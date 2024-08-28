@@ -72,6 +72,9 @@ return (
 <li onClick={handleContact}>
   <Link to={"/contact"} className="flex flex-row items-center text" style={{ marginBottom: '10px', fontWeight:'bold', fontSize: '13px' }}>{toggledContact}</Link>
 </li>
+<li >
+  <Link to={"/test"} className="flex flex-row items-center text" style={{ marginBottom: '10px', fontWeight:'bold', fontSize: '13px' }}>test</Link>
+</li>
 </ul>
   </div>
 );
