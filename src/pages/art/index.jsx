@@ -31,17 +31,21 @@ const Art = (props) => {
         </div>
       </div>
  
-      <div className="right_bottom_rectangle" style={{backgroundColor:' white', height:'96vw', marginTop:'5vh', width: '96vw', marginRight:'0.1rem',borderRadius: '50%', top:'5vh', left:'2vw'}} >
+      <div className="right_bottom_rectangle" style={{backgroundColor:' transparent', height:'100vh', marginTop:'5vh', width: '70vw', marginRight:'0.1rem', paddingRight:'0'}} >
         <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-3 lg:gap-3 [&>img:not(:first-child)]:mt-3 ">
           {arts_data.map((art) => (
+            <div className="img_mask mt-3">
+           <p className="  text_position">{art.content}</p>
             <img
               id={art.id}
               src={art.img_link}
               onClick={handleClick}
               className="object-contain"
             ></img>
+            </div>
           ))}
         </div>
+        <p className="title mb-52 " style={{color: 'white'}}> n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>
       </div>
       
       <div className="bottom_mask"> </div>{" "}

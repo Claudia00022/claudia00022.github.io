@@ -8,6 +8,7 @@
   height: 100%;
   overflow: hidden;
   background-color:#dedede;
+  background-color: black;
 
 }
 
@@ -43,11 +44,12 @@
   height: 5vh;
   background-color:#dedede;
   opacity: .9;
+  background-color: black;
 }
 .frame_line{
   position: absolute;
   z-index: 2;
-  background-color: black;
+  background-color: white;
   opacity: .5;
 }
 

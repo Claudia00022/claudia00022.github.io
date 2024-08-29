@@ -10,51 +10,64 @@ const arts_data = [
     {
       id: 1,
       img_link: PhotoOne,
+      content:'#Art001',
     },
     {
       id: 2,
       img_link: PhotoTwo,
+      content:'#Art002',
+    
     },
     {
       id: 3,
       img_link: PhotoThree,
+      content:'#Art003',
     },
     {
       id: 4,
       img_link: PhotoFour,
+      content:'#Art004',
     },
     {
       id: 5,
       img_link: PhotoFive,
+      content:'#Art005',
     },
     {
       id: 6,
       img_link: PhotoSix,
+      content:'#Art006',
     },
     {
       id: 7,
       img_link: PhotoTwo,
+      content:'#Art007',
     },
     {
         id: 8,
         img_link: PhotoOne,
+        content:'#Art008',
       },
       {
         id: 9,
         img_link: PhotoThree,
+        content:'#Art009',
       },
       {
         id: 10,
         img_link: PhotoTwo,
+        content:'#Art010',
       },
       {
           id: 11,
           img_link: PhotoFive,
+          content:'#Art011',
           
         },
         {
           id: 12,
           img_link: PhotoThree,
+          content:'#Art012',
         },
 
 

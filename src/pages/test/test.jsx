@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Mesh } from 'three';
+import { Stats,OrbitControls } from '@react-three/drei'
 import './test.style.css';
 
 
@@ -32,6 +33,12 @@ function Test(){
         <ambientLight />
         <pointLight position={[2,2,2]} />
         <Box></Box>
+        <OrbitControls 
+              minAzimuthAngle={-Math.PI / 4}
+  maxAzimuthAngle={Math.PI / 4}
+  minPolarAngle={Math.PI / 6}
+  maxPolarAngle={Math.PI - Math.PI / 6}
+        />
       </Canvas>
       </div>
     )
