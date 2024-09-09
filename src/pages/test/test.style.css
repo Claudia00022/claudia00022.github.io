@@ -1,9 +1,9 @@
 .container_sphere{
     width: 100vw;
-    height: 100vh;
+    height: 200vh;
     position: absolute;
     top: 0;
-    left: 10vw;
+    left: 0;
     z-index: 20;
     background-color: white;
 }
