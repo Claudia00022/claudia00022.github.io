@@ -4,6 +4,7 @@
   bottom: 0;
   height: 60vh;
   width: 60vw;
+  z-index: 20;
   padding-right: 4rem;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -11,6 +12,7 @@
   scrollbar-width: none;
   /* transform-origin: bottom;
   transform: skewY(10deg) */
+  background-color: green;
 }
 
 .right_bottom_rectangle::before {

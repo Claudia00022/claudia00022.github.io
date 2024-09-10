@@ -16,6 +16,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/three": "^0.165.0",
     "babel-plugin-glsl": "^1.0.0",
+    "gsap": "^3.12.5",
     "lamina": "^1.1.23",
     "rc-progress": "^4.0.0",
     "react": "^18.3.1",

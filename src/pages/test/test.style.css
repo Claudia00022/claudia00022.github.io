@@ -1,9 +1,10 @@
 .container_sphere{
     width: 100vw;
-    height: 200vh;
-    position: absolute;
+    height: 100vh;
+    position: relative;
     top: 0;
     left: 0;
-    z-index: 20;
-    background-color: white;
+    background-color: transparent;
+    overflow: hidden;
+    scroll-behavior: smooth;
 }
