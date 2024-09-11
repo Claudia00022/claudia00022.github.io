@@ -1,12 +1,18 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, extend } from '@react-three/fiber';
 import { Mesh } from 'three';
 import { Stats,OrbitControls, ScrollControls, useScroll } from '@react-three/drei';
 import gsap from "gsap";
+import Media from '../../components/media';
 import './test.style.css';
+import { LayerMaterial } from 'lamina';
 
-export const BOX_HEIGHT = 2.3;
-export const NB_FLOORS = 3;
+import CustomLayer from '../../components/rectangle/CustomLayer'; 
+extend({ CustomLayer });
+
+
+
+
 
 
  function Box(){
@@ -17,34 +23,54 @@ export const NB_FLOORS = 3;
 
     useFrame(()=>{
       tl.current.seek(scroll.offset * tl.current.duration());
-      // console.log(scroll.offset);
-    })
+      
+    });
+
+    useFrame(() => {
+      if (boxRef.current) {
+        boxRef.current.rotation.y += -0.001;
+      }
+    });
+
+
 
     useLayoutEffect(() => {
         tl.current = gsap.timeline();
+
+      
 
         //Vertical animation
         tl.current.to(
           boxRef.current.position,
           {
-           duration:3,
-          //  y:-BOX_HEIGHT * (NB_FLOORS -1),
-           x:-100,
-           y: -100
+           duration:2,
+           x:-2,
+           y: -2
           },
           0
-        )
+        );
+       tl.current.to(
+          boxRef.current.scale,{
+            x: 0,
+            y: 0,
+            z: 0,
+            duration: 1,
+            ease: 'power2.out',
+          }
+        );
     }, [])
 
 
     return(
-     <mesh ref={boxRef}>
+     <mesh ref={boxRef} position={[0, 0, 0]} rotation={[0, Math.PI, 0]}>
     
-            <ambientLight /> 
+      <ambientLight /> 
   
   <pointLight position={[2,2,2]}  intensity={1.0} color='yellow'/>
       <sphereGeometry args={[3.0, 64, 32]} />
-      <meshStandardMaterial color= "red"  />
+      <LayerMaterial>
+        <customLayer ref={boxRef} time={0.0} lacunarity={4.5} />
+      </LayerMaterial>
      </mesh>
     )
  }
@@ -53,18 +79,13 @@ function Test(){
     return(
         <div className='container_sphere'>
         <Canvas 
-        // camera={{
-        //   fov: 44,
-        //   position: [2.3,1.5,2.3]
-        // }}
         >
-    
-        {/* <OrbitControls enableZoom = {false}/> */}
      
-        <ScrollControls pages={2} damping={0.25}> 
-         <Box></Box>
-         </ScrollControls>
+        <ScrollControls pages={1}> <Box></Box></ScrollControls>
+        
       </Canvas>
+      <Media></Media>
+
       </div>
     )
 };

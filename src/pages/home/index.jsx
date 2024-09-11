@@ -6,9 +6,11 @@ import Test from "../test/test";
 const Home = () => {
   return (
     <>
-    <Test></Test>
+    
       <div className="right_bottom_rectangle">
+        <Test></Test>
         <Media></Media>
+        
       </div>{" "}
       <div className="bottom_mask"></div>
     </>
