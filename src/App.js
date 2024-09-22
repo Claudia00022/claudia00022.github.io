@@ -60,7 +60,7 @@ function App() {
 
         <Name name={name} />
         <NavBar handleName={handleName} handleNameBack={handleNameBack} />
-        {/* <Rectangle /> */}
+    
 
         <Routes>
           <Route index path="/" element={<Home />}></Route>

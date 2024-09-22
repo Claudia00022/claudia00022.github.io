@@ -22,7 +22,7 @@ const projects_data = [
 function Media() {
   return (
     <>
-      <div className="flex items-center justify-end margin_top_media mb-4 ">
+      <div className="flex items-center justify-end margin_top_media mb-4  ">
         <div
           style={{
             width: "5px",
