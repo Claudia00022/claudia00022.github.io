@@ -1,7 +1,6 @@
-.container_sphere{
-    width: 100vw;
-    height: 100vh;
-   
-    background-color: transparent;
-    scroll-behavior: smooth;
+.container_sphere {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  scroll-behavior: smooth;
 }
