@@ -58,7 +58,7 @@ function App() {
       <div className="App">
         <Loading show={display} />
 
-        <Name name={name} />
+        <Name name={name}   />
         <NavBar handleName={handleName} handleNameBack={handleNameBack} />
     
 
