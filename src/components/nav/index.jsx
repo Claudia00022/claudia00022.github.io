@@ -58,7 +58,7 @@ function handleArt(){
 
 
 return (
-  <div className="fixed z-20 w-1/6 mt-64 ms-16 bg-slate-50 opacity-5 font-black" >
+  <div className="fixed z-20 w-1/6 mt-64 ms-16 bg-slate-50 " >
 <ul>
 <li onClick={handleClick}>
   <Link to={"/"} onClick={props.handleNameBack} className="flex flex-row items-center title " style={{ marginBottom: '10px', fontWeight:'bold', fontSize: '13px' }}>{toggledLinks}</Link>

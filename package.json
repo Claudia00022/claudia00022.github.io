@@ -17,6 +17,7 @@
     "@types/three": "^0.165.0",
     "babel-plugin-glsl": "^1.0.0",
     "css-loader": "^7.1.2",
+    "glsl-curl-noise2": "^0.0.4",
     "gsap": "^3.12.5",
     "lamina": "^1.1.23",
     "rc-progress": "^4.0.0",
@@ -44,7 +45,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

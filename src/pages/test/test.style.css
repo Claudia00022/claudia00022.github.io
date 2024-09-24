@@ -4,3 +4,13 @@
   background-color: transparent;
   scroll-behavior: smooth;
 }
+
+.poject_section{
+  position: absolute;
+  top: 0;
+  right: 8rem;
+  width: 50vw;
+}
+.second-section{
+  position: relative;
+}
