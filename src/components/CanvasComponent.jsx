@@ -1,11 +1,11 @@
 import React, { useLayoutEffect, useRef } from "react";
 import { Canvas, useFrame, extend, useThree } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LayerMaterial } from "lamina";
 import '../shaders/simulationMaterial'
 import CustomLayer from "./rectangle/CustomLayer";
+import { OrbitControls } from "@react-three/drei";
 extend({
   CustomLayer,
 });
@@ -52,11 +52,11 @@ function Box() {
   return (
     <mesh ref={ref} position={[0, 0, 0]}>
 
-      <sphereGeometry args={[3, 64, 32]} />{" "}
-      <simulationMaterial  ref = {ref}/>
-      {/* <LayerMaterial>
+      <dodecahedronGeometry args={[1,5,1]} />{" "}
+      {/* <simulationMaterial  ref = {ref}/> */}
+      <LayerMaterial>
         <customLayer ref={ref} time={0.0} lacunarity={4.5} />{" "}
-      </LayerMaterial>{" "} */}
+      </LayerMaterial>{" "}
     </mesh>
   );
 }
@@ -70,8 +70,9 @@ export default function CanvasComponent() {
           camera={{ position: [0, 0, 5], zoom: 150 }}
           scale={[1, 1, 1]}
         >
-             <ambientLight />
-          <Box> </Box> <Environment preset="forest" />
+        <ambientLight />
+          <Box> </Box> 
+          <OrbitControls />
         </Canvas>{" "}
       </div>{" "}
     </>

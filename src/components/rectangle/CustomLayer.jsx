@@ -1,24 +1,22 @@
 import { Abstract } from "lamina/vanilla";
 
-
-
 class CustomLayer extends Abstract {
-    // Define stuff as static properties!
-  
-    // Uniforms: Must begin with prefix "u_".
-    // Assign them their default value.
-    // Any unifroms here will automatically be set as properties on the class as setters and getters.
-    // There setters and getters will update the underlying unifrom.
-    static u_colorA = "white";
-    static u_colorB = "black";
-    // static u_cloudTint = "red";
-    static u_gain = 0.5;
-    static u_lacunarity = 3.0;
-    static u_time = 0.5;
-  
-    // Define your fragment shader just like you already do!
-    // Only difference is, you must return the final color of this layer
-    static fragmentShader = `   
+  // Define stuff as static properties!
+
+  // Uniforms: Must begin with prefix "u_".
+  // Assign them their default value.
+  // Any unifroms here will automatically be set as properties on the class as setters and getters.
+  // There setters and getters will update the underlying unifrom.
+  static u_colorA = "black";
+  static u_colorB = "#DEDEDE";
+  // static u_cloudTint = "red";
+  static u_gain = 0.5;
+  static u_lacunarity = 3.0;
+  static u_time = 0.5;
+
+  // Define your fragment shader just like you already do!
+  // Only difference is, you must return the final color of this layer
+  static fragmentShader = `   
     uniform float u_time;
     uniform float u_lacunarity;
     uniform float u_gain;
@@ -27,6 +25,8 @@ class CustomLayer extends Abstract {
     uniform vec3 u_cloudTint;
   
     varying vec2 v_Uv;
+  
+
   
     vec4 mod289(vec4 x)
     {
@@ -60,9 +60,9 @@ class CustomLayer extends Abstract {
     
       vec4 i = permute(permute(ix) + iy);
     
-      vec4 gx = fract(i * (1.0 / 41.0)) * 2.0 - 1.0 ;
-      vec4 gy = abs(gx) - 0.5 ;
-      vec4 tx = floor(gx + 0.5);
+      vec4 gx = fract(i * (0.3 / 82.0)) * 3.0 - 1.0 ;
+      vec4 gy = abs(gx) - 0.3;
+      vec4 tx = floor(gx + 0.3);
       gx = gx - tx;
     
       vec2 g00 = vec2(gx.x,gy.x);
@@ -84,8 +84,12 @@ class CustomLayer extends Abstract {
       vec2 fade_xy = fade(Pf.xy);
       vec2 n_x = mix(vec2(n00, n01), vec2(n10, n11), fade_xy.x);
       float n_xy = mix(n_x.x, n_x.y, fade_xy.y);
-      return 2.3 * n_xy;
+      return 1.2 * n_xy;
     }
+
+
+
+
   
     float fbm(vec2 st) {
       const int OCTAVES = 10;
@@ -133,11 +137,11 @@ class CustomLayer extends Abstract {
       return f_colorfrag;
     }
     `;
-  
-    // Optionally Define a vertex shader!
-    // Same rules as fragment shaders, except no blend modes.
-    // Return a non-projected vec3 position.
-    static vertexShader = `   
+
+  // Optionally Define a vertex shader!
+  // Same rules as fragment shaders, except no blend modes.
+  // Return a non-projected vec3 position.
+  static vertexShader = `   
     varying vec2 v_Uv;
   
       void main() {
@@ -145,16 +149,15 @@ class CustomLayer extends Abstract {
         return position;
       }
     `;
-  
-    constructor(props) {
-      // You MUST call 'super' with the current constructor as the first argument.
-      // Second argument is optional and provides non-uniform parameters like blend mode, name and visibility.
-      super(CustomLayer, {
-        name: "CustomLayer",
-        ...props,
-      });
-    }
+
+  constructor(props) {
+    // You MUST call 'super' with the current constructor as the first argument.
+    // Second argument is optional and provides non-uniform parameters like blend mode, name and visibility.
+    super(CustomLayer, {
+      name: "CustomLayer",
+      ...props,
+    });
   }
-  
-  export default CustomLayer;
-  
+}
+
+export default CustomLayer;
