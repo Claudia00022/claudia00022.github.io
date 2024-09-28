@@ -3,13 +3,11 @@ import { Canvas, useFrame, extend, useThree } from "@react-three/fiber";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LayerMaterial } from "lamina";
-import '../shaders/simulationMaterial'
+import "../shaders/simulationMaterial";
 import CustomLayer from "./rectangle/CustomLayer";
-import { OrbitControls } from "@react-three/drei";
 extend({
   CustomLayer,
 });
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,15 +27,15 @@ function Box() {
         immediateRender: false,
       },
       scrollTrigger: {
-        trigger: ".second-section",
+        trigger: ".first_section",
         start: "top 60%",
         markers: true,
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play reverse play reverse ",
       },
     });
     tl.timeScale(0.8);
     tl.to(ref.current.position, {
-      x: -4,
+      x: -4.5,
       y: 0,
       z: 0,
     });
@@ -51,9 +49,7 @@ function Box() {
 
   return (
     <mesh ref={ref} position={[0, 0, 0]}>
-
-      <dodecahedronGeometry args={[1,5,1]} />{" "}
-      {/* <simulationMaterial  ref = {ref}/> */}
+      <sphereGeometry args={[3, 64, 32]} />{" "}
       <LayerMaterial>
         <customLayer ref={ref} time={0.0} lacunarity={4.5} />{" "}
       </LayerMaterial>{" "}
@@ -64,15 +60,14 @@ function Box() {
 export default function CanvasComponent() {
   return (
     <>
-      <div className="container_sphere fixed top-0 h-screen">
+      <div className="fixed top-0 h-screen z-20 w-screen">
         <Canvas
           orthographic
           camera={{ position: [0, 0, 5], zoom: 150 }}
           scale={[1, 1, 1]}
         >
-        <ambientLight />
-          <Box> </Box> 
-          <OrbitControls />
+          <ambientLight />
+          <Box> </Box>
         </Canvas>{" "}
       </div>{" "}
     </>

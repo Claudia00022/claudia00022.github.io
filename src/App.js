@@ -3,13 +3,14 @@ import React, { Suspense, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Loading from "./components/loading/loading";
 import Rectangle from "./components/rectangle";
-import Contact from "./pages/contact";
-import Art from "./pages/art";
 import Home from "./pages/home";
 import About from "./pages/about";
 import NavBar from "./components/nav";
-import Test from "./pages/test/test";
-
+import Media from "./components/media";
+import Art from "./pages/art";
+import ArtTest from "./pages/art-test/art-test";
+import Contact from "./pages/contact";
+import CanvasComponent from "./components/CanvasComponent";
 import Name from "./components/name/name";
 import arts_data from "./artsData";
 
@@ -57,12 +58,24 @@ function App() {
     <>
       <div className="App">
         <Loading show={display} />
-
-        <Name name={name}   />
-        <NavBar handleName={handleName} handleNameBack={handleNameBack} />
-    
-
-        <Routes>
+        <Name name={name} />
+        {/* <NavBar handleName={handleName} handleNameBack={handleNameBack} /> */}
+        <div className="h-screen">
+          <CanvasComponent />
+        </div>{" "}
+        <div className="first_section">
+          <About />
+        </div>
+        <div className="second-section">
+            <Media> </Media>{" "}
+         </div>{" "}
+         <div className="third_section">
+         <ArtTest />
+         </div>
+         <div className="four_section ">
+          <Contact />
+         </div>
+        {/* <Routes>
           <Route index path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route
@@ -78,7 +91,7 @@ function App() {
           ></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/test" element={<Test />}></Route>
-        </Routes>
+        </Routes> */}
       </div>
     </>
   );

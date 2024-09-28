@@ -22,6 +22,8 @@ const projects_data = [
 function Media() {
   return (
     <>
+    <div className="h-screen relative">
+    <div className="absolute top-10 w-6/12 right-52">
       <div className="flex items-center justify-end margin_top_media mb-4  ">
         <div
           style={{
@@ -71,6 +73,8 @@ function Media() {
           </a>
         </div>
       ))}
+      </div>
+      </div>
       </div>
     </>
   );

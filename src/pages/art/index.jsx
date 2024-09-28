@@ -1,12 +1,8 @@
 import React, { useState } from "react";
-
-
 import "./art.style.css";
 import arts_data from "../../artsData";
 
 const Art = (props) => {
- 
-
   const [elementId, setElementId] = useState(0);
 
   function element(event) {
@@ -22,33 +18,44 @@ const Art = (props) => {
 
   return (
     <>
-     <div className="top_mask" style={{top:'0'}}> </div>{" "}
-      <div style={{ display: props.openPopUp }}>
-        <div className="container_fix"></div>
-        <button onClick={props.handleClose} className="popUp_close_button">close</button>
-        <div className="popUp_container">
-          <img src={arts_data[elementId].img_link}></img>
+      <div className="h-screen relative">
+        <div style={{ display: props.openPopUp }}>
+          <div className="container_fix"></div>
+          <button onClick={props.handleClose} className="popUp_close_button">
+            close
+          </button>
+          <div className="popUp_container">
+            <img src={arts_data[elementId].img_link} alt="art_image"></img>
+          </div>
+        </div>
+
+        <div
+          className="right_bottom_rectangle"
+          style={{
+            backgroundColor: " transparent",
+            height: "100vh",
+            marginTop: "5vh",
+            width: "70vw",
+            marginRight: "0.1rem",
+            paddingRight: "0",
+          }}
+        >
+          <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-3 lg:gap-3 [&>img:not(:first-child)]:mt-3 ">
+            {arts_data.map((art) => (
+              <div className="img_mask mt-3">
+                <p className="  text_position">{art.content}</p>
+                <img
+                  alt="art_image"
+                  id={art.id}
+                  src={art.img_link}
+                  onClick={handleClick}
+                  className="object-contain"
+                ></img>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
- 
-      <div className="right_bottom_rectangle" style={{backgroundColor:' transparent', height:'100vh', marginTop:'5vh', width: '70vw', marginRight:'0.1rem', paddingRight:'0'}} >
-        <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-3 lg:gap-3 [&>img:not(:first-child)]:mt-3 ">
-          {arts_data.map((art) => (
-            <div className="img_mask mt-3">
-           <p className="  text_position">{art.content}</p>
-            <img
-              id={art.id}
-              src={art.img_link}
-              onClick={handleClick}
-              className="object-contain"
-            ></img>
-            </div>
-          ))}
-        </div>
-        <p className="title mb-52 " style={{color: 'white'}}> n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>
-      </div>
-      
-      <div className="bottom_mask"> </div>{" "}
     </>
   );
 };

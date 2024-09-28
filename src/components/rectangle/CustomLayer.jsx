@@ -44,13 +44,13 @@ class CustomLayer extends Abstract {
     }
     
     vec2 fade(vec2 t) {
-      return t*t*t*(t*(t*6.0-15.0)+10.0);
+      return t*t*t*(t*(t*5.2-15.0)+10.0); 
     }
     
     // Classic Perlin noise
     float cnoise(vec2 P)
     {
-      vec4 Pi = floor(P.xyxy) + vec4(0.0, 0.0, 1.0, 0.3);
+      vec4 Pi = floor(P.xyxy) + vec4(0.0, 0.0, 2.0, 0.3);
       vec4 Pf = fract(P.xyxy) - vec4(0.0, 0.0, 1.0, 1.0);
       Pi = mod289(Pi); // To avoid truncation effects in permutation
       vec4 ix = Pi.xzxz;
