@@ -3,7 +3,6 @@ import { Canvas, useFrame, extend, useThree } from "@react-three/fiber";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LayerMaterial } from "lamina";
-import "../shaders/simulationMaterial";
 import CustomLayer from "./rectangle/CustomLayer";
 extend({
   CustomLayer,

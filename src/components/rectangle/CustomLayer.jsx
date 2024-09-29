@@ -8,7 +8,7 @@ class CustomLayer extends Abstract {
   // Any unifroms here will automatically be set as properties on the class as setters and getters.
   // There setters and getters will update the underlying unifrom.
   static u_colorA = "black";
-  static u_colorB = "#DEDEDE";
+  static u_colorB = "#D6D6D6";
   // static u_cloudTint = "red";
   static u_gain = 0.5;
   static u_lacunarity = 3.0;

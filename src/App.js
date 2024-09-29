@@ -66,12 +66,13 @@ function App() {
         <div className="first_section">
           <About />
         </div>
+        <div className="third_section">
+         <ArtTest />
+         </div>
         <div className="second-section">
             <Media> </Media>{" "}
          </div>{" "}
-         <div className="third_section">
-         <ArtTest />
-         </div>
+         
          <div className="four_section ">
           <Contact />
          </div>
