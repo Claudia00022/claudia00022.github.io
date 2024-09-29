@@ -46,6 +46,29 @@ function Box() {
     });
   }, [camera.scale]);
 
+  useLayoutEffect(() => {
+    new ScrollTrigger({});
+    let tl = gsap.timeline({
+      defaults: {
+        immediateRender: false,
+      },
+      scrollTrigger: {
+        trigger: ".third_section",
+        start: "top 90%",
+        markers: true,
+        toggleActions: "play reverse ",
+      },
+    });
+    tl.timeScale(0.8);
+    tl.to(ref.current.position, {
+      x: -10,
+      y: 0,
+      z: 0,
+    });
+  }, [camera.scale]);
+
+
+
   return (
     <mesh ref={ref} position={[0, 0, 0]}>
       <sphereGeometry args={[3, 64, 32]} />{" "}

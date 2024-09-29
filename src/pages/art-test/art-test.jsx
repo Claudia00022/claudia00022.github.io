@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Canvas,
   useFrame,
@@ -21,28 +21,12 @@ import {
 } from "@react-three/drei";
 import * as THREE from "three";
 import { easing, geometry } from "maath";
+import Lenis from "lenis";
 
 import '../../artsData'
 
 
-// function ArtBox(props) {
-//   const ref = useRef();
-//   const texture = useLoader(THREE.TextureLoader, "./img/elephant.jpg");
-//   const { camera } = useThree();
-//   console.log(camera.position);
 
-//   useFrame((_, delta) => {
-//     // ref.current.rotation.x += 1 * delta;
-//     // ref.current.rotation.y += 1.0 * delta
-//   });
-//   return (
-//     <mesh {...props} ref={ref}>
-//       <ambientLight />
-//       <planeGeometry />
-//       <meshStandardMaterial map={texture} />
-//     </mesh>
-//   );
-// }
 
 function Lens({ children, damping = 0.15, ...props }) {
   const ref = useRef();
@@ -50,6 +34,8 @@ function Lens({ children, damping = 0.15, ...props }) {
   const buffer = useFBO();
   const viewport = useThree((state) => state.viewport);
   const [scene] = useState(() => new THREE.Scene());
+
+ 
   useFrame((state, delta) => {
     // Tie lens to the pointer
     // getCurrentViewport gives us the width & height that would fill the screen in threejs units
@@ -69,6 +55,8 @@ function Lens({ children, damping = 0.15, ...props }) {
       damping,
       delta
     );
+
+
     // This is entirely optional but spares us one extra render of the scene
     // The createPortal below will mount the children of <Lens> into the new THREE.Scene above
     // The following code will render that scene into a buffer, whose texture will then be fed into
@@ -78,6 +66,7 @@ function Lens({ children, damping = 0.15, ...props }) {
     state.gl.render(scene, state.camera);
     state.gl.setRenderTarget(null);
   });
+
   return (
     <>
       {createPortal(children, scene)}
@@ -145,10 +134,11 @@ function Typo() {
 }
 
 export default function ArtTest() {
+ 
   return (
     <>
       <div className=" relative h-screen ">
-        <div className="absolute top-0 right-0 w-full h-screen z-50">
+        <div className="absolute top-0 right-0 w-6/12 h-screen z-50">
 
           <Canvas camera={{ position: [0, 0, 20], fov: 15 }}>
          <ScrollControls   pages={3} distance={0.5}>
