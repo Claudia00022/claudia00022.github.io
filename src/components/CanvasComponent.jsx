@@ -19,55 +19,77 @@ function Box() {
     ref.current.rotation.y += 0.1 * delta;
   });
 
+  // useLayoutEffect(() => {
+  //   new ScrollTrigger({});
+
+  //   let tl = gsap.timeline({ defaults: {immediateRender: false}, scrollTrigger: {
+  //       trigger: ".first_section",
+  //       start: "top 60%",
+  //       end: 'bottom bottom ',
+  //       markers: true,
+  //       toggleActions: "play reverse play reverse",
+  //     },
+  //   });
+  //   tl.timeScale(0.8);
+  //   tl.to(ref.current.position, {
+  //     x: -4.5,
+  //     y: 0,
+  //     z: 0,
+  //   });
+
+  //   tl.to(camera.scale, {
+  //     x: 0.7,
+  //     y: 0.7,
+  //     z: 0.7,
+  //   });
+  
+
+  // }, [camera.scale]);
   useLayoutEffect(() => {
-    new ScrollTrigger({});
-    let tl = gsap.timeline({
-      defaults: {
-        immediateRender: false,
-      },
+
+  gsap.to(ref.current.position, {
       scrollTrigger: {
         trigger: ".first_section",
+        immediateRender: false,
         start: "top 60%",
         markers: true,
-        toggleActions: "play reverse play reverse ",
+   
+      toggleActions: "play pause play reverse", //onEnter onLeave onEnterBack onLeaveBack
       },
-    });
-    tl.timeScale(0.8);
-    tl.to(ref.current.position, {
       x: -4.5,
       y: 0,
       z: 0,
+   
     });
+    gsap.to(camera.scale, {
+      scrollTrigger: {
+        trigger: ".first_section",
+        immediateRender: false,
+        start: "top 60%",
+        markers: true,
+    
+        toggleActions: "play pause play reverse",
+      },
 
-    tl.to(camera.scale, {
       x: 0.7,
       y: 0.7,
       z: 0.7,
+      duration: 0.5
     });
-  }, [camera.scale]);
-
-  useLayoutEffect(() => {
-    new ScrollTrigger({});
-    let tl = gsap.timeline({
-      defaults: {
-        immediateRender: false,
-      },
+    gsap.to(ref.current.position, {
       scrollTrigger: {
         trigger: ".third_section",
-        start: "top 90%",
+        immediateRender: false,
+        start: "top bottom",
+        end: 'bottom top',
         markers: true,
-        toggleActions: "play reverse ",
-      },
-    });
-    tl.timeScale(0.8);
-    tl.to(ref.current.position, {
-      x: -10,
-      y: 0,
-      z: 0,
-    });
+       toggleActions: "play none play reverse",
+    },
+    x: -10.0,
+    y: 0,
+    z: 0,
+  })
   }, [camera.scale]);
-
-
 
   return (
     <mesh ref={ref} position={[0, 0, 0]}>
@@ -82,7 +104,7 @@ function Box() {
 export default function CanvasComponent() {
   return (
     <>
-      <div className="fixed top-0 h-screen z-20 w-screen">
+      <div className="fixed top-0 h-screen z-20 w-screen hero_rec">
         <Canvas
           orthographic
           camera={{ position: [0, 0, 5], zoom: 150 }}

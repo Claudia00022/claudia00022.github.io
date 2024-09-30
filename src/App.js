@@ -60,7 +60,7 @@ function App() {
         <Loading show={display} />
         <Name name={name} />
         {/* <NavBar handleName={handleName} handleNameBack={handleNameBack} /> */}
-        <div className="h-screen">
+        <div className="h-screen hero">
           <CanvasComponent />
         </div>{" "}
         <div className="first_section">

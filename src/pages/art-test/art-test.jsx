@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   Canvas,
   useFrame,
@@ -22,8 +22,14 @@ import {
 import * as THREE from "three";
 import { easing, geometry } from "maath";
 import Lenis from "lenis";
+import gsap from "gsap";
 
 import '../../artsData'
+
+
+
+
+
 
 
 
@@ -134,11 +140,15 @@ function Typo() {
 }
 
 export default function ArtTest() {
+
+
+  
+
  
   return (
     <>
-      <div className=" relative h-screen ">
-        <div className="absolute top-0 right-0 w-6/12 h-screen z-50">
+      <div className=" relative h-screen fullpage">
+        <div className="absolute top-0 right-0 w-screen h-screen z-50 itemcontainer ">
 
           <Canvas camera={{ position: [0, 0, 20], fov: 15 }}>
          <ScrollControls   pages={3} distance={0.5}>
