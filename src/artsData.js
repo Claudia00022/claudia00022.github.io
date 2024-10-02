@@ -11,7 +11,7 @@ const arts_data = [
       id: 1,
       img_link: PhotoOne,
       content:'#Art001',
-      class: img_artOne
+      class: '.img_artOne'
     },
     {
       id: 2,
