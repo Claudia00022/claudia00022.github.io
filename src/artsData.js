@@ -11,17 +11,20 @@ const arts_data = [
       id: 1,
       img_link: PhotoOne,
       content:'#Art001',
+      class: img_artOne
     },
     {
       id: 2,
       img_link: PhotoTwo,
       content:'#Art002',
+       class: '.img_artTwo'
     
     },
     {
       id: 3,
       img_link: PhotoThree,
       content:'#Art003',
+       class: '.img_artThree'
     },
     {
       id: 4,

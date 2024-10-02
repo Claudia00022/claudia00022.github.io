@@ -13,6 +13,9 @@ import Contact from "./pages/contact";
 import CanvasComponent from "./components/CanvasComponent";
 import Name from "./components/name/name";
 import arts_data from "./artsData";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [display, setDispaly] = useState("block");
@@ -53,6 +56,11 @@ function App() {
 
     console.log(art);
   }
+
+ 
+  
+ 
+ 
 
   return (
     <>

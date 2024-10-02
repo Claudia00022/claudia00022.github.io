@@ -52,7 +52,7 @@ function Box() {
         trigger: ".first_section",
         immediateRender: false,
         start: "top 60%",
-        markers: true,
+        // markers: true,
    
       toggleActions: "play pause play reverse", //onEnter onLeave onEnterBack onLeaveBack
       },
@@ -66,7 +66,7 @@ function Box() {
         trigger: ".first_section",
         immediateRender: false,
         start: "top 60%",
-        markers: true,
+        // markers: true,
     
         toggleActions: "play pause play reverse",
       },
@@ -82,7 +82,7 @@ function Box() {
         immediateRender: false,
         start: "top bottom",
         end: 'bottom top',
-        markers: true,
+        // markers: true,
        toggleActions: "play none play reverse",
     },
     x: -10.0,

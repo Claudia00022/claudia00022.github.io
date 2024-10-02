@@ -1,0 +1,52 @@
+.container {
+  margin-top: 10vh;
+  min-height: 100vh;
+}
+.body {
+  margin-left: 10vw;
+}
+
+.images {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  margin-top: 5vh;
+}
+
+/* .imageContainer {
+  position: absolute;
+} */
+
+.img_art {
+  object-fit: cover;
+
+
+}
+.img_artOne {
+  height: 60vh;
+  width: 50vh;
+  z-index: 1;
+  position: absolute;
+
+}
+.img_artTwo{
+  left: 55vw;
+  top: 15vh;
+  height: 40vh;
+  width: 30vh;
+  z-index: 2;
+  position: absolute;
+
+
+}
+.img_artThree {
+  left: 27.5vw;
+  top: 40vh;
+  height: 25vh;
+  width: 20vh;
+  z-index: 3;
+  position: absolute;
+
+
+}
