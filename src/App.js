@@ -15,6 +15,8 @@ import Name from "./components/name/name";
 import arts_data from "./artsData";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "lenis";
+import 'lenis/dist/lenis.css'
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -56,6 +58,17 @@ function App() {
 
     console.log(art);
   }
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time){
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  }, []);
 
  
   

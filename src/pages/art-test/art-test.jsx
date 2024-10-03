@@ -197,10 +197,39 @@ gsap.registerPlugin(ScrollTrigger);
 const word = 'my passion'
 
 
+
 export default function ArtTest() {
 
-  const images= arts_data;
-  console.log(images);
+  // const images= arts_data;
+  const container = useRef(null)
+  const title = useRef(null)
+  const characters = useRef([])
+
+ useLayoutEffect(() => {
+
+  const context = gsap.context(() => {
+    const tl = gsap.timeline({
+      scrollTrigger:{
+        trigger:container.current,
+        start:'top bottom',
+        end:'bottom top',
+        scrub:true,
+        markers: true
+      },
+    })
+
+    tl.to(title.current, {y: -50}, 0);
+
+    characters.current.forEach(char => {
+       tl.to(char, {top:-300}, 0);
+  })
+
+  });
+
+  return () =>  context.revert();
+
+ }, [])
+  
 
 
 
@@ -212,23 +241,23 @@ export default function ArtTest() {
   return (
    
     <> 
-      <div className=" container">
+      <div ref={container} className=" container">
         <div className=" body">
-        <h1>Art</h1>
+        <h1 ref={title}>Art</h1>
         <h1>Is</h1>
         <div>
           <p>
-            {word.split('').map((letter, i) => {
-              return <span key = {`l_&{i}`}>{letter}</span>
+            {word.split("").map((letter, i) => {
+              return <span  className="span_word" ref={ref => characters.current[i] = ref} key = {`l_&{i}`}>{letter}</span>
             })}
           </p>
         </div>
 
         <div className="images" >
           <div className="imageContainer">
-            <img className="img_art img_artOne" src={arts_data[0].img_link}></img>
-            <img className="img_art img_artTwo" src={arts_data[1].img_link}></img>
-            <img  className="img_art img_artThree"src={arts_data[2].img_link}></img>
+            <img className="img_art img_artOne" src={arts_data[0].img_link} alt="pi"></img>
+            <img className="img_art img_artTwo" src={arts_data[1].img_link} alt="pi"></img>
+            <img  className="img_art img_artThree" src={arts_data[2].img_link} alt="pi"></img>
           </div>
         </div>
         </div>
