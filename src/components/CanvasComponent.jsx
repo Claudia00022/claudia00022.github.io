@@ -10,8 +10,13 @@ extend({
 
 gsap.registerPlugin(ScrollTrigger);
 
+
+
+
+
+
 function Box() {
-  const ref = useRef();
+  const ref = useRef(null);
   const { camera } = useThree();
   console.log(ref);
 
@@ -19,77 +24,74 @@ function Box() {
     ref.current.rotation.y += 0.1 * delta;
   });
 
-  // useLayoutEffect(() => {
-  //   new ScrollTrigger({});
+  
+  useLayoutEffect(() => {
+    const context = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: 'first_section',
+          start: "top 60%",
+          end: "bottom top",
+          scrub: true,
+          markers: true,
+        },
+      });
 
-  //   let tl = gsap.timeline({ defaults: {immediateRender: false}, scrollTrigger: {
+       tl.to(ref.current.position, {x: -4.5}, 0);
+       tl.to(camera.scale, {x: 0.7,y: 0.7,z: 0.7}, 0)
+    });
+
+    return () => context.revert();
+  }, [camera.scale]);
+
+
+  // useLayoutEffect(() => {
+
+
+
+  // gsap.to(ref.current.position, {
+  //     scrollTrigger: {
   //       trigger: ".first_section",
+  //       immediateRender: false,
   //       start: "top 60%",
-  //       end: 'bottom bottom ',
-  //       markers: true,
-  //       toggleActions: "play reverse play reverse",
+  //       // markers: true,
+   
+  //     toggleActions: "play pause play reverse", //onEnter onLeave onEnterBack onLeaveBack
   //     },
-  //   });
-  //   tl.timeScale(0.8);
-  //   tl.to(ref.current.position, {
   //     x: -4.5,
   //     y: 0,
   //     z: 0,
+   
   //   });
+  //   gsap.to(camera.scale, {
+  //     scrollTrigger: {
+  //       trigger: ".first_section",
+  //       immediateRender: false,
+  //       start: "top 60%",
+  //       // markers: true,
+    
+  //       toggleActions: "play pause play reverse",
+  //     },
 
-  //   tl.to(camera.scale, {
   //     x: 0.7,
   //     y: 0.7,
   //     z: 0.7,
+  //     duration: 0.5
   //   });
-  
-
+  //   gsap.to(ref.current.position, {
+  //     scrollTrigger: {
+  //       trigger: ".third_section",
+  //       immediateRender: false,
+  //       start: "top bottom",
+  //       end: 'bottom top',
+  //       // markers: true,
+  //      toggleActions: "play none play reverse",
+  //   },
+  //   x: -10.0,
+  //   y: 0,
+  //   z: 0,
+  // })
   // }, [camera.scale]);
-  useLayoutEffect(() => {
-
-  gsap.to(ref.current.position, {
-      scrollTrigger: {
-        trigger: ".first_section",
-        immediateRender: false,
-        start: "top 60%",
-        // markers: true,
-   
-      toggleActions: "play pause play reverse", //onEnter onLeave onEnterBack onLeaveBack
-      },
-      x: -4.5,
-      y: 0,
-      z: 0,
-   
-    });
-    gsap.to(camera.scale, {
-      scrollTrigger: {
-        trigger: ".first_section",
-        immediateRender: false,
-        start: "top 60%",
-        // markers: true,
-    
-        toggleActions: "play pause play reverse",
-      },
-
-      x: 0.7,
-      y: 0.7,
-      z: 0.7,
-      duration: 0.5
-    });
-    gsap.to(ref.current.position, {
-      scrollTrigger: {
-        trigger: ".third_section",
-        immediateRender: false,
-        start: "top bottom",
-        end: 'bottom top',
-        // markers: true,
-       toggleActions: "play none play reverse",
-    },
-    x: -10.0,
-    y: 0,
-    z: 0,
-  })
-  }, [camera.scale]);
 
   return (
     <mesh ref={ref} position={[0, 0, 0]}>

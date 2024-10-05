@@ -9,7 +9,7 @@ import PhotoSix from "../src/assets/photos/man.JPG";
 const arts_data = [
     {
       id: 1,
-      img_link: PhotoOne,
+      img_link: PhotoFour,
       content:'#Art001',
       class: '.img_artOne'
     },
