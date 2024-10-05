@@ -34,8 +34,8 @@ export default function ArtTest() {
 
       tl.to(title.current, { y: -100 }, 0);
       tl.to(title2.current, { y: -100 }, 0);
-      tl.to(imagesRef.current[1], { y: -75 }, 0);
-      tl.to(imagesRef.current[2], { y: -50 }, 0);
+      tl.to(imagesRef.current[1], { y: -175 }, 0);
+      tl.to(imagesRef.current[2], { y: -150 }, 0);
 
       characters.current.forEach((char) => {
         tl.to(char, { top: -200 }, 0);

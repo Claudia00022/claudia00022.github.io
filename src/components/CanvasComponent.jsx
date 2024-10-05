@@ -1,9 +1,10 @@
-import React, { useLayoutEffect, useRef } from "react";
-import { Canvas, useFrame, extend, useThree } from "@react-three/fiber";
+import React, { useLayoutEffect, useRef, useEffect } from "react";
+import { Canvas, useFrame, extend, useThree, useLoader } from "@react-three/fiber";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LayerMaterial } from "lamina";
 import CustomLayer from "./rectangle/CustomLayer";
+import { TextureLoader } from "three";
 extend({
   CustomLayer,
 });
@@ -13,106 +14,58 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-
-
 function Box() {
-  const ref = useRef(null);
-  const { camera } = useThree();
+  const ref = useRef();
   console.log(ref);
 
   useFrame((_, delta) => {
-    ref.current.rotation.y += 0.1 * delta;
+    ref.current.rotation.y += 0.15 * delta;
   });
 
   
   useLayoutEffect(() => {
-    const context = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: 'first_section',
-          start: "top 60%",
+          trigger: ".first_section",
+          start: "top 80%",
           end: "bottom top",
           scrub: true,
           markers: true,
+         
         },
       });
 
-       tl.to(ref.current.position, {x: -4.5}, 0);
-       tl.to(camera.scale, {x: 0.7,y: 0.7,z: 0.7}, 0)
-    });
-
-    return () => context.revert();
-  }, [camera.scale]);
-
-
-  // useLayoutEffect(() => {
-
-
-
-  // gsap.to(ref.current.position, {
-  //     scrollTrigger: {
-  //       trigger: ".first_section",
-  //       immediateRender: false,
-  //       start: "top 60%",
-  //       // markers: true,
-   
-  //     toggleActions: "play pause play reverse", //onEnter onLeave onEnterBack onLeaveBack
-  //     },
-  //     x: -4.5,
-  //     y: 0,
-  //     z: 0,
-   
-  //   });
-  //   gsap.to(camera.scale, {
-  //     scrollTrigger: {
-  //       trigger: ".first_section",
-  //       immediateRender: false,
-  //       start: "top 60%",
-  //       // markers: true,
+       tl.to(ref.current.position, {x:-4.5, y:0, z:0}, 0);
+      //  tl.to(camera.scale, {y: 0.1, x:0.1, z: 0.1}, 0);
+      tl.to(ref.current.scale, {scale: 4.5}, 0);
     
-  //       toggleActions: "play pause play reverse",
-  //     },
 
-  //     x: 0.7,
-  //     y: 0.7,
-  //     z: 0.7,
-  //     duration: 0.5
-  //   });
-  //   gsap.to(ref.current.position, {
-  //     scrollTrigger: {
-  //       trigger: ".third_section",
-  //       immediateRender: false,
-  //       start: "top bottom",
-  //       end: 'bottom top',
-  //       // markers: true,
-  //      toggleActions: "play none play reverse",
-  //   },
-  //   x: -10.0,
-  //   y: 0,
-  //   z: 0,
-  // })
-  // }, [camera.scale]);
+  }, []);
 
-  return (
-    <mesh ref={ref} position={[0, 0, 0]}>
-      <sphereGeometry args={[3, 64, 32]} />{" "}
-      <LayerMaterial>
-        <customLayer ref={ref} time={0.0} lacunarity={4.5} />{" "}
-      </LayerMaterial>{" "}
+  const texture = useLoader(TextureLoader, '/img/earth.jpg.jpg');
+
+return (
+    <mesh ref={ref} position={[0, 0, 0]} scale={3.0}>
+      <sphereGeometry args={[1, 64, 32]}  />{" "}
+      <meshStandardMaterial map={texture} />
     </mesh>
   );
 }
 
+
+
+
 export default function CanvasComponent() {
+  
   return (
     <>
-      <div className="fixed top-0 h-screen z-20 w-screen hero_rec">
+      <div  className="fixed top-0 h-screen z-20 w-screen hero_rec">
         <Canvas
           orthographic
           camera={{ position: [0, 0, 5], zoom: 150 }}
           scale={[1, 1, 1]}
         >
-          <ambientLight />
+         <directionalLight intensity={3.5} position={[1, 0, -.25]} />
           <Box> </Box>
         </Canvas>{" "}
       </div>{" "}

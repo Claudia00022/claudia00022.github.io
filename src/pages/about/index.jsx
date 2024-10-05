@@ -4,7 +4,7 @@ import "./about.style.css";
 function About() {
   return (
     <>
-      <div className="relative h-screen">
+      <div className="relative h-screen" >
       <div className="absolute top-10 right-52 w-6/12 ">
        <h1 className="text-right text-slate-500 title">ABOUT</h1>
         <p className="text font-bold">

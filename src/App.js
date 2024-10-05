@@ -59,16 +59,16 @@ function App() {
     console.log(art);
   }
 
-  useEffect(() => {
-    const lenis = new Lenis();
+  // useEffect(() => {
+  //   const lenis = new Lenis();
 
-    function raf(time){
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
+  //   function raf(time){
+  //     lenis.raf(time)
+  //     requestAnimationFrame(raf)
+  //   }
 
-    requestAnimationFrame(raf)
-  }, []);
+  //   requestAnimationFrame(raf)
+  // }, []);
 
  
   
