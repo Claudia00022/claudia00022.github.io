@@ -11,7 +11,7 @@
   }
 
   .title:hover{
-      color: #767272;
+
       cursor:crosshair;
       transition: .4s ease-out;
     

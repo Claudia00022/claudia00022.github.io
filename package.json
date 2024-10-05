@@ -17,6 +17,8 @@
     "@types/three": "^0.165.0",
     "babel-plugin-glsl": "^1.0.0",
     "css-loader": "^7.1.2",
+    "framer-motion": "^11.11.1",
+    "framer-motion-3d": "^11.11.1",
     "glsl-curl-noise2": "^0.0.4",
     "gsap": "^3.12.5",
     "lamina": "^1.1.23",

@@ -1,5 +1,6 @@
-import React from "react";
-import contacts_data from "../../contactsData";
+import React, {useRef} from "react";
+import { useScroll, motion, useTransform, useMotionTemplate } from "framer-motion";
+
 
 //Styles
 import "./media.style.css";
@@ -20,10 +21,20 @@ const projects_data = [
 ];
 
 function Media() {
+  const container = useRef(null);
+
+  const {scrollYProgress} = useScroll({
+    target: container,
+    offset: ['start end', '75vw end']
+  })
+
+  const clipProgress = useTransform(scrollYProgress, [0,0.5], [100, 0]);
+  const clip = useMotionTemplate`inset(0 ${clipProgress}% 0 0)`;
+
   return (
     <>
-    <div className="h-screen relative">
-    <div className="absolute top-10 w-6/12 right-52">
+    <div className="h-screen relative mt-64 ">
+    <div className="absolute top-10 right-0 w-screen ">
       <div className="flex items-center justify-end margin_top_media mb-4  ">
         <div
           style={{
@@ -33,47 +44,19 @@ function Media() {
           }}
           className="me-2"
         ></div>
-        <p className="text text-right font-bold ">Projects</p>
+        <p className="text text-right font-bold me-96 ">Projects</p>
       </div>
 
       {projects_data.map((project) => (
-        <div className="flex items-center justify-end ">
+        <div ref={container} className="flex items-center justify-end border-t border-b m-10">
           <p className="text font-bold me-20">{project.content}</p>
-          <a href={project.link} className="title block text-right">
+          <motion.p style={{clipPath: clip}}><a href={project.link} className="title block text-right me-40">
             {project.title}
-          </a>
+          </a></motion.p>
+          
         </div>
       ))}
 
-      <div className="flex items-center justify-end mt-12 mb-4">
-        <div
-          style={{
-            width: "5px",
-            height: "5px",
-            backgroundColor: "black",
-          }}
-          className="me-2"
-        ></div>
-        <p className="text text-right font-bold ">Contact</p>
-      </div>
-
-       {/* <div className="mb-52">
-      {contacts_data.map((contact) => (
-        <a href={contact.link} className="title ms-40 block text-right">
-          {contact.title}
-        </a>
-      ))}
-      </div> */}
-      <div className="mb-52">
-      {contacts_data.map((contact) => (
-        <div className="flex  items-center justify-end ">
-          <img src={contact.img_src} className="icons_media"></img>
-          <a href={contact.link} className="title ms-10 block text-right">
-            {contact.title}
-          </a>
-        </div>
-      ))}
-      </div>
       </div>
       </div>
     </>

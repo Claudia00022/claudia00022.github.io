@@ -1,8 +1,7 @@
 //Components
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import Loading from "./components/loading/loading";
-import Rectangle from "./components/rectangle";
 import Home from "./pages/home";
 import About from "./pages/about";
 import NavBar from "./components/nav";
@@ -15,11 +14,14 @@ import Name from "./components/name/name";
 import arts_data from "./artsData";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useScroll } from "framer-motion";
+import { motion } from "framer-motion-3d";
+import SmoothScroll from "./components/smoothScroll";
 import Lenis from "lenis";
 import 'lenis/dist/lenis.css'
 gsap.registerPlugin(ScrollTrigger);
 
-function App() {
+function App( props) {
   const [display, setDispaly] = useState("block");
   const [name, setName] = useState("Klaudia Forysiak");
   const [openPopUp, setOpenPopUp] = useState("none");
@@ -69,7 +71,11 @@ function App() {
 
   //   requestAnimationFrame(raf)
   // }, []);
-
+  const scene = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: scene,
+    offset: ['start end', 'end start']
+})
  
   
  
@@ -77,24 +83,25 @@ function App() {
 
   return (
     <>
-      <div className="App">
+    <SmoothScroll>
+      <div className="App"  ref={scene}>
         <Loading show={display} />
         <Name name={name} />
         {/* <NavBar handleName={handleName} handleNameBack={handleNameBack} /> */}
         <div className="h-screen hero">
-          <CanvasComponent />
+          <CanvasComponent  scrollYProgress = {scrollYProgress}/>
         </div>{" "}
-        <div className="first_section">
+        <div className="first_section section">
           <About />
         </div>
-        <div className="third_section">
+        <div className="third_section section">
          <ArtTest />
          </div>
-        <div className="second-section">
+        <div className="second-section section">
             <Media> </Media>{" "}
          </div>{" "}
          
-         <div className="four_section ">
+         <div className="four_section section ">
           <Contact />
          </div>
         {/* <Routes>
@@ -115,6 +122,7 @@ function App() {
           <Route path="/test" element={<Test />}></Route>
         </Routes> */}
       </div>
+      </SmoothScroll>
     </>
   );
 }
