@@ -85,7 +85,7 @@ function App( props) {
     <>
     <SmoothScroll>
       <div className="App"  ref={scene}>
-        <Loading show={display} />
+        {/* <Loading show={display} /> */}
         <Name name={name} />
         {/* <NavBar handleName={handleName} handleNameBack={handleNameBack} /> */}
         <div className="h-screen hero">

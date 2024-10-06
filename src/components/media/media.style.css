@@ -10,16 +10,63 @@
     margin-top: 0rem;
   }
 
-  .title:hover{
+   .title:hover{
 
       cursor:crosshair;
       transition: .4s ease-out;
     
-  }
+  } 
   .icons_media{
     width: 36x;
     height: 36px;
   }
+   
+  .shadow{
+    display: block;
+    position: absolute;
+    z-index: -1;
+  } 
+
+  .u-hover--sparkle {
+   
+    box-sizing: border-box;
+    position: relative;
+    padding: 0.75em;
+  }
+  .u-hover--sparkle:hover{
+    cursor:crosshair;
+  }
+    .u-hover--sparkle::before,
+    .u-hover--sparkle::after {
+      content: '';
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transform-origin: center;
+    }
+  
+    .u-hover--sparkle::before {
+      border-top: 0.2em solid red;
+      border-bottom: 0.2em solid red;
+      transform: scale3d(0,1,1);
+    }
+  
+    .u-hover--sparkle::after {
+      border-left: 0.2em solid red;
+      border-right: 0.2em solid red;
+      transform: scale3d(1,0,1);
+    }
+  
+    .u-hover--sparkle:hover::before,
+    .u-hover--sparkle:hover::after {
+      transform: scale3d(1,1,1);
+      transition: transform 900ms;
+    }
+  
+
 
   @media only screen and (max-width: 600px) {
      a.title{

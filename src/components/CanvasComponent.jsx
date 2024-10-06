@@ -10,7 +10,7 @@ export default function CanvasComponent(props) {
 
   return (
     <>
-      <div className="fixed top-0 h-screen w-screen hero_rec">
+      <div className="fixed top-0 h-full w-full hero_rec -z-10">
         <Canvas
           orthographic
           camera={{ position: [0, 0, 5], zoom: 150 }}
