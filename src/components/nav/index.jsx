@@ -7,13 +7,13 @@ const NavBar = (props) => {
 const [toggledLinks, setToggledLinks] = useState("home");
 const [toggledAbout, setToggledAbout] = useState("about");
 const [toggledContact, setToggledContact] = useState("contact");
-const [toggledArt, setToggledArt] = useState("art")
+const [toggledArt, setToggledArt] = useState("projects")
 
 function handleClick(){
   setToggledLinks(
    <div 
 
-        style={{width: '5px', height: '5px', backgroundColor: 'black', display: 'inline-block'}}
+        style={{width: '5px', height: '5px', backgroundColor: '#c9c9c9', display: 'inline-block'}}
          className= 'me-2' >
         </div>
   );
@@ -25,7 +25,7 @@ function handleClick(){
 function handleAbout(){
   setToggledAbout(<div 
 
-    style={{width: '5px', height: '5px', backgroundColor: 'black', display: 'inline-block'}}
+    style={{width: '5px', height: '5px', backgroundColor: '#c9c9c9', display: 'inline-block'}}
      className= 'me-2' >
     </div>);
     setToggledLinks("home");
@@ -36,7 +36,7 @@ function handleAbout(){
 function handleContact(){
   setToggledContact(<div 
 
-    style={{width: '5px', height: '5px', backgroundColor: 'black', display: 'inline-block'}}
+    style={{width: '5px', height: '5px', backgroundColor: '#c9c9c9', display: 'inline-block'}}
      className= 'me-2' >
     </div>);
     setToggledAbout("about");
@@ -47,7 +47,7 @@ function handleContact(){
 function handleArt(){
   setToggledArt(<div 
 
-    style={{width: '5px', height: '5px', backgroundColor: 'black', display: 'inline-block'}}
+    style={{width: '5px', height: '5px', backgroundColor: '#c9c9c9', display: 'inline-block'}}
      className= 'me-2' >
     </div>);
     setToggledAbout("about");
@@ -58,7 +58,7 @@ function handleArt(){
 
 
 return (
-  <div className="fixed z-20 w-1/6 mt-64 ms-16 bg-slate-50 " >
+  <div className="fixed z-20  top-24 right-20 " >
 <ul>
 <li onClick={handleClick}>
   <Link to={"/"} onClick={props.handleNameBack} className="flex flex-row items-center title " style={{ marginBottom: '10px', fontWeight:'bold', fontSize: '13px' }}>{toggledLinks}</Link>
@@ -71,9 +71,6 @@ return (
 </li>
 <li onClick={handleContact}>
   <Link to={"/contact"} className="flex flex-row items-center text" style={{ marginBottom: '10px', fontWeight:'bold', fontSize: '13px' }}>{toggledContact}</Link>
-</li>
-<li >
-  <Link to={"/test"} className="flex flex-row items-center text" style={{ marginBottom: '10px', fontWeight:'bold', fontSize: '13px' }}>test</Link>
 </li>
 </ul>
   </div>

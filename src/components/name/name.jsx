@@ -5,7 +5,7 @@ import './name.style.css';
 function Name(props){
     return(
         <>
-<div className=" absolute z-20 ms-16 mt-24 w-name bottom-20 left-10 ">
+<div className=" absolute z-20 left-16 top-24 w-name bottom-20 ">
 <h1 className="main-font-name text-gray-950  mb-3 ">
 {props.name}
 </h1>

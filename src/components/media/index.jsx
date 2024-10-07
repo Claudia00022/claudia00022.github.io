@@ -24,18 +24,6 @@ const projects_data = [
 
 function Media() {
   const container = useRef(null);
-  const [hovered, setHovered] = useState(false);
-
-  function handleHover(){
-    setHovered(true);
-    console.log('im in')
-  }
-
-  function handleHoverOut(){
-    setHovered(false);
-    console.log('im out');
-  }
-
   const {scrollYProgress} = useScroll({
     target: container,
     offset: ['start end',`30vw end`]
@@ -46,7 +34,7 @@ function Media() {
 
   return (
     <>
-    <div className="h-screen relative mt-64 ">
+    <div className="h-screen relative pt-5 " style={{backgroundColor: '#0D0D0D'}}>
     <div className="absolute top-10 right-0 w-screen ">
       <div className="flex items-center justify-end margin_top_media mb-4  ">
         <div
@@ -62,7 +50,7 @@ function Media() {
 
       {projects_data.map((project) => (
         <div ref={container} 
-        className="flex items-center justify-end border-t border-b m-10 ">
+        className="flex items-center justify-end border-t border-b  m-10 ">
           <p className="text font-bold me-20">{project.content}</p>
           <motion.p style={{clipPath: clip}}><a href={project.link} className="title block text-right me-40  " >
            {project.title}

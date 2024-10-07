@@ -34,7 +34,7 @@ html{
     font-size: 15px;
     letter-spacing: 1px;
     line-height: 20px;
-    color: white;
+    color: #c9c9c9;
 }
 
 .title{
@@ -42,7 +42,7 @@ html{
     font-weight: 700;
     font-style: bold;
     font-size: 8.5rem;
-    color: #b7ab98;
+    color: #a8977e;
 }
 
 @media only screen and  (max-width: 600px){

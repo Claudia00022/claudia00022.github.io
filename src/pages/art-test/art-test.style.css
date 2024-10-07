@@ -1,7 +1,8 @@
 .container_art {
   min-height: 100vh;
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
   position: relative;
+  background-color: #0D0D0D;
 }
 
 .images {
@@ -11,11 +12,11 @@
 }
 
 .img_art {
-  object-fit: cover;
-  opacity: 0.9;
+  object-fit: fill;
+  filter: brightness(50%);
 }
 .imageContainer:nth-of-type(1) {
-  height: 60vh;
+  height: 80vh;
   width: 50vh;
   z-index: 1;
   position: absolute;
@@ -48,6 +49,16 @@
   -ms-transform: translate(-50%, -50%);
   width: 50vh;
   height: 60vh;
+}
+
+.center_items{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 .span_word {

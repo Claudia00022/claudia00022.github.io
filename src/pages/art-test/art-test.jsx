@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const word = "my passion";
+const word = "MY PASSION";
 const images = arts_data.slice(0, 3);
 console.log(images);
 
@@ -32,13 +32,13 @@ export default function ArtTest() {
         },
       });
 
-      tl.to(title.current, { y: -100 }, 0);
-      tl.to(title2.current, { y: -100 }, 0);
+      // tl.to(title.current, { y: -100 }, 0);
+      // tl.to(title2.current, { y: -100 }, 0);
       tl.to(imagesRef.current[1], { y: -175 }, 0);
       tl.to(imagesRef.current[2], { y: -150 }, 0);
 
       characters.current.forEach((char) => {
-        tl.to(char, { top: -200 }, 0);
+        tl.to(char, { top: -800 }, 0);
       });
     });
 
@@ -48,11 +48,12 @@ export default function ArtTest() {
   return (
     <>
       <div ref={container} className=" container_art">
-        <div className="body_art" >
-          <h1 ref={title} className="title">Art</h1>
-          <h1 ref={title2} className="title">Is</h1>
+        <div className="body_art " >
+        <div className="absolute center_items z-50">
+          <h1 ref={title} className="title text-center">ART</h1>
+          <h1 ref={title2} className="title text-center">IS</h1>
           <div>
-            <p className="title">
+            <p className="title text-center" style={{color: '#c9c9c9', fontSize: '9.5rem' }}>
               {word.split("").map((letter, i) => {
                 return (
                   <span
@@ -66,13 +67,14 @@ export default function ArtTest() {
               })}
             </p>
           </div>
-          <div className="art_body">
-          <div className="images">
+          </div>
+          <div className="art_body ">
+          <div className="images ">
             {images.map((image, i) => {
               return (
                 <div
                   ref={(ref) => (imagesRef.current[i] = ref)}
-                  className="imageContainer"
+                  className="imageContainer "
                 >
                   <img
                     src={image.img_link}

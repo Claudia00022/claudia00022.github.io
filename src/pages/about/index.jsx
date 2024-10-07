@@ -4,9 +4,10 @@ import "./about.style.css";
 function About() {
   return (
     <>
-      <div className="relative h-screen" >
-      <div className="absolute top-10 right-52 w-6/12 ">
-       <h1 className="text-right text-slate-500 title">ABOUT</h1>
+      
+      <div className=" relative h-screen bg-slate-50" >
+      <div className="absolute top-10 left-52 w-6/12 ">
+       <h1 className="text-left title">ABOUT</h1>
         <p className="text font-bold">
           I am freelance frontend developer with a passion for creating dynamic
           and responsive web applications using the React framework.I have honed
@@ -17,7 +18,7 @@ function About() {
           collaborating with individuals and businesses that value aesthetics
           and recognize the power of simplicity.
         </p>
-        <p className="title text-right text-slate-500">Skills</p>
+        <p className="title text-left">SKILLS</p>
         <p className="text">
           {" "}
           -Core Technologies: HTML5, CSS3, JavaScript (ES6+)
@@ -35,6 +36,7 @@ function About() {
         <p className="text mb-52 ">-Version Control: Git, GitHub, GitLab</p>
         </div>
       </div>
+     
     </>
   );
 }
