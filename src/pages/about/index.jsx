@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import "./about.style.css";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 function About() {
+  const sectionRef = useRef(null);
+
+  useLayoutEffect(() =>{
+
+    const tl = gsap.timeline({scrollTrigger:{
+      trigger: sectionRef.current,
+       markers: true,
+       pin: true,
+       start:'top 20%',
+        end: "+=800",
+        scrub: 1,
+    }
+  });
+  return () => {
+    tl.scrollTrigger?.kill(); // Kill the ScrollTrigger
+    tl.kill(); // Kill the GSAP timeline
+  };
+  }, [])
+
   return (
     <>
       
-      <div className=" relative h-screen bg-slate-50" >
-      <div className="absolute top-10 left-52 w-6/12 ">
+      <div className=" relative h-screen "  >
+      <div className="absolute top-10 left-52 w-6/12 " ref={sectionRef}>
        <h1 className="text-left title">ABOUT</h1>
         <p className="text font-bold">
           I am freelance frontend developer with a passion for creating dynamic

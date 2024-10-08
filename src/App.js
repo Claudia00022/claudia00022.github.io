@@ -42,7 +42,7 @@ function App( props) {
   return (
     <>
     <SmoothScroll>
-      <div className="relative" style={{height: '500vh'}}  ref={scene}>
+      <div className="relative"  ref={scene}>
         {/* <Loading show={display} /> */}
         <Name name={name} />
         <NavBar handleName={handleName} handleNameBack={handleNameBack} />

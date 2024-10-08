@@ -1,11 +1,16 @@
-/** @type {import('tailwindcss').Config} */
+
+
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{html,js,jsx,ts,tsx}",
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      height:{
+        '128': '120vh', //Custom class h-120 with a height of 120vh of window screen
+      }
+    },
   },
   plugins: [],
 }

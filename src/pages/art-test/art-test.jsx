@@ -3,6 +3,7 @@ import "./art-test.style.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import arts_data from "../../artsData";
+import { useScroll, useTransform, motion } from "framer-motion";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -28,7 +29,6 @@ export default function ArtTest() {
           start: "top bottom",
           end: "bottom top",
           scrub: true,
-          markers: true,
         },
       });
 
@@ -45,10 +45,16 @@ export default function ArtTest() {
     return () => context.revert();
   }, []);
 
+  // const {scrollYProgress} = useScroll({
+  //   target: container,
+  //   offset: ['start end', ' end start'],
+  // });
+  // const y = useTransform(scrollYProgress, [0,1], ['-20%', '-10%']);
+
   return (
     <>
-      <div ref={container} className=" container_art">
-        <div className="body_art " >
+      <div ref={container} className=" container_art" >
+        <div className="body_art "  >
         <div className="absolute center_items z-50">
           <h1 ref={title} className="title text-center">ART</h1>
           <h1 ref={title2} className="title text-center">IS</h1>
