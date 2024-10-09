@@ -2,6 +2,7 @@ import React, {useRef, useState} from "react";
 import { useScroll, motion, useTransform, useMotionTemplate } from "framer-motion";
 
 
+
 //Styles
 import "./media.style.css";
 
@@ -34,9 +35,10 @@ function Media() {
 
   return (
     <>
-    <div className="h-screen relative pt-5 " style={{backgroundColor: '#0D0D0D'}}>
-    <div className="absolute top-10 right-0 w-screen ">
-      <div className="flex items-center justify-end margin_top_media mb-4  ">
+     
+    <div className="h-screen relative  bg-slate-400">
+    <div className="absolute top-52 left-0 w-full ">
+      <div className="flex items-center justify-start margin_top_media ms-52 ">
         <div
           style={{
             width: "5px",
@@ -45,17 +47,23 @@ function Media() {
           }}
           className="me-2"
         ></div>
-        <p className="text text-right font-bold me-96 ">Projects</p>
+        <p className="text text-right font-bold ">Projects</p>
       </div>
 
       {projects_data.map((project) => (
         <div ref={container} 
-        className="flex items-center justify-end border-t border-b  m-10 ">
-          <p className="text font-bold me-20">{project.content}</p>
-          <motion.p style={{clipPath: clip}}><a href={project.link} className="title block text-right me-40  " >
+        className="flex items-center justify-start border-t border-b mt-10 ">
+          <p className="text font-bold ms-52 w-64">{project.content}</p>
+          <div className="ms-40 relative ">
+          <motion.p style={{clipPath: clip}}><a href={project.link} className="title " >
            {project.title}
           </a></motion.p>
-          <a href={project.link} className="title me-40 shadow" style={{color: '#1c1c1c'}} >{project.title}</a>
+          <div className= "absolute top-0 -z-10">
+          <a href={project.link} className="title" style={{color: '#1c1c1c'}} >{project.title}</a>
+          </div>
+          </div>
+         
+          
 
         </div>
       ))}

@@ -14,7 +14,7 @@ function About() {
        markers: true,
        pin: true,
        start:'top 20%',
-        end: "+=800",
+        end: "+=1000",
         scrub: 1,
     }
   });

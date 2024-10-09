@@ -20,6 +20,7 @@ export default function ArtTest() {
   const characters = useRef([]);
   const title2 = useRef(null);
   const imagesRef = useRef([]);
+  const sectionTwoRef = useRef(null);
 
   useLayoutEffect(() => {
     const context = gsap.context(() => {
@@ -32,8 +33,6 @@ export default function ArtTest() {
         },
       });
 
-      // tl.to(title.current, { y: -100 }, 0);
-      // tl.to(title2.current, { y: -100 }, 0);
       tl.to(imagesRef.current[1], { y: -175 }, 0);
       tl.to(imagesRef.current[2], { y: -150 }, 0);
 
@@ -45,11 +44,25 @@ export default function ArtTest() {
     return () => context.revert();
   }, []);
 
-  // const {scrollYProgress} = useScroll({
-  //   target: container,
-  //   offset: ['start end', ' end start'],
-  // });
-  // const y = useTransform(scrollYProgress, [0,1], ['-20%', '-10%']);
+  useLayoutEffect(() =>{
+    
+    const tl = gsap.timeline({scrollTrigger:{
+      trigger: sectionTwoRef.current,
+       markers: true,
+       pin: true,
+       start:'top 5%',
+        end: "+=1800",
+        scrub: 1,
+    }
+  });
+  return () => {
+    tl.scrollTrigger?.kill(); // Kill the ScrollTrigger
+    tl.kill(); // Kill the GSAP timeline
+  };
+  }, [])
+
+
+ 
 
   return (
     <>
@@ -74,7 +87,7 @@ export default function ArtTest() {
             </p>
           </div>
           </div>
-          <div className="art_body ">
+          <div className="art_body bg-slate-300 "  ref={sectionTwoRef} >
           <div className="images ">
             {images.map((image, i) => {
               return (
