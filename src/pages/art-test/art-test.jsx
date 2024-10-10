@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 const word = "MY PASSION";
-const images = arts_data.slice(0, 3);
+const images = arts_data.slice(0, 6);
 console.log(images);
 
 export default function ArtTest() {
@@ -51,7 +51,7 @@ export default function ArtTest() {
        markers: true,
        pin: true,
        start:'top 5%',
-        end: "+=1800",
+        end: "bottom 60%",
         scrub: 1,
     }
   });
@@ -66,6 +66,8 @@ export default function ArtTest() {
 
   return (
     <>
+
+    
       <div ref={container} className=" container_art" >
         <div className="body_art "  >
         <div className="absolute center_items z-50">
@@ -87,7 +89,7 @@ export default function ArtTest() {
             </p>
           </div>
           </div>
-          <div className="art_body bg-slate-300 "  ref={sectionTwoRef} >
+          <div className=" "  ref={sectionTwoRef} >
           <div className="images ">
             {images.map((image, i) => {
               return (
@@ -107,6 +109,7 @@ export default function ArtTest() {
           </div>
         </div>
       </div>
+
     </>
   );
 }

@@ -11,6 +11,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useScroll } from "framer-motion";
 import SmoothScroll from "./components/smoothScroll";
+
 import 'lenis/dist/lenis.css'
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,6 +35,8 @@ function App( props) {
     target: scene,
     offset: ['start end', 'end start']
 })
+
+
  
   
  
@@ -48,6 +51,7 @@ function App( props) {
         <NavBar handleName={handleName} handleNameBack={handleNameBack} />
         <div className=" h-screen">
           <CanvasComponent  scrollYProgress = {scrollYProgress}/>
+ 
         </div>{" "}
         <div className="first_section section">
           <About />
@@ -63,6 +67,7 @@ function App( props) {
           <Contact />
          </div>
       </div>
+  
       </SmoothScroll>
     </>
   );

@@ -28,7 +28,7 @@ function About() {
     <>
       
       <div className=" relative h-screen "  >
-      <div className="absolute top-10 left-52 w-6/12 " ref={sectionRef}>
+      <div className="absolute top-10 left-52 w-6/12 -z-10" ref={sectionRef}>
        <h1 className="text-left title">ABOUT</h1>
         <p className="text font-bold">
           I am freelance frontend developer with a passion for creating dynamic
