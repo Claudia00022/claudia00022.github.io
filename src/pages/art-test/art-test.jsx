@@ -3,7 +3,7 @@ import "./art-test.style.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import arts_data from "../../artsData";
-import { useScroll, useTransform, motion } from "framer-motion";
+import Pencil from '../../assets/pencils.png'
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 const word = "MY PASSION";
-const images = arts_data.slice(0, 6);
+const images = arts_data.slice(0, 3);
 console.log(images);
 
 export default function ArtTest() {
@@ -48,16 +48,15 @@ export default function ArtTest() {
     
     const tl = gsap.timeline({scrollTrigger:{
       trigger: sectionTwoRef.current,
-       markers: true,
        pin: true,
        start:'top 5%',
-        end: "bottom 60%",
+        end: "+=1200",
         scrub: 1,
     }
   });
   return () => {
-    tl.scrollTrigger?.kill(); // Kill the ScrollTrigger
-    tl.kill(); // Kill the GSAP timeline
+    tl.scrollTrigger?.kill(); 
+    tl.kill(); 
   };
   }, [])
 
@@ -69,7 +68,9 @@ export default function ArtTest() {
 
     
       <div ref={container} className=" container_art" >
-        <div className="body_art "  >
+      <div className=" w-full absolute -left-54 opacity-50"><img src={Pencil} alt="pencils" className="img_art"></img></div>
+     
+        <div>
         <div className="absolute center_items z-50">
           <h1 ref={title} className="title text-center">ART</h1>
           <h1 ref={title2} className="title text-center">IS</h1>
@@ -89,7 +90,7 @@ export default function ArtTest() {
             </p>
           </div>
           </div>
-          <div className=" "  ref={sectionTwoRef} >
+          <div ref={sectionTwoRef} >
           <div className="images ">
             {images.map((image, i) => {
               return (
@@ -105,9 +106,13 @@ export default function ArtTest() {
                 </div>
               );
             })}
+            <div className=" art_text">
+          <p className="text">I am constantly inspired by the endless possibilities within art, and I believe that every project is an opportunity to push boundaries, challenge conventions, and expand my creative horizons.</p>
+        </div>
           </div>
           </div>
         </div>
+       
       </div>
 
     </>

@@ -1,12 +1,15 @@
 //Components
+'use client'
 import React, {useEffect, useState, useRef } from "react";
 import About from "./pages/about";
 import NavBar from "./components/nav";
 import Media from "./components/media";
+import Skills from "./pages/skills/Skills";
 import ArtTest from "./pages/art-test/art-test";
 import Contact from "./pages/contact";
 import CanvasComponent from "./components/CanvasComponent";
 import Name from "./components/name/name";
+import MediaIcons from "./components/mediaIcons";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useScroll } from "framer-motion";
@@ -37,6 +40,8 @@ function App( props) {
 })
 
 
+      
+
  
   
  
@@ -48,6 +53,7 @@ function App( props) {
       <div className="relative"  ref={scene}>
         {/* <Loading show={display} /> */}
         <Name name={name} />
+        <MediaIcons />
         <NavBar handleName={handleName} handleNameBack={handleNameBack} />
         <div className=" h-screen">
           <CanvasComponent  scrollYProgress = {scrollYProgress}/>
@@ -56,16 +62,18 @@ function App( props) {
         <div className="first_section section">
           <About />
         </div>
+        <Skills />
         <div className="third_section section">
          <ArtTest />
          </div>
+  
         <div className="second-section section">
             <Media> </Media>{" "}
          </div>{" "}
          
-         <div className=" h-screen sticky bottom-0 z-1000 section ">
+         {/* <div className=" h-screen sticky bottom-0 z-1000 section ">
           <Contact />
-         </div>
+         </div> */}
       </div>
   
       </SmoothScroll>

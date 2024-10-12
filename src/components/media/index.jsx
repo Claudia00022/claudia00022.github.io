@@ -37,41 +37,6 @@ function Media() {
 
   
     <>
-
-<div className="h-screen relative shadow" style={{backgroundColor: '#0F0F0F'}}>
-    <div className="absolute top-52 left-0 w-full ">
-      <div className="flex items-center justify-start margin_top_media ms-52 ">
-        <div
-          style={{
-            width: "5px",
-            height: "5px",
-            backgroundColor: "black",
-          }}
-          className="me-2"
-        ></div>
-        <p className="text text-right font-bold ">Projects</p>
-      </div>
-
-      {projects_data.map((project) => (
-        <div ref={container} 
-        className="flex items-center justify-start border-t border-b mt-10 ">
-          <p className="text font-bold ms-52 w-64">{project.content}</p>
-          <div className="ms-40 relative ">
-          <motion.p style={{clipPath: clip}}><a href={project.link} className="title " >
-           {project.title}
-          </a></motion.p>
-          <div className= "absolute top-0 shadow">
-          <a href={project.link} className="title" style={{color: 'white'}} >{project.title}</a>
-          </div>
-          </div>
-         
-          
-
-        </div>
-      ))}
-
-      </div>
-      </div>
      
     <div className="h-screen relative shadow" style={{backgroundColor: '#0F0F0F'}}>
     <div className="absolute top-52 left-0 w-full ">
@@ -80,9 +45,9 @@ function Media() {
           style={{
             width: "5px",
             height: "5px",
-            backgroundColor: "black",
+            backgroundColor: "white",
           }}
-          className="me-2"
+          className="me-4"
         ></div>
         <p className="text text-right font-bold ">Projects</p>
       </div>
@@ -96,7 +61,7 @@ function Media() {
            {project.title}
           </a></motion.p>
           <div className= "absolute top-0 shadow">
-          <a href={project.link} className="title" style={{color: 'white'}} >{project.title}</a>
+          <a href={project.link} className="title" style={{color: '#141414'}} >{project.title}</a>
           </div>
           </div>
          

@@ -6,6 +6,15 @@
     margin-left: -80px;
 }
 
+.mask{
+    mask-image: url(../../assets/photos/circle.svg);
+    mask-repeat: no-repeat;
+    mask-size: 40px;
+    background: #ec4e39;
+    position: absolute;
+    color: black;
+}
+
 @media only screen and  (max-width: 600px){
     .rectangle{
         right: 0;
