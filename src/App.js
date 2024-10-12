@@ -67,13 +67,11 @@ function App( props) {
          <ArtTest />
          </div>
   
-        <div className="second-section section">
+        <div className="second-section">
             <Media> </Media>{" "}
          </div>{" "}
-         
-         {/* <div className=" h-screen sticky bottom-0 z-1000 section ">
           <Contact />
-         </div> */}
+        
       </div>
   
       </SmoothScroll>

@@ -54,7 +54,7 @@ function Media() {
 
       {projects_data.map((project) => (
         <div ref={container} 
-        className="flex items-center justify-start border-t border-b mt-10 ">
+        className="flex items-center justify-start border-t border-b mt-10 " key={project.id}>
           <p className="text font-bold ms-52 w-64">{project.content}</p>
           <div className="ms-40 relative ">
           <motion.p style={{clipPath: clip}}><a href={project.link} className="title " >

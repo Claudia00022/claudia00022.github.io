@@ -12,13 +12,16 @@
     mask-size: 40px;
     background: #ec4e39;
     position: absolute;
+    top: 0;
+    left: 0;
     color: black;
+   pointer-events: none;
 }
 
 @media only screen and  (max-width: 600px){
     .rectangle{
         right: 0;
-        bottom: 80px;
+        bottom: 100px;
         margin-right: 20px;
         margin-left: 20px;
         width: 90vw;

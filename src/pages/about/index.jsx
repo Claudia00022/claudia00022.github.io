@@ -12,8 +12,8 @@ function About() {
 
   const {x, y} = useMousePosition();
   const [isHovered, setIsHovered] = useState(false);
-    const size =  '80px';
-    console.log(x,y);
+  const size =300;
+  
 
   useLayoutEffect(() =>{
 
@@ -63,15 +63,15 @@ function About() {
     <>
       
       <div className=" relative h-screen "  >
-        <motion.div className="absolute top-10 left-52 w-6/12  mask" style={{cursor: 'default'}} ref={sectionMask} 
+        <motion.div className="absolute top-10 left-52 w-full h-full bg-slate-500 mask" ref={sectionMask} 
         
         animate={{
-          WebkitMaskPosition: 'x - {size} y - {size}',
-          WebkitMaskSize: {size},
+          WebkitMaskPosition: `${x - (size/2)}px ${y - (size/2)}px`,
+          WebkitMaskSize: `${size}px`,
         }}
-        transition={{ type: "tween", ease: "backOut", duration:0.5}}>
+        transition={{ type: "tween", ease: "linear", duration:0.2}}>
        <motion.p  className="text-left title"  style={{clipPath:clip, color : 'white'}} >ABOUT</motion.p> 
-        <p className="text font-bold" style={{color: 'red'}}>
+        <p className="text font-bold " style={{color: 'red'}}>
         I am freelance frontend developer with a passion for creating dynamic
           and responsive web applications using the React framework.I have honed
           my skills in building user-friendly interfaces and implementing best
@@ -100,9 +100,9 @@ function About() {
         </motion.div>
 
 
-        <div className="absolute top-10 left-52 w-6/12 -z-10 bg-red-200" style={{cursor: 'default'}}   ref={sectionRef}  onMouseEnter={() => {setIsHovered(true)}} onMouseLeave={() => {setIsHovered(false)}}>
+        <div className="absolute top-10 left-52 w-6/12 -z-10 bg-red-200" style={{cursor: 'default', display: 'none'}}   ref={sectionRef}  onMouseEnter={() => {setIsHovered(true)}} onMouseLeave={() => {setIsHovered(false)}}>
        <motion.p className="text-left title" style={{clipPath:clip}}>ABOUT</motion.p> 
-        <p className="text font-bold">
+        <p className="text font-bold ">
           I am freelance frontend developer with a passion for creating dynamic
           and responsive web applications using the React framework.I have honed
           my skills in building user-friendly interfaces and implementing best

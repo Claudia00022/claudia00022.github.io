@@ -81,7 +81,7 @@ export default function ArtTest() {
                   <span
                     className="span_word"
                     ref={(ref) => (characters.current[i] = ref)}
-                    key={`l_&{i}`}
+                    key={i}
                   >
                     {letter}
                   </span>
@@ -97,6 +97,7 @@ export default function ArtTest() {
                 <div
                   ref={(ref) => (imagesRef.current[i] = ref)}
                   className="imageContainer "
+                  key={image.id}
                 >
                   <img
                     src={image.img_link}

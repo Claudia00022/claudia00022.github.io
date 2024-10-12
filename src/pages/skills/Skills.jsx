@@ -85,7 +85,7 @@ function Skills() {
       </div>
 
       {projects_data.map((project) => (
-        <div ref={container} 
+        <div ref={container} key={project.id}
         className="flex items-center justify-start border-t" style={{borderColor: 'grey'}}>
           <p className="text font-bold ms-52 w-64">{project.content}</p>
           <div className="ms-40 relative ">
