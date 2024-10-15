@@ -1,6 +1,6 @@
 //Components
-'use client'
-import React, {useEffect, useState, useRef } from "react";
+"use client";
+import React, { useEffect, useState, useRef } from "react";
 import About from "./pages/about";
 import NavBar from "./components/nav";
 import Media from "./components/media";
@@ -15,16 +15,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useScroll } from "framer-motion";
 import SmoothScroll from "./components/smoothScroll";
 
-import 'lenis/dist/lenis.css'
+import "lenis/dist/lenis.css";
 gsap.registerPlugin(ScrollTrigger);
 
-function App( props) {
+function App(props) {
   const [display, setDispaly] = useState("block");
   const [name, setName] = useState("Klaudia Forysiak");
-
-
-
-
 
   function handleName() {
     setName("Hello");
@@ -33,47 +29,26 @@ function App( props) {
     setName("Klaudia Forysiak");
   }
 
-  const scene = useRef(null)
+  const scene = useRef(null);
   const { scrollYProgress } = useScroll({
     target: scene,
-    offset: ['start end', 'end start']
-})
-
-
-      
-
- 
-  
- 
- 
+    offset: ["start end", "end start"],
+  });
 
   return (
     <>
-    <SmoothScroll>
-      <div className="relative"  ref={scene}>
-        {/* <Loading show={display} /> */}
-        <Name name={name} />
-        <MediaIcons />
-        <NavBar handleName={handleName} handleNameBack={handleNameBack} />
-        <div className=" h-screen">
-          <CanvasComponent  scrollYProgress = {scrollYProgress}/>
- 
-        </div>{" "}
-        <div className="first_section section">
+      <SmoothScroll>
+        <div ref={scene}>
+          <Name name={name} />
+          <MediaIcons />
+          <NavBar handleName={handleName} handleNameBack={handleNameBack} />
+          <CanvasComponent scrollYProgress={scrollYProgress} />
           <About />
-        </div>
-        <Skills />
-        <div className="third_section section">
-         <ArtTest />
-         </div>
-  
-        <div className="second-section">
-            <Media> </Media>{" "}
-         </div>{" "}
+          <Skills />
+          <ArtTest />
+          <Media />
           <Contact />
-        
-      </div>
-  
+        </div>
       </SmoothScroll>
     </>
   );

@@ -1,21 +1,21 @@
-.rectangle_size_about{
-    width: 20vw;
-    height: 40vh;
-}
-.margin_minus{
-    margin-left: -80px;
-}
+
 
 .mask{
     mask-image: url(../../assets/photos/circle.svg);
-    mask-repeat: no-repeat;
+    mask-repeat:no-repeat;
     mask-size: 40px;
     background: #ec4e39;
     position: absolute;
-    top: 0;
-    left: 0;
-    color: black;
-   pointer-events: none;
+ 
+}
+
+.about_body,
+.about_mask{
+    width: 100%;
+    height: 100%;
+    cursor: default;
+   
+
 }
 
 @media only screen and  (max-width: 600px){

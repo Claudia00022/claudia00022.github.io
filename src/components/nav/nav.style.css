@@ -1,13 +1,13 @@
 
 
 
-.text:hover{
+/* .text:hover{
     color: #767272;
     cursor:crosshair;
     transition: .4s ease-out;
   
 
-}
+} */
 
 @media only screen and  (max-width: 600px) {
   div.absolute{

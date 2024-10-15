@@ -12,7 +12,7 @@ function About() {
 
   const {x, y} = useMousePosition();
   const [isHovered, setIsHovered] = useState(false);
-  const size =300;
+  const size = isHovered ? 400 : 50;
   
 
   useLayoutEffect(() =>{
@@ -61,17 +61,17 @@ function About() {
 
   return (
     <>
-      
-      <div className=" relative h-screen "  >
-        <motion.div className="absolute top-10 left-52 w-full h-full bg-slate-500 mask" ref={sectionMask} 
+       
+      <div className=" relative h-screen bg-white m-0 "  >
+        <motion.div className=" mask about_mask z-10" ref={sectionMask} //top-10 left-52
         
         animate={{
           WebkitMaskPosition: `${x - (size/2)}px ${y - (size/2)}px`,
           WebkitMaskSize: `${size}px`,
         }}
-        transition={{ type: "tween", ease: "linear", duration:0.2}}>
+        transition={{ type: "tween", ease: "backOut", duration:0.5}}>
        <motion.p  className="text-left title"  style={{clipPath:clip, color : 'white'}} >ABOUT</motion.p> 
-        <p className="text font-bold " style={{color: 'red'}}>
+        <p className="text font-bold " style={{color: 'red'}}   onMouseEnter={() => {setIsHovered(true)}} onMouseLeave={() => {setIsHovered(false)}}>
         I am freelance frontend developer with a passion for creating dynamic
           and responsive web applications using the React framework.I have honed
           my skills in building user-friendly interfaces and implementing best
@@ -98,9 +98,8 @@ function About() {
         </p>
         <p className="text mb-52 ">-Version Control: Git, GitHub, GitLab</p>
         </motion.div>
-
-
-        <div className="absolute top-10 left-52 w-6/12 -z-10 bg-red-200" style={{cursor: 'default', display: 'none'}}   ref={sectionRef}  onMouseEnter={() => {setIsHovered(true)}} onMouseLeave={() => {setIsHovered(false)}}>
+      
+        <div className=" bg-red-200 about_body "   ref={sectionRef}>
        <motion.p className="text-left title" style={{clipPath:clip}}>ABOUT</motion.p> 
         <p className="text font-bold ">
           I am freelance frontend developer with a passion for creating dynamic

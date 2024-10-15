@@ -7,12 +7,9 @@ import './contact.style.css';
 export default function Contact() {
 
   const [isHovered, setIsHovered] = useState(false);
-  const[hover, setHover] = useState(false);
   const { x, y } = useMousePosition();
   const size = isHovered ? 400 : 50;
-  const widthBox = hover ? '100px' : '20px'
-  const heightBox = hover ? '100px' : '20px'
-  const color = hover ? 'green' : 'white'
+
 
   return (
     <div className='contact_main'>
