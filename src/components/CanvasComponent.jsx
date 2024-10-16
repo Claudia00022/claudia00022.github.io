@@ -30,7 +30,7 @@ export default function CanvasComponent(props) {
 
   return (
     <>
-    <div className='h-screen'>
+    <div className='h-screen w-screen'>
       <div className="fixed top-0 h-full w-full hero_rec -z-10"  ref={ref} style={{display:'block'}}>
         <Canvas
           orthographic

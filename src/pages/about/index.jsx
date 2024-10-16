@@ -6,7 +6,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-function About() {
+function About(props) {
   const sectionRef = useRef(null);
   const sectionMask = useRef(null);
 
@@ -62,8 +62,8 @@ function About() {
   return (
     <>
        
-      <div className=" relative h-screen bg-white m-0 "  >
-        <motion.div className=" mask about_mask z-10" ref={sectionMask} //top-10 left-52
+      <div className=" relative h-screen m-0 -z-10 "  >
+        {/* <motion.div className=" mask about_mask z-10" ref={sectionMask} //top-10 left-52
         
         animate={{
           WebkitMaskPosition: `${x - (size/2)}px ${y - (size/2)}px`,
@@ -97,11 +97,11 @@ function About() {
           applications
         </p>
         <p className="text mb-52 ">-Version Control: Git, GitHub, GitLab</p>
-        </motion.div>
+        </motion.div> */}
       
-        <div className=" bg-red-200 about_body "   ref={sectionRef}>
-       <motion.p className="text-left title" style={{clipPath:clip}}>ABOUT</motion.p> 
-        <p className="text font-bold ">
+        <div className="left-52 top-10 w-6/12"   ref={sectionRef}>
+       <motion.p className="text-left title " style={{clipPath:clip}}>ABOUT</motion.p> 
+        <p className="text font-bold " onMouseEnter={props.handleHover} onMouseLeave={props.handleHoverBack}>
           I am freelance frontend developer with a passion for creating dynamic
           and responsive web applications using the React framework.I have honed
           my skills in building user-friendly interfaces and implementing best
