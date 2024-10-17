@@ -1,12 +1,12 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import useMousePosition from "../../components/useMOusePOsition";
-import "./about.style.css";
+// import "./about.style.css";
 import { useScroll, motion, useTransform, useMotionTemplate } from "framer-motion";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-function About(props) {
+function AboutMask(props) {
   const sectionRef = useRef(null);
   const sectionMask = useRef(null);
 
@@ -62,10 +62,10 @@ function About(props) {
   return (
     <>
        
-      <div className=" relative h-screen m-0 -z-10 "  >
-       <div className="left-52 top-10 w-6/12"   ref={sectionRef}>
-       <motion.p className="text-left title " style={{clipPath:clip}}>Klaudia</motion.p> 
-        <p className="text font-bold " onMouseEnter={props.handleHover} onMouseLeave={props.handleHoverBack}>
+      <div className="relative h-screen w-screen  "  >
+      <div className="left-52 top-10 w-6/12 "   ref={sectionRef}>
+       <motion.p className="text-left title " style={{clipPath:clip}} onMouseEnter={props.handleHover} onMouseLeave={props.handleHoverBack}>maska</motion.p> 
+        <p className="text font-bold " style={{color: 'black'}} onMouseEnter={props.handleHover} onMouseLeave={props.handleHoverBack}>
           I am freelance frontend developer with a passion for creating dynamic
           and responsive web applications using the React framework.I have honed
           my skills in building user-friendly interfaces and implementing best
@@ -75,7 +75,7 @@ function About(props) {
           collaborating with individuals and businesses that value aesthetics
           and recognize the power of simplicity.
         </p>
-        <motion.p className="text-left title" style={{clipPath:clip}}>SKILLS</motion.p> 
+        <motion.p className="text-left title" style={{clipPath:clip, color: 'black'}} onMouseEnter={props.handleHover} onMouseLeave={props.handleHoverBack}>SKILLS</motion.p> 
         <p className="text">
           {" "}
           -Core Technologies: HTML5, CSS3, JavaScript (ES6+)
@@ -93,9 +93,10 @@ function About(props) {
         <p className="text mb-52 ">-Version Control: Git, GitHub, GitLab</p>
         </div>
       </div>
+    
      
     </>
   );
 }
 
-export default About;
+export default AboutMask;

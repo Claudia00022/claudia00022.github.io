@@ -5,7 +5,7 @@
   /* opacity: 0.5; */
 }
 
-.contact_mask,
+
 .contact_body {
   width: 100%;
   height: 100%;
@@ -31,11 +31,10 @@
 .contact_mask {
   mask-image: url("../../assets/photos/circle.svg");
   mask-repeat: no-repeat;
-  mask-size: 0px;
-  background: #ec4e39;
-  position: absolute;
-  color: black;
-   width: 100%;
+  background: transparent;
+  /* position: fixed; */
+  /* color: black; */
+   /* width: 100%; */
 }
 
 .top_app_about{
