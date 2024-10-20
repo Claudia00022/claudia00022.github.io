@@ -35,7 +35,7 @@ const projects_data = [
 },
 ];
 
-function SkillsMask() {
+function SkillsMask(props) {
 
     const sectionTwoRef = useRef(null);
 
@@ -89,7 +89,8 @@ function SkillsMask() {
         className="flex items-center justify-start border-t" style={{borderColor: 'grey'}}>
           <p className="text font-bold ms-52 w-64">{project.content}</p>
           <div className="ms-40 relative ">
-          <motion.p style={{clipPath: clip}}><a href={project.link} className="title " >
+          <motion.p style={{clipPath: clip}}      onMouseEnter={props.handleHover}
+            onMouseLeave={props.handleHoverBack}><a href={project.link} className="title " >
            {project.title}
           </a></motion.p>
           <div className= "absolute top-0 shadow">

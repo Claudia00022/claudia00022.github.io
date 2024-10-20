@@ -20,13 +20,13 @@ function MaskComponent(props) {
     <>
     
 
-           <div>
+          
           <CanvasComponent />
           <AboutMask  handleHover = {props.handleHover} handleHoverBack = {props.handleHoverBack}/>
-          <SkillsMask />
-          <ArtMask />
+          <SkillsMask  handleHover = {props.handleHover} handleHoverBack = {props.handleHoverBack} />
+          <ArtMask handleHover = {props.handleHover} handleHoverBack = {props.handleHoverBack} />
           <Media />
-          </div>
+       
       
     
     </>

@@ -46,8 +46,7 @@ function About(props) {
           </motion.p>
           <p
             className="text font-bold "
-            onMouseEnter={props.handleHover}
-            onMouseLeave={props.handleHoverBack}
+          
           >
             I am freelance frontend developer with a passion for creating
             dynamic and responsive web applications using the React framework.I

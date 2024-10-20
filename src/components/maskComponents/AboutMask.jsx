@@ -66,7 +66,7 @@ function AboutMask(props) {
           </p>
           <motion.p
             className="text-left title"
-            style={{ clipPath: clip }}
+            style={{ clipPath: clip, color: 'black' }}
             onMouseEnter={props.handleHover}
             onMouseLeave={props.handleHoverBack}
           >

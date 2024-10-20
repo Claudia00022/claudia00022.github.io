@@ -1,10 +1,13 @@
-import React, {useRef, useState} from "react";
+import React, {useRef, useLayoutEffect} from "react";
 import { useScroll, motion, useTransform, useMotionTemplate } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 
 
 //Styles
-import "./media.style.css";
+// import "./media.style.css";
 
 const projects_data = [
   {
@@ -25,6 +28,8 @@ const projects_data = [
 
 function Media() {
   const container = useRef(null);
+  const contactSection = useRef(null);
+
   const {scrollYProgress} = useScroll({
     target: container,
     offset: ['start end',`30vw end`]
@@ -32,6 +37,24 @@ function Media() {
 
   const clipProgress = useTransform(scrollYProgress, [0,1], [100, 0]);
   const clip = useMotionTemplate`inset(0 ${clipProgress}% 0 0)`;
+
+
+     
+  useLayoutEffect(() =>{
+  
+      const tl = gsap.timeline({scrollTrigger:{
+        trigger: contactSection.current,
+         pin: true,
+         start:'top 5%',
+          end: "+=1200",
+          scrub: 1,
+      }
+    });
+    return () => {
+      tl.scrollTrigger?.kill(); 
+      tl.kill(); 
+    };
+    }, [])
 
   return (
 

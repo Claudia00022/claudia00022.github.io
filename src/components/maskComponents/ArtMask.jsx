@@ -98,13 +98,14 @@ export default function ArtMask(props) {
                   ref={(ref) => (imagesRef.current[i] = ref)}
                   className="imageContainer "
                   key={image.id}
+                  onMouseEnter={props.handleHover}
+                  onMouseLeave={props.handleHoverBack}
                 >
                   <img
                     src={image.img_link}
                     alt="art images"
                     className="img_art"
-                    onMouseEnter={props.handleHover}
-                    onMouseLeave={props.handleHoverBack}
+                 
                   ></img>
                 </div>
               );
