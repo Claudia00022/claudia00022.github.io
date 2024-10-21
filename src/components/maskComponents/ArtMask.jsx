@@ -67,7 +67,7 @@ export default function ArtMask(props) {
     <>
 
     
-      <div ref={container} className=" container_art" >
+      <div ref={container} className=" container_art" style={{backgroundColor: ' #ec4e39'}}>
       <div className=" w-full absolute -left-54 opacity-50"><img src={Pencil} alt="pencils" className="img_art"></img></div>
      
         <div>

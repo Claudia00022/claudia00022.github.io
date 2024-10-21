@@ -70,9 +70,9 @@ function SkillsMask(props) {
   
     <>
      
-    <div className="h-screen relative shadow" style={{backgroundColor: '#0F0F0F'}}>
+    <div className="h-screen relative shadow " style={{backgroundColor: ' #ec4e39'}}>
     <div className="absolute top-52 left-0 w-full" ref={sectionTwoRef}>
-      <div className="flex items-center justify-start margin_top_media ms-52 mb-5 ">
+      <div className="flex items-center justify-start ms-52 mb-5 ">
         <div
           style={{
             width: "5px",

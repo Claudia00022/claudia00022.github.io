@@ -50,7 +50,7 @@ function App() {
         <div className="relative overflow-hidden " ref={scene}>
 
         <motion.div
-            className="absolute top-0 left-0 contact_mask  "
+            className="absolute top-0 left-0 contact_mask z-50  "
             animate={{
               WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
               WebkitMaskSize: `${size}px`,

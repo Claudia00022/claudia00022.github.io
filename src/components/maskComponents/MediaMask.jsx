@@ -9,24 +9,24 @@ gsap.registerPlugin(ScrollTrigger);
 //Styles
 // import "./media.style.css";
 
-const projects_data = [
+const projects_data_mask = [
   {
     id: 1,
-    title: "vpmu-studio",
+    title: "HELLO",
     link: "https://www.vpmu-studio.co.uk/",
-    content: "Apr 2023/Design & Dev",
+    content: "HAVE A FUN TOGETHER",
     speed:0.5,
   },
   {
     id: 2,
-    title: "j&l Gradzkie",
+    title: "HELLO",
     link: "https://www.jl-gradzkie.pl/",
     content: "Sep 2022/Design",
     speed:0.5,
   },
 ];
 
-function Media() {
+function MediaMask(props) {
   const container = useRef(null);
   const contactSection = useRef(null);
 
@@ -61,8 +61,8 @@ function Media() {
   
     <>
      
-    <div className="h-screen relative shadow " style={{backgroundColor: '#0F0F0F'}}>
-    <div className="absolute top-52 left-0 w-full  ">
+    <div className="h-screen relative shadow" style={{backgroundColor: '#ec4e39'}}>
+    <div className="absolute top-52 left-0 w-full ">
       <div className="flex items-center justify-start ms-52 mb-5 ">
         <div
           style={{
@@ -75,25 +75,31 @@ function Media() {
         <p className="text text-right font-bold ">Projects</p>
       </div>
 
-      {projects_data.map((project) => (
-        <div ref={container}  key={project.id} className="flex items-center justify-start border-t  " >
-
-          <p className="text font-bold ms-52 w-64 ">{project.content}</p>
+      {projects_data_mask.map((project) => (
+        <div ref={container} 
+        className="flex items-center justify-start border-t  " key={project.id}>
+          <p className="text font-bold ms-52 w-64"  onMouseEnter={props.handleHover}
+            onMouseLeave={props.handleHoverBack}>{project.content}</p>
 
           <div className="ms-40 relative ">
 
-          
-
-          <motion.p style={{clipPath: clip}}><a href={project.link} className="title " >
+          <div>
+          <motion.p style={{clipPath: clip}}><a href={project.link} className="title "  onMouseEnter={props.handleHover}
+            onMouseLeave={props.handleHoverBack} >
            {project.title}
           </a></motion.p>
+          </div>
 
           <div className= "absolute top-0 shadow ">
           <a href={project.link} className="title" style={{color: '#141414'}} >{project.title}</a>
           </div>
 
-         
+          
+          
           </div>
+         
+          
+
         </div>
       ))}
 
@@ -103,4 +109,4 @@ function Media() {
   );
 }
 
-export default Media;
+export default MediaMask;
