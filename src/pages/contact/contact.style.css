@@ -31,10 +31,10 @@
 .contact_mask {
   mask-image: url("../../assets/photos/circle.svg");
   mask-repeat:no-repeat;
-  /* position: fixed; */
-  /* color: black; */
-   /* width: 100%; */
-   background-color: #ec4e39;
+  background-color: #EBCA98;
+  /* background-color: #475569; */
+  
+  
 }
 
 .top_app_about{

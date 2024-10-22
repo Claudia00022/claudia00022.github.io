@@ -8,6 +8,7 @@ import Skills from "./pages/skills/Skills";
 import ArtTest from "./pages/art-test/art-test";
 import CanvasComponent from "./components/CanvasComponent";
 import Contact from "./pages/contactOriginal/Contact";
+import Motto from "./pages/Motto";
 
 import Name from "./components/name/name";
 import MediaIcons from "./components/mediaIcons";
@@ -18,17 +19,15 @@ import { motion } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useScroll } from "framer-motion";
 import SmoothScroll from "./components/smoothScroll";
-import './pages/contact/contact.style.css'
+import "./pages/contact/contact.style.css";
 
 import "lenis/dist/lenis.css";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const [display, setDispaly] = useState("block");
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
-  const size = isHovered ? 400 : 50;
-  // const size = 400;
+  const size = isHovered ? 400 : 60;
 
   const scene = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -48,8 +47,7 @@ function App() {
     <>
       <SmoothScroll>
         <div className="relative overflow-hidden " ref={scene}>
-
-        <motion.div
+          <motion.div
             className="absolute top-0 left-0 contact_mask z-50  "
             animate={{
               WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
@@ -57,7 +55,10 @@ function App() {
             }}
             transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
           >
-            <MaskComponent handleHover = {handleHover} handleHoverBack = {handleHoverBack} />
+            <MaskComponent
+              handleHover={handleHover}
+              handleHoverBack={handleHoverBack}
+            />
           </motion.div>
 
           <div>
@@ -65,14 +66,13 @@ function App() {
             <MediaIcons />
             <NavBar />
             <CanvasComponent scrollYProgress={scrollYProgress} />
-            <About   />
+            <About />
             <Skills />
             <ArtTest />
             <Media />
+            <Motto />
             <Contact />
           </div>
-
-      
         </div>
       </SmoothScroll>
     </>
