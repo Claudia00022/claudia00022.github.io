@@ -15,7 +15,7 @@ export default function Contact() {
     
    
     
-    <div className=" w-screen h-96 sticky bottom-0" style={{backgroundColor: 'red'}} >
+    <div className=" w-screen h-96 sticky bottom-0" style={{backgroundColor: '#0F0F0F'}} >
    
   
       <div className="w-1/4 flex flex-col items-center absolute bottom-10 left-40">

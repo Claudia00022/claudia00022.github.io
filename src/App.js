@@ -8,7 +8,7 @@ import Skills from "./pages/skills/Skills";
 import ArtTest from "./pages/art-test/art-test";
 import CanvasComponent from "./components/CanvasComponent";
 import Contact from "./pages/contactOriginal/Contact";
-import Motto from "./pages/Motto";
+import Motto from "./pages/Motto/Motto";
 
 import Name from "./components/name/name";
 import MediaIcons from "./components/mediaIcons";

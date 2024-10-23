@@ -44,21 +44,21 @@ export default function ArtTest() {
     return () => context.revert();
   }, []);
 
-  useLayoutEffect(() =>{
+  // useLayoutEffect(() =>{
     
-    const tl = gsap.timeline({scrollTrigger:{
-      trigger: sectionTwoRef.current,
-       pin: true,
-       start:'top 5%',
-        end: "+=1200",
-        scrub: 1,
-    }
-  });
-  return () => {
-    tl.scrollTrigger?.kill(); 
-    tl.kill(); 
-  };
-  }, [])
+  //   const tl = gsap.timeline({scrollTrigger:{
+  //     trigger: sectionTwoRef.current,
+  //      pin: true,
+  //      start:'top 5%',
+  //       end: "+=1200",
+  //       scrub: 1,
+  //   }
+  // });
+  // return () => {
+  //   tl.scrollTrigger?.kill(); 
+  //   tl.kill(); 
+  // };
+  // }, [])
 
 
  
