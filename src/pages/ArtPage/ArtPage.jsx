@@ -55,7 +55,7 @@ export default function ArtPage() {
             <h1 ref={title} className="title text-center">
               ART
             </h1>
-            <h1 ref={title2} className="title text-center">
+            <h1 ref={title2} className="title text-center" >
               IS
             </h1>
            

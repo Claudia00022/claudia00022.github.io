@@ -14,7 +14,7 @@
 
 .img_art {
   object-fit: fill;
-  filter: brightness(60%);
+  filter: brightness(40%);
   border-radius: 1%;
 }
 
