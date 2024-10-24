@@ -5,7 +5,7 @@ import About from "./pages/about";
 import NavBar from "./components/nav";
 import Media from "./components/media";
 import Skills from "./pages/skills/Skills";
-import ArtTest from "./pages/art-test/art-test";
+import ArtPage from "./pages/ArtPage/ArtPage";
 import CanvasComponent from "./components/CanvasComponent";
 import Contact from "./pages/contactOriginal/Contact";
 import Motto from "./pages/Motto/Motto";
@@ -68,7 +68,7 @@ function App() {
             <CanvasComponent scrollYProgress={scrollYProgress} />
             <About />
             <Skills />
-            <ArtTest />
+            <ArtPage />
             <Media />
             <Motto />
             <Contact />

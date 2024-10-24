@@ -1,8 +1,8 @@
 import PhotoOne from "../src/assets/photos/marlyn.JPG";
-import PhotoTwo from "../src/assets/photos/girl.JPG";
+import PhotoTwo from "../src/assets/photos/girl.jpg";
 import PhotoThree from "../src/assets/photos/women.JPG";
 import PhotoFour from "../src/assets/photos/elephant.JPG";
-import PhotoFive from "../src/assets/photos/womenInColor.JPG";
+import PhotoFive from "../src/assets/photos/womenInColorMask.jpg";
 import PhotoSix from "../src/assets/photos/man.JPG";
 
 

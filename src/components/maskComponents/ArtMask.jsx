@@ -1,24 +1,16 @@
 import { useLayoutEffect, useRef } from "react";
-// import "./art-test.style.css";
+import "../../pages/ArtPage/artPage.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import arts_data_mask from "../../artsDataMask";
-import Pencil from '../../assets/pencils.png'
 gsap.registerPlugin(ScrollTrigger);
-
-
-
-
 
 const word = "MY PASSION";
 const images = arts_data_mask.slice(0, 3);
-console.log(images);
 
 export default function ArtMask(props) {
   const container = useRef(null);
-  const title = useRef(null);
-  const characters = useRef([]);
-  const title2 = useRef(null);
+  const title3 = useRef(null);
   const imagesRef = useRef([]);
   const sectionTwoRef = useRef(null);
 
@@ -35,90 +27,68 @@ export default function ArtMask(props) {
 
       tl.to(imagesRef.current[1], { y: -175 }, 0);
       tl.to(imagesRef.current[2], { y: -150 }, 0);
-
-      characters.current.forEach((char) => {
-        tl.to(char, { top: -800 }, 0);
-      });
+      tl.to(title3.current, { top: -50 }, 0);
     });
 
     return () => context.revert();
   }, []);
 
-  useLayoutEffect(() =>{
-    
-    const tl = gsap.timeline({scrollTrigger:{
-      trigger: sectionTwoRef.current,
-       pin: true,
-       start:'top 5%',
-        end: "+=1200",
-        scrub: 1,
-    }
-  });
-  return () => {
-    tl.scrollTrigger?.kill(); 
-    tl.kill(); 
-  };
-  }, [])
-
-
- 
-
   return (
     <>
-
-    
-      <div ref={container} className=" container_art" style={{backgroundColor: ' #ec4e39'}}>
-      <div className=" w-full absolute -left-54 opacity-50"><img src={Pencil} alt="pencils" className="img_art"></img></div>
-     
+      <div
+        ref={container}
+        className="container_art"
+        style={{ backgroundColor: "#EBCA98" }}
+      >
         <div>
-        <div className="absolute center_items z-50">
-          <h1 ref={title} className="title text-center">ART</h1>
-          <h1 ref={title2} className="title text-center">IS</h1>
-          <div>
-            <p className="title text-center" style={{color: '#c9c9c9', fontSize: '9.5rem' }}>
-              {word.split("").map((letter, i) => {
-                return (
-                  <span
-                    className="span_word"
-                    ref={(ref) => (characters.current[i] = ref)}
-                    key={i}
-                  >
-                    {letter}
-                  </span>
-                );
-              })}
+          <div
+            onMouseEnter={props.handleHover}
+            onMouseLeave={props.handleHoverBack}
+          >
+            <p
+              className="title text-center absolute bottom-0 left-52 z-50"
+              style={{ color: "#0A0A0A", fontSize: "9.5rem" }}
+              ref={title3}
+            >
+              {word}
             </p>
           </div>
-          </div>
-          <div ref={sectionTwoRef} >
-          <div className="images ">
-            {images.map((image, i) => {
-              return (
-                <div
-                  ref={(ref) => (imagesRef.current[i] = ref)}
-                  className="imageContainer "
-                  key={image.id}
+          <div ref={sectionTwoRef}>
+            <div className="images ">
+              {images.map((image, i) => {
+                return (
+                  <div
+                    ref={(ref) => (imagesRef.current[i] = ref)}
+                    className="imageContainer "
+                    key={image.id}
+                    onMouseEnter={props.handleHover}
+                    onMouseLeave={props.handleHoverBack}
+                  >
+                    <img
+                      src={image.img_link}
+                      alt="art images"
+                      className="img_art"
+                    ></img>
+                  </div>
+                );
+              })}
+              <div className=" art_text_container">
+                <p
+                  className="text"
+                  style={{ color: "black" }}
                   onMouseEnter={props.handleHover}
                   onMouseLeave={props.handleHoverBack}
                 >
-                  <img
-                    src={image.img_link}
-                    alt="art images"
-                    className="img_art"
-                 
-                  ></img>
-                </div>
-              );
-            })}
-            <div className=" art_text">
-          <p className="text">I am constantly inspired by the endless possibilities within art, and I believe that every project is an opportunity to push boundaries, challenge conventions, and expand my creative horizons.</p>
-        </div>
-          </div>
+                  I am constantly inspired by the endless possibilities within
+                  art, and I believe that every project is an opportunity to
+                  push boundaries, challenge conventions, and expand my creative
+                  horizons.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-       
       </div>
-
     </>
   );
 }
