@@ -10,12 +10,16 @@ export default function CanvasComponent(props) {
 
   return (
     <>
-      <div className="h-screen w-screen relative">
-        <div className="fixed top-0 h-full w-full -z-10">
+      <div className="h-screen w-screen relative mb-52">
+      <div className=" absolute center">
+      <p className="text">Klaudia Krzeminska</p>
+      <p className="title">Freelancer Fronted Webdeveloper</p>
+      </div>
+        <div className="absolute top-0 h-full w-full -z-10">
           <Canvas
             orthographic
             camera={{ position: [0, 0, 5], zoom: 150 }}
-            scale={[1, 1, 1]}
+            // scale={[1, 1, 1]}
           >
             <ambientLight intensity={0.1} />
             <directionalLight intensity={2.5} position={[5, 0, -0.2]} />
