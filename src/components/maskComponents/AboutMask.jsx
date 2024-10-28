@@ -40,7 +40,7 @@ function AboutMask(props) {
   return (
     <>
       <div className="relative h-screen -z-10 ">
-        <div className="left-52 top-10 w-6/12" ref={sectionRef}>
+        <div className=" absolute center  w-6/12" ref={sectionRef}>
           <motion.p
             className="text-left title "
             style={{ clipPath: clip , color: 'black'}}

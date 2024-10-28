@@ -6,10 +6,12 @@ import {
   useTransform,
   useMotionTemplate,
 } from "framer-motion";
-import Stars from '../../assets/photos/stars.png'
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+
+
+
 
 function About(props) {
   const sectionRef = useRef(null);
@@ -30,6 +32,8 @@ function About(props) {
     };
   }, []);
 
+  
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", `80vw end`],
@@ -40,10 +44,10 @@ function About(props) {
 
   return (
     <>
-      <div className=" relative h-screen -z-10  ">
+      <div className=" relative h-screen -z-10 border-t border-b border-gray-500 ">
         <div className=" absolute center w-6/12" ref={sectionRef}>
           <motion.p className="text-left title " style={{ clipPath: clip }}>
-            ABOUT
+            ABOUT ME 
           </motion.p>
           <p
             className="text font-bold "

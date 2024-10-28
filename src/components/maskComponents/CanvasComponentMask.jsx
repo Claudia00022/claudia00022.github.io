@@ -11,8 +11,8 @@ export default function CanvasComponent(props) {
   return (
     <> 
   
-      <div className="h-screen w-screen relative ">
-        <div className="absolute top-0 h-full w-full">
+      <div className="h-screen w-screen relative mb-52 ">
+        <div className="absolute center">
           <Canvas
             orthographic
             camera={{ position: [0, 0, 5], zoom: 150 }}
