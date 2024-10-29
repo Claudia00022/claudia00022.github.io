@@ -1,17 +1,15 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState, useEffect } from "react";
 import "./about.style.css";
 import {
   useScroll,
   motion,
   useTransform,
   useMotionTemplate,
+  useInView,
 } from "framer-motion";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-
-
-
 
 function About(props) {
   const sectionRef = useRef(null);
@@ -32,8 +30,6 @@ function About(props) {
     };
   }, []);
 
-  
-
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", `80vw end`],
@@ -42,17 +38,63 @@ function About(props) {
   const clipProgress = useTransform(scrollYProgress, [0, 1], [100, 0]);
   const clip = useMotionTemplate`inset(0 ${clipProgress}% 0 0)`;
 
+
+
+  function AnimatedText() {
+    const text = "klaudia";
+
+    const defaultAnimations = {
+      hidden: {
+        opacity: 0,
+        y: 20,
+      },
+      visible: {
+        opacity: 1,
+        y: 0,
+      },
+    };
+    const ref = useRef(null);
+    const isInView = useInView(ref, { amount: 0.5, once: true });
+
+  
+    return (
+      <>
+      <>
+      <div  style={{pointerEvents: 'none'}}> 
+        <span className=" sr-only ">{text}</span>
+        <div ref={ref}>
+        <motion.span
+          className="title"
+          aria-hidden
+          initial="hidden"
+          animate= {isInView ? 'visible' : 'hidden'}
+          transition={{ staggerChildren: 0.1 }}
+        >
+          {text.split("").map((char, index) => (
+            <motion.span key={index} className="inline-block" variants={defaultAnimations}>
+              {char}
+            </motion.span>
+          ))}
+        </motion.span>
+        </div>
+        </div>
+        </>
+      </>
+    );
+  }
+
   return (
     <>
       <div className=" relative h-screen -z-10 border-t border-b border-gray-500 ">
+      <div className="absolute top-10 left-52">
+      <AnimatedText />
+      </div>
         <div className=" absolute center w-6/12" ref={sectionRef}>
-          <motion.p className="text-left title " style={{ clipPath: clip }}>
-            ABOUT ME 
-          </motion.p>
-          <p
-            className="text font-bold "
-          
-          >
+          {/* <motion.p className="text-left title " style={{ clipPath: clip }}>
+            ABOUT ME
+          </motion.p> */}
+       
+          <p className="text font-bold ">
             I am freelance frontend developer with a passion for creating
             dynamic and responsive web applications using the React framework.I
             have honed my skills in building user-friendly interfaces and
@@ -62,9 +104,9 @@ function About(props) {
             art, I thrive on collaborating with individuals and businesses that
             value aesthetics and recognize the power of simplicity.
           </p>
-          <motion.p className="text-left title" style={{ clipPath: clip }}>
+          {/* <motion.p className="text-left title" style={{ clipPath: clip }}>
             SKILLS
-          </motion.p>
+          </motion.p> */}
           <p className="text">
             {" "}
             -Core Technologies: HTML5, CSS3, JavaScript (ES6+)

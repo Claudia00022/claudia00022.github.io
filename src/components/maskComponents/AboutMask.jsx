@@ -3,6 +3,7 @@ import "../../pages/about/about.style.css";
 import {
   useScroll,
   motion,
+  useInView,
   useTransform,
   useMotionTemplate,
 } from "framer-motion";
@@ -37,9 +38,51 @@ function AboutMask(props) {
   const clipProgress = useTransform(scrollYProgress, [0, 1], [100, 0]);
   const clip = useMotionTemplate`inset(0 ${clipProgress}% 0 0)`;
 
+  function AnimatedText() {
+    const text = "klaudia";
+
+    const defaultAnimations = {
+      hidden: {
+        opacity: 0,
+        y: 20,
+      },
+      visible: {
+        opacity: 1,
+        y: 0,
+      },
+    };
+    const ref = useRef(null);
+    const isInView = useInView(ref, { amount: 0.5, once: true });
+    return (
+      <>
+        <span className=" sr-only ">{text}</span>
+        <motion.span
+        ref={ref}
+          className="title"
+          style={{color: 'red'}}
+          aria-hidden
+          initial="hidden"
+          animate= {isInView ? 'visible' : 'hidden'}
+          transition={{ staggerChildren: 0.1 }}
+          onMouseEnter={props.handleHover}
+          onMouseLeave={props.handleHoverBack}
+        >
+          {text.split("").map((char) => (
+            <motion.span className="inline-block" variants={defaultAnimations}>
+              {char}
+            </motion.span>
+          ))}
+        </motion.span>
+      </>
+    );
+  }
+
   return (
     <>
       <div className="relative h-screen -z-10 ">
+      <div>
+      <AnimatedText  />
+      </div>
         <div className=" absolute center  w-6/12" ref={sectionRef}>
           <motion.p
             className="text-left title "
