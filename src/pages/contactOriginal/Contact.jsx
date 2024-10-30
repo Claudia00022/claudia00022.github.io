@@ -9,6 +9,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export default function Contact() {
+
+  
  
   return (
     <>

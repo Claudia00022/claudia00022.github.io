@@ -39,22 +39,6 @@ function Skills() {
 
     const sectionTwoRef = useRef(null);
 
-    // useLayoutEffect(() =>{
-  
-    //   const tl = gsap.timeline({scrollTrigger:{
-    //     trigger: sectionTwoRef.current,
-    //      pin: true,
-    //      start:'top 20%',
-    //       end: "+=1000",
-    //       scrub: 1,
-    //   }
-    // });
-    // return () => {
-    //   tl.scrollTrigger?.kill(); // Kill the ScrollTrigger
-    //   tl.kill(); // Kill the GSAP timeline
-    // };
-    // }, []);
-
 
   const container = useRef(null);
   const {scrollYProgress} = useScroll({

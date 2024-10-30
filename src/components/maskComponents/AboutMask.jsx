@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef } from "react";
 import "../../pages/about/about.style.css";
+import AnimatedText from "../AnimatedText";
 import {
   useScroll,
   motion,
@@ -38,67 +39,25 @@ function AboutMask(props) {
   const clipProgress = useTransform(scrollYProgress, [0, 1], [100, 0]);
   const clip = useMotionTemplate`inset(0 ${clipProgress}% 0 0)`;
 
-  function AnimatedText() {
-    const text = "klaudia";
-
-    const defaultAnimations = {
-      hidden: {
-        opacity: 0,
-        y: 20,
-      },
-      visible: {
-        opacity: 1,
-        y: 0,
-      },
-    };
-    const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.5, once: true });
-    return (
-      <>
-        <span className=" sr-only ">{text}</span>
-        <motion.span
-        ref={ref}
-          className="title"
-          style={{color: 'red'}}
-          aria-hidden
-          initial="hidden"
-          animate= {isInView ? 'visible' : 'hidden'}
-          transition={{ staggerChildren: 0.1 }}
-          onMouseEnter={props.handleHover}
-          onMouseLeave={props.handleHoverBack}
-        >
-          {text.split("").map((char) => (
-            <motion.span className="inline-block" variants={defaultAnimations}>
-              {char}
-            </motion.span>
-          ))}
-        </motion.span>
-      </>
-    );
-  }
-
   return (
     <>
       <div className="relative h-screen -z-10 ">
-      <div>
-      <AnimatedText  />
-      </div>
-        <div className=" absolute center  w-6/12" ref={sectionRef}>
-          <motion.p
-            className="text-left title "
-            style={{ clipPath: clip , color: 'black'}}
-            onMouseEnter={props.handleHover}
-            onMouseLeave={props.handleHoverBack}
+        <div className=" absolute center  w-6/12 " ref={sectionRef}>
+          <div
+           onMouseEnter={props.handleHover}
+           onMouseLeave={props.handleHoverBack}
+        
           >
-            ABOUT
-          </motion.p>
+            <h1 className="title text-slate-950 mb-2">ABOUT</h1>
+          </div>
+
           <p
             className="text font-bold"
-            style={{ color: "red" }}
+            style={{ color: "black" }}
             onMouseEnter={props.handleHover}
             onMouseLeave={props.handleHoverBack}
           >
-            I am freelance frontend developer with a passion for creating
+            I am <span className="text-red-300">FREELANCE</span> frontend developer with a passion for creating
             dynamic and responsive web applications using the React framework.I
             have honed my skills in building user-friendly interfaces and
             implementing best practices in web development. My commitment to
@@ -107,19 +66,38 @@ function AboutMask(props) {
             art, I thrive on collaborating with individuals and businesses that
             value aesthetics and recognize the power of simplicity why klaudia
           </p>
-          <motion.p
-            className="text-left title"
-            style={{ clipPath: clip, color: 'black' }}
-            onMouseEnter={props.handleHover}
-            onMouseLeave={props.handleHoverBack}
-          >
-            SKILLS
-          </motion.p>
-          <p className="text"    style={{ color: "red" }}>
+
+          <h1 className="text mt-10">SKILLS</h1>
+          <div
+            style={{
+              width: "5px",
+              height: "5px",
+              backgroundColor: "#F3DFC1",
+            }}
+            className="mt-10"
+          ></div>
+          <div
+            style={{
+              width: "5px",
+              height: "5px",
+              backgroundColor: "#F3DFC1",
+            }}
+            className="mt-5"
+          ></div>
+          <div
+            style={{
+              width: "5px",
+              height: "5px",
+              backgroundColor: "#F3DFC1",
+            }}
+            className="mt-5"
+          ></div>
+
+          <p className="text" style={{ color: "red" }}>
             {" "}
             -Core Technologies: HTML5, CSS3, JavaScript (ES6+)
           </p>
-          <p className="text"    style={{ color: "red" }}>
+          <p className="text" style={{ color: "red" }}>
             -React: React.js, Redux, Context API, React Router, React Hooks
           </p>
           <p className="text">
