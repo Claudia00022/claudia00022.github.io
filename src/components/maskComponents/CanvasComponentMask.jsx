@@ -5,8 +5,10 @@ import { TextureLoader } from "three";
 import { motion } from "framer-motion-3d";
 
 
+
 export default function CanvasComponent(props) {
   const texture = useLoader(TextureLoader, "/img/earth.jpg.jpg");
+
 
   return (
     <> 

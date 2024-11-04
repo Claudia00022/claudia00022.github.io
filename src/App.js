@@ -9,6 +9,7 @@ import ArtPage from "./pages/ArtPage/ArtPage";
 import CanvasComponent from "./components/CanvasComponent";
 import Contact from "./pages/contactOriginal/Contact";
 import Motto from "./pages/Motto/Motto";
+import SmileFace from "./SmileFace";
 
 import Name from "./components/name/name";
 import MediaIcons from "./components/mediaIcons";
@@ -27,7 +28,7 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
-  const size = isHovered ? 400 : 60;
+  const size = isHovered ? 400 : 20;
 
   const scene = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -72,6 +73,7 @@ function App() {
             <Media />
             <Motto />
             <Contact />
+            <SmileFace />
           </div>
         </div>
       </SmoothScroll>
