@@ -17,11 +17,11 @@ export default function SmileFace(props) {
     return(
       <primitive
       object={gltf.scene}
-    //   children-0-material-color= '#fc1485'
-    //   children-0-material-clearcoat={1.0}
-    //   children-0-material-transmission={1.0}
-    //   children-0-material-ior={1.74}
-    //   children-0-material-thickness={3.12}
+      children-0-material-color= '#fc1485'
+      children-0-material-clearcoat={1.0}
+      children-0-material-transmission={1.0}
+      children-0-material-ior={1.74}
+      children-0-material-thickness={3.12}
       />
     )
 
