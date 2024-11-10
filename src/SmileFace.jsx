@@ -1,170 +1,55 @@
 "use client";
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import { motion } from "framer-motion-3d";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 import gsap from "gsap";
 import * as THREE from "three";
 import { OrthographicCamera } from "@react-three/drei";
+import imgData from "./smileImgData";
+import Model from "./SmileFaceModel";
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
 
-export default function SmileFace(props) {
-  function Model() {
-    const gltf = useLoader(GLTFLoader, "./img/smileFace.glb");
-    // const texture = useLoader(TextureLoader, "/img/rgb.jpg");
-    const ref = useRef(null);
+function GLBModel({ position, url }) {
+  const { scene, isLoaded } = useGLTF(url);
 
-    // gltf.scene.traverse((child) => {
-    //   if (child.isMesh) {
-    //     child.material.map = texture; // Set the texture as the map
-    //     child.material.needsUpdate = true; // Ensure the material updates
-    //   }
-    // });
-
-    useFrame((_, delta) => {
-      ref.current.rotation.x  += 0.05 * delta;
-      // ref.current.rotation.y += 0.05 * delta;
-    });
-
-    return (
-      <mesh>
-        <primitive ref={ref} object={gltf.scene} position={[0, 0, -5]} rotation={[-Math.PI/4, 0,0]}/>
-      </mesh>
-    );
+  if (!isLoaded) {
+    return <mesh position={position}><textGeometry args={['Loading...', { size: 0.5 }]} /><meshBasicMaterial color="black" /></mesh>; // Show loading text
   }
 
-  function ModelTwo() {
-    const gltf = useLoader(GLTFLoader, "./img/smileFace2.glb");
-    const ref = useRef(null);
+  return <primitive object={scene} position={position}  />;
+}
 
-    useFrame((_, delta) => {
-      // ref.current.rotation.x  += 0.1 * delta;
-      ref.current.rotation.y += 0.1 * delta;
-    });
 
-    return (
-      <mesh>
-        <primitive ref={ref} object={gltf.scene} position={[8, 0, -5]}  rotation={[-Math.PI/4, 0,0]}/>
-      </mesh>
-    );
-  }
 
-  function ModelThree() {
-    const gltf = useLoader(GLTFLoader, "./img/smileFace3.glb");
-    const ref = useRef(null);
-    // const texture = useLoader(TextureLoader, "/img/rgb.jpg");
 
-    // gltf.scene.traverse((child) => {
-    //   if (child.isMesh) {
-    //     child.material.map = texture; // Set the texture as the map
-    //     child.material.needsUpdate = true; // Ensure the material updates
-    //   }
-    // });
+export default function SmileFace() {
+  const glbUrl = imgData[0].img
+  const [xPosition, setXPosition] = useState(0);
+  const position = [8,0,0]
 
-    useFrame((_, delta) => {
-      ref.current.rotation.x  += -0.09 * delta;
-      ref.current.rotation.y += -0.09 * delta;
-    });
+ function moveSmile(){
+  setXPosition(prevX => prevX + 8);
+  console.log('click')
+ };
 
-    return (
-      <mesh>
-        <primitive ref={ref} object={gltf.scene} position={[-8, 0, -5]}  rotation={[-Math.PI/4, 0,0]}/>
-      </mesh>
-    );
-  }
-  function ModelFour() {
-    const gltf = useLoader(GLTFLoader, "./img/smile4.glb");
-    const ref = useRef(null);
-    // const texture = useLoader(TextureLoader, "/img/rgb.jpg");
+ function generatePosition(count){
 
-    // gltf.scene.traverse((child) => {
-    //   if (child.isMesh) {
-    //     child.material.map = texture; // Set the texture as the map
-    //     child.material.needsUpdate = true; // Ensure the material updates
-    //   }
-    // });
+    const objects = [];
 
-    useFrame((_, delta) => {
-      ref.current.rotation.x  += -0.09 * delta;
-      ref.current.rotation.y += -0.09 * delta;
-    });
+    for (let i = 0; i < count; i++){
+      const newPosition = [xPosition + i*8, 0,0];
+      objects.push(newPosition);
+    };
+    return objects;
+ }
 
-    return (
-      <mesh>
-        <primitive ref={ref} object={gltf.scene} position={[-16, 0, -5]}  rotation={[-Math.PI/4, 0,0]}/>
-      </mesh>
-    );
-  }
-  function ModelFive() {
-    const gltf = useLoader(GLTFLoader, "./img/smile5.glb");
-    const ref = useRef(null);
-    // const texture = useLoader(TextureLoader, "/img/rgb.jpg");
 
-    // gltf.scene.traverse((child) => {
-    //   if (child.isMesh) {
-    //     child.material.map = texture; // Set the texture as the map
-    //     child.material.needsUpdate = true; // Ensure the material updates
-    //   }
-    // });
+ const objects = generatePosition(5);
 
-    useFrame((_, delta) => {
-      ref.current.rotation.x  += -0.09 * delta;
-      ref.current.rotation.y += -0.09 * delta;
-    });
-
-    return (
-      <mesh>
-        <primitive ref={ref} object={gltf.scene} position={[16, 0, -5]}  rotation={[-Math.PI/4, 0,0]}/>
-      </mesh>
-    );
-  }
-  function ModelSix() {
-    const gltf = useLoader(GLTFLoader, "./img/smile6.glb");
-    const ref = useRef(null);
-    // const texture = useLoader(TextureLoader, "/img/rgb.jpg");
-
-    // gltf.scene.traverse((child) => {
-    //   if (child.isMesh) {
-    //     child.material.map = texture; // Set the texture as the map
-    //     child.material.needsUpdate = true; // Ensure the material updates
-    //   }
-    // });
-
-    useFrame((_, delta) => {
-      ref.current.rotation.x  += -0.09 * delta;
-      ref.current.rotation.y += -0.09 * delta;
-    });
-
-    return (
-      <mesh>
-        <primitive ref={ref} object={gltf.scene} position={[-24, 0, -5]}  rotation={[-Math.PI/4, 0,0]}/>
-      </mesh>
-    );
-  }
-  function ModelSeven() {
-    const gltf = useLoader(GLTFLoader, "./img/smile7.glb");
-    const ref = useRef(null);
-    // const texture = useLoader(TextureLoader, "/img/rgb.jpg");
-
-    // gltf.scene.traverse((child) => {
-    //   if (child.isMesh) {
-    //     child.material.map = texture; // Set the texture as the map
-    //     child.material.needsUpdate = true; // Ensure the material updates
-    //   }
-    // });
-
-    useFrame((_, delta) => {
-      ref.current.rotation.x  += -0.09 * delta;
-      ref.current.rotation.y += -0.09 * delta;
-    });
-
-    return (
-      <mesh>
-        <primitive ref={ref} object={gltf.scene} position={[24, 0, -5]}  rotation={[-Math.PI/4, 0,0]}/>
-      </mesh>
-    );
-  }
 
   function CamearaAnimation() {
     const { camera } = useThree();
@@ -172,7 +57,7 @@ export default function SmileFace(props) {
     useLayoutEffect(() => {
       gsap.to(camera.position, {
         x: 10,
-        duration: 100,
+        duration: 10,
         ease: "power2.inOut",
         repeat: -1,
         yoyo: true,
@@ -181,22 +66,28 @@ export default function SmileFace(props) {
     return null;
   }
 
-  return (
+ return (
     <>
       <div className="h-screen w-screen relative ">
         <div className="absolute top-0 h-full w-full ">
-          <Canvas>
+          <Canvas onPointerEnter={moveSmile}>
+
             <OrthographicCamera makeDefault zoom={60} position={[0, 0, 5]} />
             <CamearaAnimation />
             <ambientLight intensity={1.0} />
             <directionalLight intensity={2.5} position={[1, 5, 0]} />
-            <Model />
-            <ModelTwo />
-            <ModelThree />
-            <ModelFour />
-            <ModelFive />
-            <ModelSix />
-            <ModelSeven />
+              {[...Array(2).keys()].map((x)=>
+              [...Array(1).keys()].map((y)=>(
+                <GLBModel key={`${x}-${y}`} position={[x * 2.5, y * 2.5, 0]} url={glbUrl}/>
+           ))   ).flat()}
+           
+   
+             
+
+        
+           
+          
+      
           </Canvas>{" "}
         </div>{" "}
       </div>

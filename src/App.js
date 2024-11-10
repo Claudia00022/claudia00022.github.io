@@ -44,6 +44,8 @@ function App() {
     setIsHovered(false);
   }
 
+  
+
   return (
     <>
       <SmoothScroll>
