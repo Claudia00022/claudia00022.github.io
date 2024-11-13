@@ -3,6 +3,8 @@ import { useLoader } from "@react-three/fiber";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader";
+import * as THREE from 'three';
+
 
 
 
@@ -21,11 +23,21 @@ const modelSeven =  useLoader(GLTFLoader, imgData[6].img);
 
 
 const models = [modelOne, modelTwo, modelThree, modelFour, modelFive, modelSix, modelSeven];
+console.log(models)
+
+const customMaterialOne = new THREE.MeshPhysicalMaterial({ color: 'red', transmission:1 , clearcoat:1, ior:1.74, thickness:3.12});
+const customMaterialTwo = new THREE.MeshPhysicalMaterial({ color: 'green', transmission:1 , clearcoat:1, ior:1.74, thickness:3.12});
+const customMaterialThree = new THREE.MeshPhysicalMaterial({ color: 'blue', transmission:1 , clearcoat:1, ior:1.74, thickness:3.12});
+
+const materialsSmile = [customMaterialOne, customMaterialTwo, customMaterialThree]
+
+
+
 
 
   const initialRotations = useRef(models.map(() => ({
-    x: Math.random() * Math.PI / 2, // Random initial rotation for x axis
-    y: Math.random() * Math.PI * 2, // Random initial rotation for y axis
+    x: -Math.random() * Math.PI / 2, // Random initial rotation for x axis
+    y: -Math.random() * Math.PI * 2, // Random initial rotation for y axis
     z: -Math.random() * Math.PI * 2, // Random initial rotation for y axis
 
   })));
@@ -52,7 +64,27 @@ const models = [modelOne, modelTwo, modelThree, modelFour, modelFive, modelSix, 
       object={model.scene}
       key={index}
      position={[index * 8, 0, 0]}
-    ></primitive>
+
+     
+    >
+         {model.scene.children.map((child, childIndex) => {
+            if (child.isMesh) {
+              // Use modulo to cycle through the materials in the array
+              const material = materialsSmile[childIndex % materialsSmile.length];
+              child.material = material; 
+              console.log(model)
+
+              return (
+                <primitive
+                  key={childIndex}
+                  object={child}
+               // Apply material from the array
+                />
+              );
+            }
+            return null;
+          })}
+    </primitive>
 
     ))
  
