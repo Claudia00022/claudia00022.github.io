@@ -4,6 +4,8 @@ import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, OrthographicCamera } from "@react-three/drei";
 import Model from "./SmileFaceModel";
 import CamearaAnimation from "./CameraAnimation";
+import { EffectComposer, Noise } from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 
 export default function SmileFace(props) {
 
@@ -15,15 +17,18 @@ export default function SmileFace(props) {
   }
   return (
     <>
-      <div className="h-screen w-screen relative ">
+      <div className="h-screen w-screen relative " style={{backgroundColor: '#978B72'}}>
         <div className="absolute top-0 h-full w-full ">
           <Canvas>
             <OrthographicCamera makeDefault zoom={80} position={[18, 0, 5]}/>
             <CamearaAnimation />
-            <CameraAngle />
+            {/* <CameraAngle /> */}
             {/* <ambientLight intensity={1.0} /> */}
-            <directionalLight intensity={2.5} position={[1, 5, 0]} />
+            <directionalLight intensity={2.5} position={[0, 8, 0]} />
             <Model />
+            <EffectComposer>
+          <Noise premultiply blendFunction={BlendFunction.SCREEN} />
+        </EffectComposer>
             
           </Canvas>{" "}
         </div>{" "}

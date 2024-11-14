@@ -47,8 +47,8 @@ const materialsSmile = [customMaterialOne, customMaterialTwo, customMaterialThre
     modelRefs.current.forEach((modelRef, index) => {
       if (modelRef) {
         // Add small random rotation values to x, y, and z axes
-        modelRef.rotation.x += initialRotations.current[index].x * Math.random() * 0.001 ;
-        modelRef.rotation.y += initialRotations.current[index].y * Math.random() * 0.001 ;
+        modelRef.rotation.x += initialRotations.current[index].x * Math.random() * 0.0009 ;
+        modelRef.rotation.y += initialRotations.current[index].y * Math.random() * 0.0009 ;
         modelRef.rotation.z += initialRotations.current[index].z * Math.random() * 0.001 ;
       }
     });
@@ -63,27 +63,10 @@ const materialsSmile = [customMaterialOne, customMaterialTwo, customMaterialThre
        ref={(el) => (modelRefs.current[index] = el)} // Assign each model's ref to the array
       object={model.scene}
       key={index}
-     position={[index * 8, 0, 0]}
+     position={[index * 7.5, 0, 0]}
 
      
     >
-         {model.scene.children.map((child, childIndex) => {
-            if (child.isMesh) {
-              // Use modulo to cycle through the materials in the array
-              const material = materialsSmile[childIndex % materialsSmile.length];
-              child.material = material; 
-              console.log(model)
-
-              return (
-                <primitive
-                  key={childIndex}
-                  object={child}
-               // Apply material from the array
-                />
-              );
-            }
-            return null;
-          })}
     </primitive>
 
     ))
