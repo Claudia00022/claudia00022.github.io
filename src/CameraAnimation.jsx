@@ -7,8 +7,8 @@ import { useThree } from "@react-three/fiber";
 
     useLayoutEffect(() => {
       gsap.to(camera.position, {
-        x: 100,
-        duration: 500,
+        x: 10,
+        duration: 50,
         ease: "power2.inOut",
         repeat: -1,
         yoyo: true,

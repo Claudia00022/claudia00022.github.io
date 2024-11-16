@@ -26,7 +26,7 @@ export default function AnimatedText() {
       <>
   
       <div  style={{pointerEvents: 'none'}}> 
-        <span className=" sr-only ">{text}</span>
+        <span className=" sr-only " >{text}</span>
         <motion.div
         ref={ref}
           className="title"

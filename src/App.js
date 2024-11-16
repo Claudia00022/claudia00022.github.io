@@ -25,7 +25,7 @@ import "./pages/contact/contact.style.css";
 import "lenis/dist/lenis.css";
 gsap.registerPlugin(ScrollTrigger);
 
-function App() {
+function App(props) {
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
   const size = isHovered ? 400 : 20;
@@ -50,7 +50,7 @@ function App() {
     <>
       <SmoothScroll>
         <div className="relative overflow-hidden " ref={scene}>
-          <motion.div
+          {/* <motion.div
             className="absolute top-0 left-0 contact_mask z-50  "
             animate={{
               WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
@@ -62,20 +62,21 @@ function App() {
               handleHover={handleHover}
               handleHoverBack={handleHoverBack}
             />
-          </motion.div>
+          </motion.div> */}
 
           <div>
             <Name />
             <MediaIcons />
             <NavBar />
-            <CanvasComponent scrollYProgress={scrollYProgress} />
+            {/* <CanvasComponent scrollYProgress={scrollYProgress} /> */}
+            <SmileFace />
             <About />
-            <Skills />
+            <Skills   scrollYP = {scrollYProgress}/>
             <ArtPage />
             <Media />
             <Motto />
             <Contact />
-            <SmileFace />
+            {/* <SmileFace /> */}
           </div>
         </div>
       </SmoothScroll>

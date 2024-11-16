@@ -1,6 +1,7 @@
 import React, {useRef, useLayoutEffect} from "react";
 import { useScroll, motion, useTransform, useMotionTemplate } from "framer-motion";
 import "./skills.css";
+import CanvasComponent from "../../components/CanvasComponent";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -35,7 +36,7 @@ const projects_data = [
 },
 ];
 
-function Skills() {
+function Skills(props) {
 
     const sectionTwoRef = useRef(null);
 
@@ -54,7 +55,7 @@ function Skills() {
   
     <>
      
-    <div className="h-screen relative shadow" style={{backgroundColor: '#0F0F0F'}}>
+    <div className="h-screen relative shadow" style={{backgroundColor: '#978B72'}}>
     <div className="absolute top-52 left-0 w-full" ref={sectionTwoRef}>
       <div className="flex items-center justify-start ms-52 mb-5 ">
         <div
@@ -87,6 +88,8 @@ function Skills() {
       ))}
 
       </div>
+       <CanvasComponent  scrollYP = {props.scrollYP}/>
+
       </div>
     </>
   );

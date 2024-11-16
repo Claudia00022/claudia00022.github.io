@@ -61,7 +61,7 @@ function Media() {
     <>
       <div
         className="h-screen relative shadow "
-        style={{ backgroundColor: "#0F0F0F" }}
+        style={{ backgroundColor: "#978B72" }}
       >
         <div className="absolute top-20 left-0 w-full  ">
           <div className=" ms-52  mb-52">

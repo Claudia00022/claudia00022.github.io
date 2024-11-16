@@ -5,6 +5,7 @@ import SmileFaceFour from '../src/assets/glb/smile4.glb';
 import SmileFaceFive from '../src/assets/glb/smile5.glb';
 import SmileFaceSix from '../src/assets/glb/smile6.glb';
 import SmileFaceSeven from '../src/assets/glb/smile7.glb';
+import SmileFaceEight from '../src/assets/glb/smileMe.glb';
 
 const imgData= [
     {
@@ -35,6 +36,10 @@ const imgData= [
         id:7,
         img: SmileFaceSeven
     },
+    {
+        id:8,
+        img:SmileFaceEight
+    }
 
 ]
 

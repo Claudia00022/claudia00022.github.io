@@ -10,6 +10,8 @@ import {
 import AnimatedText from "../../components/AnimatedText";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Ja from '../../assets/photos/ja.jpg';
+import Smile from "../../Smile";
 gsap.registerPlugin(ScrollTrigger);
 
 function About(props) {
@@ -46,7 +48,7 @@ function About(props) {
     <>
       <div className=" relative h-screen -z-10 border-t border-b border-gray-500 ">
     
-        <div className=" absolute center w-6/12" ref={sectionRef}>
+        <div className=" absolute left-52 top-52 w-2/6" ref={sectionRef}>
          <div className="mb-2">
           <AnimatedText />
           </div>
@@ -102,6 +104,10 @@ function About(props) {
             type-safe applications
           </p>
           <p className="text mb-52 ">-Version Control: Git, GitHub, GitLab</p>
+        </div>
+        <div className=" w-3/12 h-3/4 right-52 top-36 absolute   ">
+         <img src={Ja} alt='myImage' className="object-cover" style={{width:'700px', height: '800px', border: '1px solid #EB4B2F'}}></img>
+         <Smile />
         </div>
       </div>
     </>

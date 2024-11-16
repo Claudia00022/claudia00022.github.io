@@ -18,13 +18,17 @@ export default function SmileFace(props) {
   return (
     <>
       <div className="h-screen w-screen relative " style={{backgroundColor: '#978B72'}}>
+      <div className=" absolute center z-10">
+      <p className="text" style={{color: '#EB4B2F'}}>Klaudia Krzeminska</p>
+      <p className="title"><span>Free</span>lancer Fronted Webdeveloper</p>
+      </div>
         <div className="absolute top-0 h-full w-full ">
           <Canvas>
-            <OrthographicCamera makeDefault zoom={80} position={[18, 0, 5]}/>
+            <OrthographicCamera makeDefault zoom={80} position={[18, -1, 5]}/>
             <CamearaAnimation />
             {/* <CameraAngle /> */}
             {/* <ambientLight intensity={1.0} /> */}
-            <directionalLight intensity={2.5} position={[0, 8, 0]} />
+            <directionalLight intensity={5.5} position={[0, 8, 0]} />
             <Model />
             <EffectComposer>
           <Noise premultiply blendFunction={BlendFunction.SCREEN} />

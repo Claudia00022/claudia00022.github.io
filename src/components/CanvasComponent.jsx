@@ -6,16 +6,12 @@ import { motion } from "framer-motion-3d";
 
 
 export default function CanvasComponent(props) {
-  const texture = useLoader(TextureLoader, "/img/earth.jpg.jpg");
+  const texture = useLoader(TextureLoader, "/img/texture.jpg");
   
 
   return (
     <>
       <div className="h-screen w-screen relative mb-52">
-      <div className=" absolute center">
-      <p className="text">Klaudia Krzeminska</p>
-      <p className="title">Freelancer Fronted Webdeveloper</p>
-      </div>
         <div className="absolute top-0 h-full w-full -z-10">
           <Canvas
             orthographic
@@ -27,7 +23,7 @@ export default function CanvasComponent(props) {
             <motion.mesh
               position={[0, 0, 0]}
               scale={3.0}
-              rotation-y={props.scrollYProgress}
+              rotation-y={props.scrollYP}
             >
               <sphereGeometry args={[1, 64, 32]} />{" "}
               <meshStandardMaterial map={texture} />

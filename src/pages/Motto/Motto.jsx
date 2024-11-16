@@ -34,7 +34,7 @@ export default function Motto(){
 
 
     return(
-        <div ref={motto_container} className=" h-screen w-screen relative" style={{backgroundColor: '#0D0D0D'}}>
+        <div ref={motto_container} className=" h-screen w-screen relative" style={{backgroundColor: '#978B72'}}>
         <div ref={clauds_img} className=" absolute -bottom-10 -left-60">
         <img src={CloudsImg} alt= 'clouds' />
         </div>
