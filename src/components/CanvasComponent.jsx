@@ -6,7 +6,7 @@ import { motion } from "framer-motion-3d";
 
 
 export default function CanvasComponent(props) {
-  const texture = useLoader(TextureLoader, "/img/texture.jpg");
+  const texture = useLoader(TextureLoader, "/img/earth.jpg.jpg");
   
 
   return (
@@ -18,7 +18,7 @@ export default function CanvasComponent(props) {
             camera={{ position: [0, 0, 5], zoom: 150 }}
             // scale={[1, 1, 1]}
           >
-            <ambientLight intensity={0.1} />
+            <ambientLight intensity={0.5} />
             <directionalLight intensity={2.5} position={[5, 0, -0.2]} />
             <motion.mesh
               position={[0, 0, 0]}

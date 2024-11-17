@@ -1,7 +1,10 @@
 import React, {useRef, useState} from "react";
 import { motion, useInView } from "framer-motion";
 
-const text = "about";
+const text = "Who’s";
+const textTwo = 'Behind';
+const textThree = 'the';
+const textFour = 'curtains?'
 
 const defaultAnimations = {
   hidden: {
@@ -27,18 +30,33 @@ export default function AnimatedText() {
   
       <div  style={{pointerEvents: 'none'}}> 
         <span className=" sr-only " >{text}</span>
+        <span className=" sr-only " >{textTwo}</span>
+        <span className=" sr-only " >{textThree}</span>
+        <span className=" sr-only " >{textFour}</span>
         <motion.div
         ref={ref}
           className="title"
-        //   style={{color: titleColor}}
           aria-hidden
           initial="hidden"
           animate= {isInView ? 'visible' : 'hidden'}
           transition={{ staggerChildren: 0.1 }}
-        //   onMouseEnter={() => setHover(true)}
-        //   onMouseLeave={()=>setHover(false)}
         >
           {text.split("").map((char, index) => (
+            <motion.p key={index} className="inline-block" variants={defaultAnimations}>
+              {char}
+            </motion.p>
+          ))}<br></br>
+          {textTwo.split("").map((char, index) => (
+            <motion.p key={index} className="inline-block" variants={defaultAnimations}>
+              {char}
+            </motion.p>
+          ))}<br></br>
+          {textThree.split("").map((char, index) => (
+            <motion.p key={index} className="inline-block" variants={defaultAnimations}>
+              {char}
+            </motion.p>
+          ))}<br></br>
+          {textFour.split("").map((char, index) => (
             <motion.p key={index} className="inline-block" variants={defaultAnimations}>
               {char}
             </motion.p>

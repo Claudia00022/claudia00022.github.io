@@ -12,8 +12,9 @@ body{
     position: relative;
     height: 100%;
      /* background-color: #0D0D0D; */
-     background-color: #978B72;
-
+     /* background-color: #978B72; */
+     background-color: #EBCA98;
+    
     
     
     
@@ -34,17 +35,21 @@ html{
     font-weight: bold;
     font-style: normal;
     font-size: 15px;
-    letter-spacing: 1px;
-    line-height: 20px;
-    color: #F3DFC1;
+    line-height: 15px;
+    /* color: #F3DFC1; */
+    color: black;
+    opacity: 0.7;
 }
 
 .title{
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
     font-style: bold;
-    font-size: 8.75rem;
-    color: #EBCA98 ;
+    font-size: 9.75rem;
+    /* color: #EBCA98 ; */
+    color: #EB4B2F;
+    color: #CC8B28;
+    color: #FFFF99;
     letter-spacing: -.05em;
     line-height: 84%;
     text-transform: uppercase;

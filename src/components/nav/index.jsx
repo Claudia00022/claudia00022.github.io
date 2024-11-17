@@ -1,80 +1,125 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import { Link } from "react-router-dom";
-import './nav.style.css'
+import "./nav.style.css";
 
 const NavBar = (props) => {
-  
-const [toggledLinks, setToggledLinks] = useState("home");
-const [toggledAbout, setToggledAbout] = useState("about");
-const [toggledContact, setToggledContact] = useState("contact");
-const [toggledArt, setToggledArt] = useState("projects")
+  const [toggledLinks, setToggledLinks] = useState("home");
+  const [toggledAbout, setToggledAbout] = useState("about");
+  const [toggledContact, setToggledContact] = useState("contact");
+  const [toggledArt, setToggledArt] = useState("projects");
 
-function handleClick(){
-  setToggledLinks(
-   <div 
+  function handleClick() {
+    setToggledLinks(
+      <div
+        style={{
+          width: "5px",
+          height: "5px",
+          backgroundColor: "white",
+          display: "inline-block",
+        }}
+        className="me-2"
+      ></div>
+    );
+    setToggledAbout("about");
+    setToggledContact("contact");
+    setToggledArt("art");
+  }
 
-        style={{width: '5px', height: '5px', backgroundColor: '#c9c9c9', display: 'inline-block'}}
-         className= 'me-2' >
-        </div>
-  );
-  setToggledAbout("about");
-  setToggledContact("contact");
-  setToggledArt("art");
-}
-
-function handleAbout(){
-  setToggledAbout(<div 
-
-    style={{width: '5px', height: '5px', backgroundColor: '#c9c9c9', display: 'inline-block'}}
-     className= 'me-2' >
-    </div>);
+  function handleAbout() {
+    setToggledAbout(
+      <div
+        style={{
+          width: "5px",
+          height: "5px",
+          backgroundColor: "white",
+          display: "inline-block",
+        }}
+        className="me-2"
+      ></div>
+    );
     setToggledLinks("home");
     setToggledContact("contact");
     setToggledArt("art");
-}
+  }
 
-function handleContact(){
-  setToggledContact(<div 
-
-    style={{width: '5px', height: '5px', backgroundColor: '#c9c9c9', display: 'inline-block'}}
-     className= 'me-2' >
-    </div>);
+  function handleContact() {
+    setToggledContact(
+      <div
+        style={{
+          width: "5px",
+          height: "5px",
+          backgroundColor: "white",
+          display: "inline-block",
+        }}
+        className="me-2"
+      ></div>
+    );
     setToggledAbout("about");
     setToggledLinks("home");
-    setToggledArt("art")
-}
+    setToggledArt("art");
+  }
 
-function handleArt(){
-  setToggledArt(<div 
-
-    style={{width: '5px', height: '5px', backgroundColor: '#c9c9c9', display: 'inline-block'}}
-     className= 'me-2' >
-    </div>);
+  function handleArt() {
+    setToggledArt(
+      <div
+        style={{
+          width: "5px",
+          height: "5px",
+          backgroundColor: "white",
+          display: "inline-block",
+        }}
+        className="me-2"
+      ></div>
+    );
     setToggledAbout("about");
     setToggledContact("contact");
     setToggledLinks("home");
+  }
 
-}
-
-
-return (
-  <div className="fixed z-20  top-24 right-20 " >
-<ul>
-<li onClick={handleClick}>
-  <Link to={"/"} onClick={props.handleNameBack} className="flex flex-row items-center title " style={{ marginBottom: '10px', fontWeight:'bold', fontSize: '13px' }}>{toggledLinks}</Link>
-</li>
-<li onClick={handleAbout}>
-  <Link to={"/about"} onClick={props.handleName} className="flex flex-row items-center text " style={{ marginBottom: '10px', fontWeight:'bold', fontSize: '13px' }}>{toggledAbout}</Link>
-</li>
-<li onClick={handleArt}>
-  <Link to={"/art"} className="flex flex-row items-center text " style={{ marginBottom: '10px', fontWeight:'bold', fontSize: '13px' }}>{toggledArt}</Link>
-</li>
-<li onClick={handleContact}>
-  <Link to={"/contact"} className="flex flex-row items-center text" style={{ marginBottom: '10px', fontWeight:'bold', fontSize: '13px' }}>{toggledContact}</Link>
-</li>
-</ul>
-  </div>
-);
-}
+  return (
+    <div className="fixed z-20  top-0 right-0 w-full h-14 ">
+      <ul className="flex justify-evenly mt-5">
+        <li onClick={handleClick}>
+          <Link
+          className="text"
+            to={"/"}
+            onClick={props.handleNameBack}
+            style={{ fontSize: "26px", textTransform: "uppercase" }}
+          >
+            {toggledLinks}
+          </Link>
+        </li>
+        <li onClick={handleAbout}>
+          <Link
+            className="text"
+            to={"/about"}
+            onClick={props.handleName}
+            style={{ fontSize: "26px", textTransform: "uppercase" }}
+          >
+            {toggledAbout}
+          </Link>
+        </li>
+        <li onClick={handleArt}>
+          <Link
+            className="text"
+            to={"/art"}
+            style={{ fontSize: "26px", textTransform: "uppercase" }}
+          >
+            {toggledArt}
+          </Link>
+        </li>
+        <li onClick={handleContact}>
+          <Link
+            className="text"
+            to={"/contact"}
+            style={{ fontSize: "26px", textTransform: "uppercase" }}
+          >
+            {toggledContact}
+          </Link>
+        </li>
+      </ul>
+    </div>
+  );
+};
 
 export default NavBar;

@@ -3,7 +3,7 @@ import MagneticEffect from './MagneticEffect'
 
 export default function MediaIcons(){
     return(
-    <div className="fixed bottom-10 left-10 z-50">
+    <div className="fixed bottom-10 left-10 z-50 opacity-70">
     {contactsData.map((con)=>( 
         <MagneticEffect>
             <div className="w-10 h-10 mt-10 mb-10">

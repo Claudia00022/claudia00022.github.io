@@ -55,7 +55,7 @@ function Skills(props) {
   
     <>
      
-    <div className="h-screen relative shadow" style={{backgroundColor: '#978B72'}}>
+    <div className="h-screen relative shadow" style={{backgroundColor: '#EBCA98'}}>
     <div className="absolute top-52 left-0 w-full" ref={sectionTwoRef}>
       <div className="flex items-center justify-start ms-52 mb-5 ">
         <div
