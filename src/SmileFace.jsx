@@ -17,7 +17,7 @@ export default function SmileFace(props) {
   }
   return (
     <>
-      <div className="h-screen w-screen relative " style={{backgroundColor: '#EBCA98'}}>
+      <div className="h-screen w-screen relative " style={{backgroundColor: '#D4D2CD'}}>
       <div className=" absolute center z-10 ">
       <p className=" ms-5 text">Klaudia Krzeminska</p>
       <p className="title" style={{color: '#FFFF99'}}><span >Free</span>lancer Fronted Webdeveloper</p>

@@ -3,6 +3,7 @@ import "./artPage.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import arts_data from "../../artsData";
+import SmileTwo from "../../SmileArt";
 import Pencil from "../../assets/pencils.png";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,10 +30,10 @@ export default function ArtPage() {
         },
       });
 
-      tl.to(imagesRef.current[1], { y: -175 }, 0);
+      tl.to(imagesRef.current[1], { y: 175 }, 0);
       tl.to(imagesRef.current[2], { y: -150 }, 0);
       tl.to(pencilsRef.current, { y: -150 }, 0);
-      tl.to(title3.current, { top: -50 }, 0);
+      tl.to(title3.current, { top: 50 }, 0);
     });
 
     return () => context.revert();
@@ -40,38 +41,30 @@ export default function ArtPage() {
 
   return (
     <>
-      <div ref={container} className="container_art">
-        <div className=" w-full absolute -left-54 opacity-50">
-          <img
-            src={Pencil}
-            alt="pencils"
-            className="img_art"
-            ref={pencilsRef}
-          ></img>
-        </div>
+      <div ref={container} className="container_art ">
 
-        <div>
-          <div className="absolute center_items z-50">
-            <h1 ref={title} className="title text-center">
+        
+          <div className="absolute left-52 top-52 z-50">
+            <h1 ref={title} className="title text-center"   style={{ color:'black', fontSize: "9.5rem", opacity:0.7 }}>
               ART
             </h1>
-            <h1 ref={title2} className="title text-center" >
+            <h1 ref={title2} className="title text-center"   style={{ color:'black', fontSize: "9.5rem", opacity:0.7 }}>
               IS
             </h1>
-           
           </div>
 
           <div>
-              <p
-                className="title absolute bottom-0 left-52 text-center span_word"
-                style={{ color: "#c9c9c9", fontSize: "9.5rem" }}
-                ref={title3}
-              >
-                {word}
-              </p>
-            </div>
-          <div ref={sectionTwoRef}>
-            <div className="images ">
+            <p
+              className="title absolute bottom-0 left-52 text-center  z-10"
+              style={{ color:'#FFFF99', fontSize: "9.5rem" }}
+              ref={title3}
+            >
+              {word}
+            </p>
+          </div>
+
+          <div ref={sectionTwoRef} >
+            <div className="images">
               {images.map((image, i) => {
                 return (
                   <div
@@ -97,7 +90,12 @@ export default function ArtPage() {
               </div>
             </div>
           </div>
-        </div>
+      
+          <SmileTwo />
+ 
+        
+ 
+        
       </div>
     </>
   );
