@@ -61,7 +61,7 @@ function Media() {
     <>
       <div
         className="h-screen relative shadow "
-        style={{ backgroundColor: "#978B72" }}
+        style={{ backgroundColor: "#E34300" }}
       >
         <div className="absolute top-20 left-0 w-full  ">
           <div className=" ms-52  mb-52">
@@ -102,7 +102,7 @@ function Media() {
 
               <div className="ms-40 relative">
                 <motion.p style={{ clipPath: clip }}>
-                  <a href={project.link} className="title ">
+                  <a href={project.link} className="title " style={{color: '#FFFF99'}}>
                     {project.title}
                   </a>
                 </motion.p>

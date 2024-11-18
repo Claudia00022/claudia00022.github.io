@@ -56,7 +56,7 @@ export default function ArtPage() {
           <div>
             <p
               className="title absolute bottom-0 left-52 text-center  z-10"
-              style={{ color:'#FFFF99', fontSize: "9.5rem" }}
+              style={{ color:'#E34300', fontSize: "9.5rem" }}
               ref={title3}
             >
               {word}

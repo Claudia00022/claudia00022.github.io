@@ -1,5 +1,6 @@
 //Components
 "use client";
+import './assets/fonts/fonts.css';
 import React, { useState, useRef } from "react";
 import About from "./pages/about";
 import NavBar from "./components/nav";
@@ -24,6 +25,8 @@ import "./pages/contact/contact.style.css";
 
 import "lenis/dist/lenis.css";
 gsap.registerPlugin(ScrollTrigger);
+
+
 
 function App(props) {
   const [isHovered, setIsHovered] = useState(false);

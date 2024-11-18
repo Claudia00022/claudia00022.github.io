@@ -55,7 +55,7 @@ function Skills(props) {
     <>
       <div
         className="h-screen relative shadow  "
-        style={{ backgroundColor: "#D4D2CD" }}
+        style={{ backgroundColor: "#E34300" }}
       >
         <div className="absolute top-52 left-0 w-full" ref={sectionTwoRef}>
           <div className="flex items-center justify-start ms-52 mb-5 ">
@@ -80,7 +80,7 @@ function Skills(props) {
               <p className="text font-bold ms-52 w-64">{project.content}</p>
               <div className="ms-40 relative ">
                 <motion.p style={{ clipPath: clip }}>
-                  <a href={project.link} className="title ">
+                  <a href={project.link} className="title " style={{color: '#FFFF99'}}>
                     {project.title}
                   </a>
                 </motion.p>
