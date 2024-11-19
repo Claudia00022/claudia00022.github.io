@@ -3,6 +3,8 @@ import React from "react";
 import { Canvas, useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import { motion } from "framer-motion-3d";
+import { EffectComposer, Noise } from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 
 
 export default function CanvasComponent(props) {
@@ -28,6 +30,9 @@ export default function CanvasComponent(props) {
               <sphereGeometry args={[1, 64, 32]} />{" "}
               <meshStandardMaterial map={texture} />
             </motion.mesh>
+            <EffectComposer>
+          <Noise premultiply blendFunction={BlendFunction.SCREEN} />
+        </EffectComposer>
           </Canvas>{" "}
         </div>{" "}
       </div>

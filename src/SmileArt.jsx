@@ -9,7 +9,7 @@ function MySmile() {
   const refSmile = useRef(null);
 
   useFrame(()=>{
-    // refSmile.current.rotation.y += -0.01;
+    refSmile.current.rotation.y += -0.01;
     // refSmile.current.rotation.x += -0.01;
     refSmile.current.rotation.z += 0.01;
 
@@ -22,7 +22,7 @@ export default function SmileTwo() {
     <div className="absolute  -bottom-0 -right-0 " style={{width:'600px', height:'600px'}}>
     <Canvas>
     <OrthographicCamera/>
-    <ambientLight intensity={1.0} />
+    <ambientLight intensity={5.0} />
       <directionalLight intensity={2.5} position={[0, 8, 0]} />
       <MySmile />
     </Canvas>

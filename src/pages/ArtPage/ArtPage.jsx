@@ -91,7 +91,7 @@ export default function ArtPage() {
             </div>
           </div>
       
-          <SmileTwo />
+          {/* <SmileTwo /> */}
  
         
  

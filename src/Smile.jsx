@@ -2,6 +2,8 @@ import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader";
 import imgData from "./smileImgData";
 import { useRef } from "react";
+import { EffectComposer, Noise } from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 
 function MySmile() {
   const gltf = useLoader(GLTFLoader, imgData[7].img);
@@ -20,6 +22,9 @@ export default function Smile() {
     <ambientLight intensity={5.0} />
       {/* <directionalLight intensity={2.5} position={[0, 8, 0]} /> */}
       <MySmile />
+      <EffectComposer>
+          <Noise premultiply blendFunction={BlendFunction.SCREEN} />
+        </EffectComposer>s
     </Canvas>
     </div>
   );

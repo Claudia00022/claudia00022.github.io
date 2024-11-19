@@ -5,6 +5,8 @@ import {
   useTransform,
   useMotionTemplate,
 } from "framer-motion";
+import { EffectComposer, Noise } from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -65,31 +67,7 @@ function Media() {
       >
         <div className="absolute top-20 left-0 w-full  ">
           <div className=" ms-52  mb-52">
-            <p className="text text-left font-bold ">Projects</p>
-            <div
-              style={{
-                width: "5px",
-                height: "5px",
-                backgroundColor: "#F3DFC1",
-              }}
-              className="mt-10"
-            ></div>
-            <div
-              style={{
-                width: "5px",
-                height: "5px",
-                backgroundColor: "#F3DFC1",
-              }}
-              className="mt-5"
-            ></div>
-            <div
-              style={{
-                width: "5px",
-                height: "5px",
-                backgroundColor: "#F3DFC1",
-              }}
-              className="mt-5"
-            ></div>
+            <p className="text text-left font-bold ">Stuff I Built (That Didn’t Fall Apart)</p>
           </div>
 
           {projects_data.map((project) => (
@@ -120,6 +98,7 @@ function Media() {
             </div>
           ))}
         </div>
+        
       </div>
     </>
   );

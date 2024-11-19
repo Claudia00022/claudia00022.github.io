@@ -59,14 +59,7 @@ function Skills(props) {
       >
         <div className="absolute top-52 left-0 w-full" ref={sectionTwoRef}>
           <div className="flex items-center justify-start ms-52 mb-5 ">
-            <div
-              style={{
-                width: "5px",
-                height: "5px",
-                backgroundColor: "white",
-              }}
-              className="me-4"
-            ></div>
+         
             <p className="text text-right font-bold ">What I Bring to the Table (Besides Snacks)</p>
           </div>
 

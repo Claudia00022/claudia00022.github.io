@@ -34,7 +34,7 @@ export default function Motto(){
 
 
     return(
-        <div ref={motto_container} className=" h-screen w-screen relative" style={{backgroundColor: '#D4D2CD'}}>
+        <div ref={motto_container} className=" h-full w-full relative" style={{backgroundColor: '#D4D2CD', border:'10px solid #ffff99'}}>
         <div ref={clauds_img} className=" absolute -bottom-10 -left-60">
         <img src={CloudsImg} alt= 'clouds' />
         </div>
@@ -44,7 +44,7 @@ export default function Motto(){
         </div>
         <div className="flex justify-center items-center h-screen">
         <div ref={text_container} className=" w-1/3">
-            <p className="title">Let's grow together </p>
+            <p className="title" style={{textAlign:'center'}}>Let’s Reach for the Clouds (Together) </p>
             </div>
             </div>
            
