@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import { EffectComposer, Noise } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
+import Scene from "./Scene";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -98,7 +99,7 @@ function Media() {
             </div>
           ))}
         </div>
-        
+        <Scene />
       </div>
     </>
   );
