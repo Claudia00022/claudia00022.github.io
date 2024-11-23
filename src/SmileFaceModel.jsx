@@ -23,7 +23,6 @@ const modelSeven =  useLoader(GLTFLoader, imgData[6].img);
 
 
 const models = [modelOne, modelTwo, modelThree, modelFour, modelFive, modelSix, modelSeven];
-console.log(models)
 
 const customMaterialOne = new THREE.MeshPhysicalMaterial({ color: 'red', transmission:1 , clearcoat:1, ior:1.74, thickness:3.12});
 const customMaterialTwo = new THREE.MeshPhysicalMaterial({ color: 'green', transmission:1 , clearcoat:1, ior:1.74, thickness:3.12});

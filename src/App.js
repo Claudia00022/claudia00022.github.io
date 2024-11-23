@@ -67,7 +67,7 @@ function App(props) {
             />
           </motion.div> */}
 
-          <div>
+          
             <Name />
             <MediaIcons />
             <NavBar />
@@ -80,7 +80,6 @@ function App(props) {
             <Motto />
             <Contact />
             {/* <SmileFace /> */}
-          </div>
         </div>
       </SmoothScroll>
     </>

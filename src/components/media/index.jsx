@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect } from "react";
+import React, { useRef, useLayoutEffect, useState } from "react";
 import {
   useScroll,
   motion,
@@ -8,6 +8,7 @@ import {
 import { EffectComposer, Noise } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
 import Scene from "./Scene";
+import { projects_data } from "../../projects_data";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -15,24 +16,9 @@ gsap.registerPlugin(ScrollTrigger);
 //Styles
 // import "./media.style.css";
 
-const projects_data = [
-  {
-    id: 1,
-    title: "vpmu-STUDIO",
-    link: "https://www.vpmu-studio.co.uk/",
-    content: "Apr 2023/Design & Dev",
-    speed: 0.5,
-  },
-  {
-    id: 2,
-    title: "j&l GRADZKIE",
-    link: "https://www.jl-gradzkie.pl/",
-    content: "Sep 2022/Design",
-    speed: 0.5,
-  },
-];
 
 function Media() {
+  const [activeProject, setActiveProject] = useState(null);
   const container = useRef(null);
   const contactSection = useRef(null);
 
@@ -62,8 +48,9 @@ function Media() {
 
   return (
     <>
+    <div className="relative">
       <div
-        className="h-screen relative shadow "
+        className="h-screen relative shadow z-10 "
         style={{ backgroundColor: "#E34300" }}
       >
         <div className="absolute top-20 left-0 w-full  ">
@@ -71,26 +58,28 @@ function Media() {
             <p className="text text-left font-bold ">Stuff I Built (That Didn’t Fall Apart)</p>
           </div>
 
-          {projects_data.map((project) => (
+          {projects_data.map((project,i) => (
             <div
+            onMouseLeave={() => {setActiveProject(null)}}
               ref={container}
               key={project.id}
               className="flex items-center justify-start border-b border-slate-500  "
             >
               <p className="text font-bold ms-52 w-64 ">{project.content}</p>
 
-              <div className="ms-40 relative">
-                <motion.p style={{ clipPath: clip }}>
-                  <a href={project.link} className="title " style={{color: '#FFFF99'}}>
+              <div className="ms-40 relative"  >
+                <motion.p style={{ clipPath: clip }} >
+                  <a href={project.link} className="title " style={{color: '#FFFF99'}} >
                     {project.title}
                   </a>
                 </motion.p>
 
-                <div className="absolute top-0 shadow m-0 p-0 ">
+                <div className="absolute top-0 shadow m-0 p-0 " >
                   <a
                     href={project.link}
                     className="title "
                     style={{ color: "#141414" }}
+                    onMouseOver={() => {setActiveProject(i)}}
                   >
                     {project.title}
                   </a>
@@ -99,7 +88,9 @@ function Media() {
             </div>
           ))}
         </div>
-        <Scene />
+   
+      </div>
+      <Scene activeProject = {activeProject} />
       </div>
     </>
   );

@@ -1,11 +1,11 @@
 import { Canvas } from "@react-three/fiber";
 import Model from "./Model";
 
-export default function Scene() {
+export default function Scene({activeProject}) {
   return (
-    <div className="relative h-screen w-screen">
+    <div className=" absolute top-0 h-screen w-full  z-10">
       <Canvas>
-        <Model />
+        <Model activeProject = {activeProject}/>
       </Canvas>
     </div>
   );
