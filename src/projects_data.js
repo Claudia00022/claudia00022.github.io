@@ -6,7 +6,8 @@
       link: "https://www.vpmu-studio.co.uk/",
       content: "Apr 2023/Design & Dev",
       speed: 0.5,
-      src: '/img/color.jpg',
+      src: '/img/laptop.jpg',
+      color: 'red'
     },
     {
       id: 2,
@@ -14,7 +15,8 @@
       link: "https://www.jl-gradzkie.pl/",
       content: "Sep 2022/Design",
       speed: 0.5,
-      src:'/img/elephant.JPG',
+      src:'/img/computer.jpg',
+      color: 'green'
     },
   ];
 

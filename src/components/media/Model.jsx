@@ -12,10 +12,12 @@ export default function Model({ activeProject }) {
   const mouse = useMouse();
   const { viewport } = useThree();
   const mesh = useRef();
+  const opacity = useMotionValue(0);
   const textures = [
     useTexture(projects_data[0].src),
     useTexture(projects_data[1].src),
   ];
+  // const texture = useTexture('/img/elephant.JPG')
   const scale = useAspect(
     textures[0].image.width,
     textures[0].image.height,
@@ -27,9 +29,12 @@ export default function Model({ activeProject }) {
   };
 
   useEffect( () => {
-    console.log(activeProject)
     if(activeProject != null){
         mesh.current.material.uniforms.uTexture.value = textures[activeProject]
+        animate(opacity, 1, {duration: 0.2, onUpdate: latest => mesh.current.material.uniforms.uAlpha.value = latest})
+    }
+    else {
+        animate(opacity, 0, {duration: 0.2, onUpdate: latest => mesh.current.material.uniforms.uAlpha.value = latest})
     }
 }, [activeProject])
 
@@ -66,7 +71,7 @@ export default function Model({ activeProject }) {
   return (
     <motion.mesh scale={scale} ref={mesh} position-x={x} position-y={y}>
       <planeGeometry args={[1, 1, 15, 15]} />
-      {/* <meshBasicMaterial color="black" wireframe={true} />*/}
+      {/* <meshBasicMaterial color="black" wireframe={true} /> */}
       <shaderMaterial
         fragmentShader={fragment}
         vertexShader={vertex}

@@ -4,7 +4,7 @@ import './assets/fonts/fonts.css';
 import React, { useState, useRef } from "react";
 import About from "./pages/about";
 import NavBar from "./components/nav";
-import Media from "./components/media";
+import Work from './components/media/Work';
 import Skills from "./pages/skills/Skills";
 import ArtPage from "./pages/ArtPage/ArtPage";
 import CanvasComponent from "./components/CanvasComponent";
@@ -76,7 +76,7 @@ function App(props) {
             <About />
             <Skills   scrollYP = {scrollYProgress}/>
             <ArtPage />
-            <Media />
+            <Work />
             <Motto />
             <Contact />
             {/* <SmileFace /> */}

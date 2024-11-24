@@ -16,9 +16,8 @@ gsap.registerPlugin(ScrollTrigger);
 //Styles
 // import "./media.style.css";
 
-
-function Media() {
-  const [activeProject, setActiveProject] = useState(null);
+function Projects({ setActiveMenu }) {
+  // const [activeProject, setActiveProject] = useState('red');
   const container = useRef(null);
   const contactSection = useRef(null);
 
@@ -46,40 +45,76 @@ function Media() {
     };
   }, []);
 
+  // State to track the hovered ID
+  // const [hoveredId, setHoveredId] = useState(null);
+
+  // Handler for mouse enter
+  // const handleMouseEnter = (id) => {
+  //   setHoveredId(id);
+  //   console.log(`Hovered over: ${id}`);
+  // };
+
+  // const [activeProject, setActiveProject] = useState(
+  //   projects_data.reduce((acc, item) => {
+  //     acc[item.id] = item.src; // Initialize each id with its initial color
+  //     return acc;
+  //   }, {})
+  // );
+
+  // const changeImg = (id) => {
+  //   setActiveProject((prevImg) => ({
+  //     ...prevImg,
+  //     [id]: prevImg[id] === 'yellow' ? projects_data.find(item => item.id === id).color : 'yellow', // Toggle color
+  //   }));
+  // };
+
   return (
     <>
-    <div className="relative">
       <div
-        className="h-screen relative shadow z-10 "
+        className="h-screen w-full  relative   z-10 mix-blend-difference  "
         style={{ backgroundColor: "#E34300" }}
       >
         <div className="absolute top-20 left-0 w-full  ">
           <div className=" ms-52  mb-52">
-            <p className="text text-left font-bold ">Stuff I Built (That Didn’t Fall Apart)</p>
+            <p className="text text-left font-bold ">
+              Stuff I Built (That Didn’t Fall Apart)
+            </p>
           </div>
 
-          {projects_data.map((project,i) => (
+          {projects_data.map((project, i) => (
             <div
-            onMouseLeave={() => {setActiveProject(null)}}
               ref={container}
               key={project.id}
               className="flex items-center justify-start border-b border-slate-500  "
             >
               <p className="text font-bold ms-52 w-64 ">{project.content}</p>
 
-              <div className="ms-40 relative"  >
-                <motion.p style={{ clipPath: clip }} >
-                  <a href={project.link} className="title " style={{color: '#FFFF99'}} >
+              <div
+                className="ms-40 relative"
+                onMouseLeave={() => {
+                  setActiveMenu(null);
+                }}
+              >
+                <motion.p
+                  style={{ clipPath: clip }}
+                  onMouseOver={() => {
+                    setActiveMenu(i);
+                  }}
+                >
+                  <a
+                    href={project.link}
+                    className="title "
+                    style={{ color: "red" }}
+                  >
                     {project.title}
                   </a>
                 </motion.p>
 
-                <div className="absolute top-0 shadow m-0 p-0 " >
+                <div className="absolute top-0 -z-20 m-0 p-0  ">
                   <a
                     href={project.link}
                     className="title "
-                    style={{ color: "#141414" }}
-                    onMouseOver={() => {setActiveProject(i)}}
+                    style={{ color: "black" }}
                   >
                     {project.title}
                   </a>
@@ -88,12 +123,10 @@ function Media() {
             </div>
           ))}
         </div>
-   
       </div>
-      <Scene activeProject = {activeProject} />
-      </div>
+      {/* <Scene activeProject = {activeProject} /> */}
     </>
   );
 }
 
-export default Media;
+export default Projects;
