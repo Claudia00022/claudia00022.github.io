@@ -31,10 +31,10 @@ export default function Model({ activeProject }) {
   useEffect( () => {
     if(activeProject != null){
         mesh.current.material.uniforms.uTexture.value = textures[activeProject]
-        animate(opacity, 1, {duration: 0.2, onUpdate: latest => mesh.current.material.uniforms.uAlpha.value = latest})
+        animate(opacity, 1, {duration: 0.2})
     }
     else {
-        animate(opacity, 0, {duration: 0.2, onUpdate: latest => mesh.current.material.uniforms.uAlpha.value = latest})
+        animate(opacity, 0, {duration: 0.2})
     }
 }, [activeProject])
 
@@ -42,7 +42,7 @@ export default function Model({ activeProject }) {
     uTexture: { value: textures[0] },
     uDelta: { value: { x: 0, y: 0 } },
     uAmplitude: { value: 0.0005 },
-    uAlpha: { value: 0 },
+    // uAlpha: { value: 0},
   });
 
   const lerp = (x, y, a) => x * (1 - a) + y * a;

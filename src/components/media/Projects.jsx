@@ -16,7 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
 //Styles
 // import "./media.style.css";
 
-function Projects({ setActiveMenu }) {
+function Projects({ setActiveMenu, activeProject}) {
   // const [activeProject, setActiveProject] = useState('red');
   const container = useRef(null);
   const contactSection = useRef(null);
@@ -71,10 +71,11 @@ function Projects({ setActiveMenu }) {
   return (
     <>
       <div
-        className="h-screen w-full  relative   z-10 mix-blend-difference  "
+        className="h-screen w-full  relative   z-10   "
         style={{ backgroundColor: "#E34300" }}
       >
         <div className="absolute top-20 left-0 w-full  ">
+        <Scene activeProject = {activeProject} />
           <div className=" ms-52  mb-52">
             <p className="text text-left font-bold ">
               Stuff I Built (That Didn’t Fall Apart)

@@ -7,8 +7,8 @@ export default function Work(){
     return(
         <main>
         <div>
-            <Projects setActiveMenu = {setActiveProject} />
-            <Scene activeProject={activeProject} />
+            <Projects setActiveMenu = {setActiveProject} activeProject={activeProject} />
+            {/* <Scene activeProject={activeProject} /> */}
         </div>
     </main>
     )
