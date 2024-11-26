@@ -16,10 +16,10 @@ void main() {
 export const fragment = `
 varying vec2 vUv;
 uniform sampler2D uTexture;
-uniform float uAlpha;
+uniform float uOpacity;
 void main() {
     vec3 texture = texture2D(uTexture, vUv).rgb;
-    gl_FragColor = vec4(texture, 1.0);
+    gl_FragColor = vec4(texture, uOpacity);
     // gl_FragColor = vec4(1., 0., 0., 1.);
 }
 `;

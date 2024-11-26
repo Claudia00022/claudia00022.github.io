@@ -31,10 +31,10 @@ export default function Model({ activeProject }) {
   useEffect( () => {
     if(activeProject != null){
         mesh.current.material.uniforms.uTexture.value = textures[activeProject]
-        animate(opacity, 1, {duration: 0.2})
+        animate(opacity, 0.8, {duration: 0.2, onUpdate: latest => mesh.current.material.uniforms.uOpacity.value = latest})
     }
     else {
-        animate(opacity, 0, {duration: 0.2})
+        animate(opacity, 0, {duration: 0.2, onUpdate: latest => mesh.current.material.uniforms.uOpacity.value = latest})
     }
 }, [activeProject])
 
@@ -43,6 +43,8 @@ export default function Model({ activeProject }) {
     uDelta: { value: { x: 0, y: 0 } },
     uAmplitude: { value: 0.0005 },
     // uAlpha: { value: 0},
+    uOpacity : {value: 0.5},
+
   });
 
   const lerp = (x, y, a) => x * (1 - a) + y * a;
@@ -69,13 +71,16 @@ export default function Model({ activeProject }) {
     [viewport.height / 2, (-1 * viewport.height) / 2]
   );
   return (
-    <motion.mesh scale={scale} ref={mesh} position-x={x} position-y={y}>
-      <planeGeometry args={[1, 1, 15, 15]} />
+    <motion.mesh scale={scale} ref={mesh} position-x={x} position-y={y} >
+      <planeGeometry args={[1, 1, 15, 15]}    opacity = {0}/>
       {/* <meshBasicMaterial color="black" wireframe={true} /> */}
       <shaderMaterial
         fragmentShader={fragment}
         vertexShader={vertex}
+        transparent = {true}
         uniforms={uniforms.current}
+
+     
       />
     </motion.mesh>
   );

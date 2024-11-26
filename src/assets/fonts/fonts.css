@@ -24,3 +24,17 @@
     font-weight: bold;
     font-style: normal;
   }
+  @font-face {
+    font-family: "PPGatwick-Bold";
+    src: url("./PPGatwick-Bold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "PPGatwick-Light";
+    src: url("./PPGatwick-Ultralight.otf") format("opentype");
+    font-weight: lighter;
+    font-style: normal;
+  }
+  

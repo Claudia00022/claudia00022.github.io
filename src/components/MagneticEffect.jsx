@@ -1,6 +1,6 @@
 'use client'
 import { useRef, useState, useEffect} from "react";
-import { motion } from 'framer-motion-3d';
+import { motion } from 'framer-motion';
 
 export default function MagneticEffect({children}){
   const ref = useRef(null);
