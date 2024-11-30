@@ -54,13 +54,14 @@ function Skills(props) {
   return (
     <>
       <div
-        className="h-screen relative shadow  "
-        style={{ backgroundColor: "#E34300" }}
-      >
-        <div className="absolute top-52 left-0 w-full" ref={sectionTwoRef}>
+        className="h-128 relative shadow  "
+        style={{ backgroundColor: "#EEEFEE" }}
+      > 
+      <p className="title border-b mb-3 " style={{color:'#F7F7AA', fontWeight:'bold', fontSize: '100px'}}>3.</p>
+        <div className="absolute center w-full" ref={sectionTwoRef}>
           <div className="flex items-center justify-start ms-52 mb-5 ">
          
-            <p className="text text-right font-bold ">What I Bring to the Table (Besides Snacks)</p>
+            {/* <p className="text text-right font-bold ">What I Bring to the Table (Besides Snacks)</p> */}
           </div>
 
           {projects_data.map((project) => (

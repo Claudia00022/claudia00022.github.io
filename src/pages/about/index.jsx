@@ -43,9 +43,10 @@ function About(props) {
 
   return (
     <>
-      <div className=" relative h-screen -z-10 border-t border-b border-gray-500">
-      <div className="absolute top-52 left-0 w-full h-3/4" ref={sectionRef}>
-        <div className=" w-3/6 absolute top-0 left-52">
+      <div className=" relative h-screen -z-10 border-gray-500">
+      <div className="absolute top-52 left-0 w-full h-3/4" >
+        <div className=" w-3/6 absolute bottom-10 ms-5">
+          <p className="title border-b mb-3 " style={{color:'#F7F7AA', fontWeight:'bold', fontSize: '100px'}}>2.</p>
           <AnimatedText />
         </div>
         <div className="absolute bottom-10 right-52  w-3/6">

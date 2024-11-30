@@ -17,10 +17,11 @@ export default function SmileFace(props) {
   }
   return (
     <>
-      <div className="h-screen w-screen relative " style={{backgroundColor: '#E34300'}}>
-      <div className=" absolute center z-10 ">
+      <div className="h-screen w-screen relative " style={{backgroundColor: '#EEEFEE'}}>
+      <div className=" absolute bottom-10 z-10 w-4/12 ms-5 ">
+      <p className="title border-b mb-3 " style={{color:'#F7F7AA', fontWeight:'bold', fontSize: '100px'}}>1.</p>
       <p className=" ms-5 text">Klaudia Krzeminska</p>
-      <p className="title" style={{color: '#FFFF99'}}><span >Free</span>lancer Fronted Webdeveloper</p>
+      <p className="title" style={{color: '#3F3B37'}}><span >Free</span>lancer Fronted Webdeveloper</p>
       </div>
         <div className="absolute top-0 h-full w-full opacity-80">
           <Canvas>

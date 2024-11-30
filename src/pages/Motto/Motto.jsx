@@ -34,7 +34,7 @@ export default function Motto(){
 
 
     return(
-        <div ref={motto_container} className=" h-full w-full relative" style={{backgroundColor: '#D4D2CD', border:'10px solid #ffff99'}}>
+        <div ref={motto_container} className=" h-full w-full relative" style={{backgroundColor: '#EEEFEE', border:'10px solid #ffff99'}}>
         <div ref={clauds_img} className=" absolute -bottom-10 -left-60">
         <img src={CloudsImg} alt= 'clouds' />
         </div>

@@ -72,7 +72,7 @@ function Projects({ setActiveMenu, activeProject}) {
     <>
       <div
         className="h-screen w-full  relative   z-10   "
-        style={{ backgroundColor: "#E34300" }}
+        style={{ backgroundColor: "#ffffff" }}
       >
         <div className="absolute top-20 left-0 w-full  ">
         <Scene activeProject = {activeProject} />

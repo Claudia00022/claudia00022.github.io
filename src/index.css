@@ -12,6 +12,7 @@ body{
     position: relative;
     height: 100%;
     background-color: #D4D2CD;
+    background-color: #EEEFEE;
  
     
     
@@ -39,22 +40,25 @@ html{
 }
 
 .title{
-    font-family: "PPGatwick-Light", sans-serif;
-    /* font-weight: 700; */
-    /* font-style: bold; */
+    /* font-family: "PPGatwick-Light", sans-serif; */
+    font-family: "Roboto Mono", sans-serif;
+    font-weight: 700;
+    font-style: bold;
     font-size: 5.75rem;
     color: white;
     color: #EE6868;
     color: #BC4047;
     color: #FFD84A;
     color: #E34300;
+    color: #E7AA2C;
+    color: #3F3B37;
     /* color: #FFFF99; */
  
    
   
     /* opacity: 0.7; */
     /* letter-spacing: -.05em; */
-    /* line-height:120%; */
+    line-height:80%;
     text-transform: uppercase;
 }
 
