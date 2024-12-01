@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.094112c9.css",
-    "main.js": "/static/js/main.121add6c.js",
+    "main.css": "/static/css/main.28111268.css",
+    "main.js": "/static/js/main.fba2eafc.js",
     "static/media/elephant.JPG": "/static/media/elephant.a8fade4ba3c1b57355c7.JPG",
     "static/media/girl.jpg": "/static/media/girl.2f688dcbfb9a22e20c8d.jpg",
     "static/media/womenInColorMask.jpg": "/static/media/womenInColorMask.5c981d0203ec9ac05bfc.jpg",
@@ -10,26 +10,33 @@
     "static/media/marlyn.JPG": "/static/media/marlyn.0640a86a87f8e87cb0d6.JPG",
     "static/media/pencils.png": "/static/media/pencils.f9dc67228aa0e27be3de.png",
     "static/media/ja.jpg": "/static/media/ja.8423ea37af0fd40cbace.jpg",
+    "static/media/smileFaces.jpg": "/static/media/smileFaces.2b93ae2a51621d0096d2.jpg",
     "static/media/mirror-3.png": "/static/media/mirror-3.afddb76023f8ee0f8a65.png",
     "static/media/3.png": "/static/media/3.833adab41535ad5445e5.png",
+    "static/media/smileMeTwo.glb": "/static/media/smileMeTwo.270b2aef2d578b1d4e57.glb",
     "static/media/smile5.glb": "/static/media/smile5.a9c480fb383524257483.glb",
     "static/media/smile4.glb": "/static/media/smile4.418d0ef5e84f162da7c2.glb",
     "static/media/smile6.glb": "/static/media/smile6.6c0c53d017296ac1fb10.glb",
     "static/media/smile7.glb": "/static/media/smile7.08bd9b22a0a57789894e.glb",
-    "static/media/smileMeTwo.glb": "/static/media/smileMeTwo.bcbb93b81f8e0472fc6a.glb",
     "static/media/smileFace.glb": "/static/media/smileFace.65a8256e0e2369caef0c.glb",
     "static/media/smileFace2.glb": "/static/media/smileFace2.bed03aca8ac20533c672.glb",
     "static/media/smileFace3.glb": "/static/media/smileFace3.97ae999df0658f45cf41.glb",
+    "static/media/Fedro-LightItalic.otf": "/static/media/Fedro-LightItalic.dbf79c835ac77ed5a638.otf",
+    "static/media/Fedro-Light.otf": "/static/media/Fedro-Light.3522674948928d73e19f.otf",
     "static/media/smileMe.glb": "/static/media/smileMe.c17971b74d9472c09b09.glb",
+    "static/media/PPGatwick-Bold.otf": "/static/media/PPGatwick-Bold.b22d27c488efb5f3b0f7.otf",
+    "static/media/PPGatwick-Ultralight.otf": "/static/media/PPGatwick-Ultralight.10f53d57bfe579419b5b.otf",
+    "static/media/WILD WORLD.otf": "/static/media/WILD WORLD.ad49c6992312da43d9b4.otf",
     "static/media/insta.png": "/static/media/insta.f42f9e92e4d53d0bce52.png",
     "static/media/mail.png": "/static/media/mail.a8df4638190bd6b7b9b5.png",
+    "static/media/Gothic60-Regular.otf": "/static/media/Gothic60-Regular.e2c76f39e1cfac6abd27.otf",
     "index.html": "/index.html",
     "static/media/circle.svg": "/static/media/circle.3d56fc1b313de66a917c.svg",
-    "main.094112c9.css.map": "/static/css/main.094112c9.css.map",
-    "main.121add6c.js.map": "/static/js/main.121add6c.js.map"
+    "main.28111268.css.map": "/static/css/main.28111268.css.map",
+    "main.fba2eafc.js.map": "/static/js/main.fba2eafc.js.map"
   },
   "entrypoints": [
-    "static/css/main.094112c9.css",
-    "static/js/main.121add6c.js"
+    "static/css/main.28111268.css",
+    "static/js/main.fba2eafc.js"
   ]
 }
