@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import "./nav.style.css";
 
 const NavBar = (props) => {
-  const [toggledLinks, setToggledLinks] = useState("home");
-  const [toggledAbout, setToggledAbout] = useState("about");
-  const [toggledContact, setToggledContact] = useState("contact");
-  const [toggledArt, setToggledArt] = useState("projects");
+  const [toggledLinks, setToggledLinks] = useState("01/home");
+  const [toggledAbout, setToggledAbout] = useState("02/about");
+  const [toggledContact, setToggledContact] = useState("03/contact");
+  const [toggledArt, setToggledArt] = useState("04/projects");
 
   function handleClick() {
     setToggledLinks(

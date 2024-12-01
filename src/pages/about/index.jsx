@@ -43,15 +43,27 @@ function About(props) {
 
   return (
     <>
-      <div className=" relative h-screen -z-10 border-gray-500">
-      <div className="absolute top-52 left-0 w-full h-3/4" >
-        <div className=" w-3/6 absolute bottom-10 ms-5">
-          <p className="title border-b mb-3 " style={{color:'#F7F7AA', fontWeight:'bold', fontSize: '100px'}}>2.</p>
+      <div className=" relative h-screen -z-10 ">
+      <div className="absolute  left-0 w-full h-screen " >
+        <div className=" w-3/6  absolute top-0 ms-5 border-b mt-10 bg-slate-50 right-5">
+          <p className="title mb-3 " style={{opacity:0.5, fontWeight:'bold', fontSize: '60px'}}>01/</p>
           <AnimatedText />
         </div>
-        <div className="absolute bottom-10 right-52  w-3/6">
-          <div className="flex mt-10 justify-end items-end">
-            <div className="w-3/12 h-3/4 text  ">
+        <div className="absolute left-5  w-3/6 border-b bottom-0  ">
+          <div className="flex  justify-start items-end">
+          <div className=" w-6/12 h-3/4 relative ">
+                <img
+                  src={Ja}
+                  alt="myImage"
+                  className="object-cover"
+                  style={{
+                    width: "700px",
+                    height: "800px",
+                  }}
+                ></img>
+                <Smile />
+              </div>
+            <div className="w-4/12 h-3/4 text  ">
               <p>
                 I am <span>FREELANCE </span> frontend developer with a passion
                 for creating dynamic and responsive web applications using the
@@ -65,18 +77,7 @@ function About(props) {
               </p>
               </div>
 
-              <div className=" w-6/12 h-3/4 relative ">
-                <img
-                  src={Ja}
-                  alt="myImage"
-                  className="object-cover"
-                  style={{
-                    width: "700px",
-                    height: "800px",
-                  }}
-                ></img>
-                <Smile />
-              </div>
+             
             </div>
           </div>
           </div>

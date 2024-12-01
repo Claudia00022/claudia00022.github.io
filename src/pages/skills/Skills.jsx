@@ -40,6 +40,7 @@ const projects_data = [
 ];
 
 function Skills(props) {
+  
   const sectionTwoRef = useRef(null);
 
   const container = useRef(null);
@@ -54,11 +55,15 @@ function Skills(props) {
   return (
     <>
       <div
-        className="h-128 relative shadow  "
+        className="h-screen relative -z-10"
         style={{ backgroundColor: "#EEEFEE" }}
       > 
-      <p className="title border-b mb-3 " style={{color:'#F7F7AA', fontWeight:'bold', fontSize: '100px'}}>3.</p>
-        <div className="absolute center w-full" ref={sectionTwoRef}>
+      {/* <p className="title ms-5 mb-3 " style={{opacity: 0.5, fontWeight:'bold', fontSize: '60px'}}>2.</p> */}
+      <div className=" w-3/6  absolute top-0 ms-5 mt-16 bg-slate-50  -z-10">
+          <p className="title mb-3 " style={{opacity:0.5, fontWeight:'bold', fontSize: '60px'}}>03/</p>
+          <p className="title"  style={{fontSize: '4rem'}}>What I Bring<br></br> to the Table<br></br> (Besides Snacks)</p>
+        </div>
+        <div className="absolute center mt-10" ref={sectionTwoRef} style={{width: 'calc(100vw - 60px)'}}>
           <div className="flex items-center justify-start ms-52 mb-5 ">
          
             {/* <p className="text text-right font-bold ">What I Bring to the Table (Besides Snacks)</p> */}
@@ -68,7 +73,7 @@ function Skills(props) {
             <div
               ref={container}
               key={project.id}
-              className="flex items-center justify-start border-t"
+              className="flex items-center justify-start border-b"
               style={{ borderColor: "grey" }}
             >
               <p className="text font-bold ms-52 w-64">{project.content}</p>

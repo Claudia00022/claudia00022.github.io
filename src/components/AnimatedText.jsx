@@ -40,6 +40,7 @@ export default function AnimatedText() {
           initial="hidden"
           animate= {isInView ? 'visible' : 'hidden'}
           transition={{ staggerChildren: 0.1 }}
+          style={{fontSize: '4rem'}}
         >
           {text.split("").map((char, index) => (
             <motion.p key={index} className="inline-block" variants={defaultAnimations}>

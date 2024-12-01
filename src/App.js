@@ -52,7 +52,9 @@ function App(props) {
   return (
     <>
       <SmoothScroll>
+      <div className=' border border-b-0 mt-5 mb-5 ms-5 me-5 fixed z-20 top-0 left-0 ' style={{height: 'calc(100vh - 60px)', width:'calc(100vw - 60px)'}}></div>
         <div className="relative overflow-hidden " ref={scene}>
+        
           {/* <motion.div
             className="absolute top-0 left-0 contact_mask z-50  "
             animate={{
