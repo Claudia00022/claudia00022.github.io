@@ -13,11 +13,11 @@ export default function CanvasComponent(props) {
 
   return (
     <>
-      <div className="h-screen w-screen relative mb-52">
+      <div className="h-screen w-screen relative ">
         <div className="absolute top-0 h-full w-full -z-10">
           <Canvas
             orthographic
-            camera={{ position: [0, 0, 5], zoom: 150 }}
+            camera={{ position: [5, 0, 5], zoom: 150 }}
             // scale={[1, 1, 1]}
           >
             <ambientLight intensity={0.5} />

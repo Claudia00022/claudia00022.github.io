@@ -43,17 +43,23 @@ export default function ArtPage() {
     <>
       <div ref={container} className="container_art ">
 
+      <div className=" w-3/6  absolute top-0 right-0 ms-5 mt-16 bg-slate-50  -z-10">
+          <p className="title mb-3 " style={{opacity:0.5, fontWeight:'bold', fontSize: '60px'}}>05/</p>
+          <p className="title"  style={{fontSize: '4rem'}}>Art is <br></br>my passion</p>
+        </div>
+        <div className="w-full h-full bg-red-400 absolute top-96 left-0"></div>
+
         
-          <div className="absolute left-52 top-52 z-50">
+          {/* <div className="absolute left-52 top-52 z-50">
             <h1 ref={title} className="title text-center"   style={{ color:'black', fontSize: "9.5rem", opacity:0.7 }}>
               ART
             </h1>
             <h1 ref={title2} className="title text-center"   style={{ color:'black', fontSize: "9.5rem", opacity:0.7 }}>
               IS
             </h1>
-          </div>
+          </div> */}
 
-          <div>
+          {/* <div>
             <p
               className="title absolute bottom-0 left-52 text-center  z-10"
               style={{ color:'#E34300', fontSize: "9.5rem" }}
@@ -61,9 +67,9 @@ export default function ArtPage() {
             >
               {word}
             </p>
-          </div>
+          </div> */}
 
-          <div ref={sectionTwoRef} >
+          {/* <div ref={sectionTwoRef} className=" w-full h-full absolute top-0 left-5" >
             <div className="images">
               {images.map((image, i) => {
                 return (
@@ -89,7 +95,7 @@ export default function ArtPage() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
       
           {/* <SmileTwo /> */}
  

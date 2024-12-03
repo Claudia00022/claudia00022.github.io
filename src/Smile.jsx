@@ -17,7 +17,7 @@ function MySmile() {
 
 export default function Smile() {
   return (
-    <div className="absolute -top-10 -left-24 " style={{width:'600px', height:'600px'}}>
+    <div className="absolute -top-16 " style={{width:'600px', height:'600px'}}>
     <Canvas>
     <ambientLight intensity={5.0} />
       {/* <directionalLight intensity={2.5} position={[0, 8, 0]} /> */}

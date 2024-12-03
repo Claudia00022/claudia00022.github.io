@@ -71,16 +71,19 @@ function Projects({ setActiveMenu, activeProject}) {
   return (
     <>
       <div
-        className="h-screen w-full  relative   z-10   "
-        style={{ backgroundColor: "#ffffff" }}
+        className="h-screen w-full  relative   z-10 mt-20  "
+        style={{ backgroundColor: "#EEEFEE" }}
+        
       >
-        <div className="absolute top-20 left-0 w-full  ">
+         <div className=" w-3/6  absolute top-0 ms-5 mt-16 bg-slate-50  -z-10">
+          <p className="title mb-3 " style={{opacity:0.5, fontWeight:'bold', fontSize: '60px'}}>04/</p>
+          <p className="title"  style={{fontSize: '4rem'}}>Stuff I Built<br></br> (That Didn’t <br></br>Fall Apart)</p>
+        </div>
         <Scene activeProject = {activeProject} />
-          <div className=" ms-52  mb-52">
-            <p className="text text-left font-bold ">
-              Stuff I Built (That Didn’t Fall Apart)
-            </p>
-          </div>
+        <div className="absolute center w-full" style={{width: 'calc(100vw - 60px)'}}>
+        
+         
+       
 
           {projects_data.map((project, i) => (
             <div
@@ -105,7 +108,7 @@ function Projects({ setActiveMenu, activeProject}) {
                   <a
                     href={project.link}
                     className="title "
-                    style={{ color: "red" }}
+                    style={{ color: "#FFFF99" }}
                   >
                     {project.title}
                   </a>
@@ -115,7 +118,7 @@ function Projects({ setActiveMenu, activeProject}) {
                   <a
                     href={project.link}
                     className="title "
-                    style={{ color: "black" }}
+                    style={{ color: "black", opacity:0.6 }}
                   >
                     {project.title}
                   </a>
@@ -125,7 +128,6 @@ function Projects({ setActiveMenu, activeProject}) {
           ))}
         </div>
       </div>
-      {/* <Scene activeProject = {activeProject} /> */}
     </>
   );
 }

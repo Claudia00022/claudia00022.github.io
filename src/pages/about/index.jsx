@@ -43,13 +43,13 @@ function About(props) {
 
   return (
     <>
-      <div className=" relative h-screen -z-10 ">
+      <div className=" relative h-screen -z-10 mt-20 ">
       <div className="absolute  left-0 w-full h-screen " >
         <div className=" w-3/6  absolute top-0 ms-5 border-b mt-10 bg-slate-50 right-5">
           <p className="title mb-3 " style={{opacity:0.5, fontWeight:'bold', fontSize: '60px'}}>01/</p>
           <AnimatedText />
         </div>
-        <div className="absolute left-5  w-3/6 border-b bottom-0  ">
+        <div className="absolute left-5  w-5/6 border-b bottom-0  ">
           <div className="flex  justify-start items-end">
           <div className=" w-6/12 h-3/4 relative ">
                 <img
