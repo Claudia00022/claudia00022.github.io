@@ -17,14 +17,14 @@ export default function SmileFace(props) {
   }
   return (
     <>
-      <div className="h-screen w-screen relative " style={{backgroundColor: '#EEEFEE'}}>
+      <div className="h-screen w-full relative " style={{backgroundColor: '#EEEFEE'}}>
       <div className=" absolute bottom-10 w-4/12 ms-5 ">
       {/* <p className="title border-b mb-3 " style={{color:'#F7F7AA', fontWeight:'bold', fontSize: '100px'}}>1.</p> */}
       <p className=" ms-3 text">Klaudia Krzeminska</p>
       <p className="title border-b" style={{color: '#3F3B37'}}><span >Free</span>lancer Fronted Webdeveloper and Webdesigner <span className="text">/01</span></p>
       </div>
       <div className="absolute bottom-10 w-4/12 text right-10 border-b">Lets have fun</div>
-        <div className="absolute top-0 h-full w-full opacity-80">
+        <div className="absolute top-0 h-screen w-full opacity-80" style={{border: '5px solid black'}}>
           <Canvas>
             <OrthographicCamera makeDefault zoom={80} position={[18, -1, 5]}/>
             <CamearaAnimation />

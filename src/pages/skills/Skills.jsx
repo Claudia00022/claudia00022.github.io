@@ -55,8 +55,8 @@ function Skills(props) {
   return (
     <>
       <div
-        className="h-screen relative -z-10 mt-20"
-        style={{ backgroundColor: "#EEEFEE" }}
+        className="h-screen w-full relative -z-20 mt-20"
+        style={{ backgroundColor: "#EEEFEE" , border : '5px sollid black' }}
       > 
       {/* <p className="title ms-5 mb-3 " style={{opacity: 0.5, fontWeight:'bold', fontSize: '60px'}}>2.</p> */}
       <div className=" w-3/6  absolute top-0 ms-5 mt-16 bg-slate-50  -z-10">

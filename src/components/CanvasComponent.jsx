@@ -13,7 +13,7 @@ export default function CanvasComponent(props) {
 
   return (
     <>
-      <div className="h-screen w-screen relative ">
+      <div className="h-screen w-full relative ">
         <div className="absolute top-0 h-full w-full -z-10">
           <Canvas
             orthographic

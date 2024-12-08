@@ -44,7 +44,7 @@ function About(props) {
   return (
     <>
       <div className=" relative h-screen -z-10 mt-20 ">
-      <div className="absolute  left-0 w-full h-screen " >
+      <div className="absolute  left-0 w-full h-screen "  style={{border: '5px solid black'}} >
         <div className=" w-3/6  absolute top-0 ms-5 border-b mt-10 bg-slate-50 right-5">
           <p className="title mb-3 " style={{opacity:0.5, fontWeight:'bold', fontSize: '60px'}}>01/</p>
           <AnimatedText />

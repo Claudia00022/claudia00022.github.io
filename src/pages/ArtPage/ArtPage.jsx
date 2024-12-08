@@ -41,68 +41,9 @@ export default function ArtPage() {
 
   return (
     <>
-      <div ref={container} className="container_art ">
-
-      <div className=" w-3/6  absolute top-0 right-0 ms-5 mt-16 bg-slate-50  -z-10">
-          <p className="title mb-3 " style={{opacity:0.5, fontWeight:'bold', fontSize: '60px'}}>05/</p>
-          <p className="title"  style={{fontSize: '4rem'}}>Art is <br></br>my passion</p>
+      <div className="container_art w-full bg-black relative " >
+        <div className="w-screen h-screen bg-red-400 sticky top-0"  style={{height: 'calc(100vh - 60px)', width:'calc(100vw - 60px)'}}></div>
         </div>
-        <div className="w-full h-full bg-red-400 absolute top-96 left-0"></div>
-
-        
-          {/* <div className="absolute left-52 top-52 z-50">
-            <h1 ref={title} className="title text-center"   style={{ color:'black', fontSize: "9.5rem", opacity:0.7 }}>
-              ART
-            </h1>
-            <h1 ref={title2} className="title text-center"   style={{ color:'black', fontSize: "9.5rem", opacity:0.7 }}>
-              IS
-            </h1>
-          </div> */}
-
-          {/* <div>
-            <p
-              className="title absolute bottom-0 left-52 text-center  z-10"
-              style={{ color:'#E34300', fontSize: "9.5rem" }}
-              ref={title3}
-            >
-              {word}
-            </p>
-          </div> */}
-
-          {/* <div ref={sectionTwoRef} className=" w-full h-full absolute top-0 left-5" >
-            <div className="images">
-              {images.map((image, i) => {
-                return (
-                  <div
-                    ref={(ref) => (imagesRef.current[i] = ref)}
-                    className="imageContainer "
-                    key={image.id}
-                  >
-                    <img
-                      src={image.img_link}
-                      alt="art images"
-                      className="img_art"
-                    ></img>
-                  </div>
-                );
-              })}
-              <div className=" art_text_container">
-                <p className="text">
-                  I am constantly inspired by the endless possibilities within
-                  art, and I believe that every project is an opportunity to
-                  push boundaries, challenge conventions, and expand my creative
-                  horizons.
-                </p>
-              </div>
-            </div>
-          </div> */}
-      
-          {/* <SmileTwo /> */}
- 
-        
- 
-        
-      </div>
     </>
   );
 }
