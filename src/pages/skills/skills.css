@@ -1,0 +1,56 @@
+/* 
+
+
+   .title:hover{
+
+      cursor:crosshair;
+      transition: .4s ease-out;
+    
+  }  */
+  .icons_media{
+    width: 36x;
+    height: 36px;
+  }
+   
+  .shadow{
+ 
+    z-index: -2;
+  } 
+
+
+
+  
+
+
+  @media only screen and (max-width: 600px) {
+     a.title{
+      font-size: 28px;
+      margin-left: 0;
+     }
+
+     h1.text{
+      margin-left: 0;
+      font-size: 34px;
+     }
+
+     p.text{
+      margin-left: 0;
+     }
+
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 768px){
+    a.title{
+      font-size: 28px;
+      margin-left: 15vw;
+      width: 100%;
+     }
+
+     p.text{
+      width: 100%;
+      margin-left: 15vw;
+     }
+
+  
+  }
+

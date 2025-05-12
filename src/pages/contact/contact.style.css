@@ -1,0 +1,58 @@
+.contact_main {
+  height: 600vh;
+  margin: 0px;
+  position: relative;
+  /* opacity: 0.5; */
+}
+
+
+.contact_body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #afa18f;
+  font-size: 64px;
+  line-height: 66px;
+  cursor: default;
+  background-color: blue;
+}
+
+.contact_text {
+  width: 1000px;
+  padding: 40px;
+}
+
+.contact_text span {
+  color: #ec4e39;
+}
+
+.contact_mask {
+  mask-image: url("../../assets/photos/circle.svg");
+  mask-repeat:no-repeat;
+  background-color: #EBCA98;
+  /* background-color: #475569; */
+  
+  
+}
+
+.top_app_about{
+  top: 100vh;
+  left: 0;
+}
+
+.top_app_skills{
+  top: 200vh;
+  left: 0;
+}
+.top_app_art{
+  top: 300vh;
+  left: 0;
+}
+
+.top_app_media{
+  top: 400vh;
+  left: 0;
+}
+

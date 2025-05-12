@@ -1,0 +1,21 @@
+
+
+.enter{
+  position: absolute;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color:#DEDEDE;
+
+}
+
+
+
+
+
+
+.enter p {
+  font-size: large;
+  text-align: center;
+  margin-top: 50vh;
+}
