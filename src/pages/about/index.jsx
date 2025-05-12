@@ -62,7 +62,7 @@ function About(props) {
             </p>
             <AnimatedText />
           </div>
-          <div className="absolute xs: w-full md:w-5/6 md:left-5 xs: pe-5 xs: ps-5 xs:pt-5  border-b bottom-0 ">
+          <div className="absolute xs: w-full md:w-5/6 md:left-5 xs: pe-5 xs: ps-5 xs:pt-5  border-b bottom-0 "> i did it 
             <div className=" md:flex  md:justify-start md:items-end">
               <div className=" xs: 4/5  md:w-6/12 md:h-3/4 relative overflow-hidden ">
                 <img src={Ja} alt="myImage" className="object-cover"></img>
