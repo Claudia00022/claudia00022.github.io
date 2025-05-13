@@ -51,11 +51,11 @@ function Projects({ setActiveMenu, activeProject }) {
         <div className=" w-3/6  absolute top-0 ms-5 mt-16  -z-10">
           <p
             className="title mb-3 "
-            style={{ color: '#4DB2C8', fontWeight: "bold", fontSize: "50px" }}
+            style={{ color: '#4DB2C8', fontWeight: "bold"}}
           >
             04/
           </p>
-          <p className="text" style={{ fontSize: "2rem", textTransform: 'uppercase', fontWeight: 'bold' }}>
+          <p className="text" style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
             Stuff I Built<br></br> (That Didn’t <br></br>Fall Apart)
           </p>
         </div>
@@ -120,7 +120,7 @@ function Projects({ setActiveMenu, activeProject }) {
                 </motion.p>
               </div>
 
-              <div className="flex items-center justify-end h-full w-96   ">
+              <div className="flex items-center justify-end h-full w-96 xs:hidden md:block">
                 <a
                   className="text text-right font-bold w-64  "
                   href={project.link}

@@ -3,7 +3,7 @@ import Model from "./Model";
 
 export default function Scene({activeProject}) {
   return (
-    <div className=" fixed top-0 h-screen w-screen -z-10" >
+    <div className=" fixed top-0 h-screen w-screen -z-10 xs:hidden md:block" >
       <Canvas>
         <Model activeProject = {activeProject}/>
       </Canvas>
