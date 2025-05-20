@@ -45,8 +45,9 @@ function Projects({ setActiveMenu, activeProject }) {
   return (
     <>
       <div
-        className="h-screen w-full  relative   z-10 overflow-hidden"
-        style={{ backgroundColor: "#EEEFEE", borderLeft: '5px solid #5F605F', borderRight: '3px solid #5F605F' }}
+        className="h-screen w-full  relative   z-10 overflow-hidde"
+        style={{ backgroundColor: "#EEEFEE", borderLeft: '5px solid #5F605F', borderRight: '3px solid #5F605F', backgroundColor: 'red' }}
+  
       >
         <div className=" w-3/6  absolute top-0 ms-5 mt-16  -z-10">
           <p
