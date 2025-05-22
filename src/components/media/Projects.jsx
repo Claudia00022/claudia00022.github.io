@@ -84,7 +84,15 @@ function Projects({ setActiveMenu, activeProject }) {
                   </motion.p>
                 </a>
               </div>
-              <div className="flex items-center xs:w-full lg:w-96 xs:m-auto">
+              <div className=" xs:flex justify-between items-center lg:hidden w-full mb-5">
+              <div className="w-3/4">
+                <p className="text text-start font-bold">{project.content}</p>
+              </div>
+               <div className="w-7">
+               <img src={Arrow} alt="arrow"></img>
+               </div>
+              </div>
+              <div className="flex items-center xs:w-full lg:w-96 xs:m-auto xs:hidden lg:block">
                 {" "}
                 <a
                   className="text text-right font-bold w-64  "
