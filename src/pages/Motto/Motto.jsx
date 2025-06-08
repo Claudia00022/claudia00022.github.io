@@ -7,26 +7,38 @@ export default function Motto(props) {
   const motto_container = useRef(null);
   const text_container = useRef(null);
 
-  useLayoutEffect(() => {
-    const context = gsap.context(() => {
-      const tl = gsap.timeline({
+useLayoutEffect(() => {
+  const context = gsap.context(() => {
+    const mm = gsap.matchMedia();
+
+    // ✅ Only animate on large screens (lg and above)
+    mm.add("(min-width: 1024px)", () => {
+      gsap.timeline({
         scrollTrigger: {
           trigger: motto_container.current,
           start: "top bottom",
           end: "bottom top",
           scrub: true,
         },
-      });
-
-      tl.to(text_container.current, { y: 575 }, 0);
+      }).to(text_container.current, { y: 475 });
     });
 
-    return () => context.revert();
-  }, []);
+    return () => mm.revert(); // Cleanup
+  }, motto_container);
 
-  return (
+  return () => context.revert(); // Cleanup on unmount
+}, []);
+
+
+   
+
+
+
+ 
+
+return (                     
     <div
-      ref={motto_container}
+      ref={motto_container}              
       className=" h-full w-full relative overflow-hidden"
       style={{
         backgroundColor: "#F4F2ED",
@@ -43,8 +55,8 @@ export default function Motto(props) {
           05/
         </p>
       </div>
-      <div className="flex justify-start h-screen ms-5   ">
-        <div ref={text_container} className=" w-5/12">
+      <div className="flex justify-start min-h-screen ms-5 me-5 flex-wrap">
+        <div ref={text_container} className=" sm:w-full md:w-5/12  bg-red-300">
           <p
             ref={props.contact_section}
             className="title"
@@ -54,7 +66,7 @@ export default function Motto(props) {
           </p>
         </div>
       </div>
-      <div className=" text absolute bottom-5 left-5">
+      <div className=" text absolute bottom-10 left-5  ">
         <p> © 2025</p>
       </div>
       <SmileMotto />

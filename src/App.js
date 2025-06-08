@@ -75,15 +75,15 @@ function App(props) {
   return (
     <>
       <SmoothScroll>
-        <MediaIcons text_opacity = {text_opacity} />
-        <NavBar />
+        {/* <MediaIcons text_opacity = {text_opacity} />  */}
+        {/* <NavBar /> */}
         <SmileFace />
         <About about_section={about_section}
           smile_container={smile_container}
         />
         {/* <Skills scrollYP={scrollYProgress} /> */}
         {/* <ArtPage /> */}
-        <Work />
+        {/* <Work /> */}
         <Motto contact_section = {contact_section} />
         {/* <Test /> */}
       </SmoothScroll>
