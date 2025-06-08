@@ -12,7 +12,7 @@ useLayoutEffect(() => {
     const mm = gsap.matchMedia();
 
     // ✅ Only animate on large screens (lg and above)
-    mm.add("(min-width: 1024px)", () => {
+    mm.add("(min-width: 1181px)", () => {
       gsap.timeline({
         scrollTrigger: {
           trigger: motto_container.current,
@@ -47,20 +47,20 @@ return (
         borderBottom: "3px solid #5F605F",
       }}
     >
-      <div className=" w-3/6  absolute top-0 ms-5 mt-16  z-10 ">
+      <div className=" absolute top-0 ms-5 mt-5 z-10  ">
         <p
-          className="text mb-3 "
-          style={{ color: "#3F3B37", fontSize: "26px", opacity: 1 }}
+          className="text xs:text-base xl:text-2xl"
+          style={{ color: "#3F3B37", opacity: 1 }}
         >
           05/
         </p>
       </div>
       <div className="flex justify-start min-h-screen ms-5 me-5 flex-wrap">
-        <div ref={text_container} className=" sm:w-full md:w-5/12  bg-red-300">
+        <div ref={text_container} className=" sm:w-full md:w-5/12 xs:mt-16 xl:mt-0 mb-5">
           <p
             ref={props.contact_section}
-            className="title"
-            style={{ textAlign: "left", fontSize: "7.5rem", fontWeight: 700 }}
+            className="title xs:text-7xl lg:text-9xl text-black"
+            style={{ textAlign: "left", fontWeight: 700 }}
           >
             Want to reach out?{" "}
           </p>

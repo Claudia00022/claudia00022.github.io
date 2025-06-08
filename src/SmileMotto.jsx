@@ -63,8 +63,7 @@ useGLTF.preload(imgData[8].img);
 export default function SmileMotto() {
   return (
     <div
-      className="absolute top-0 left-1/4 opacity-80 " 
-      style={{ width: "800px", height: "800px" }}
+      className=" w-full h-full absolute top-0 left-0 opacity-80  " 
     >
       <Canvas>
         <Environment preset="forest" />

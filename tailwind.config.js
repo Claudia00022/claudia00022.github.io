@@ -12,7 +12,7 @@ module.exports = {
         '200':'200vh', //Custom class h-120 with a height of 200vh of window screen
       },
       screens:{
-       'xs': '350px',
+       'xs': '320px',
       }
     },
   },
