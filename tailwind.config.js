@@ -1,21 +1,20 @@
-
-
 module.exports = {
-  content: [
-    "./src/**/*.{html,js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
 
   theme: {
     extend: {
-      height:{
-        '128': '120vh', //Custom class h-120 with a height of 120vh of window screen
-        '200':'200vh', //Custom class h-120 with a height of 200vh of window screen
+      height: {
+        128: "120vh", //Custom class h-120 with a height of 120vh of window screen
+        200: "200vh", //Custom class h-120 with a height of 200vh of window screen
       },
-      screens:{
-       'xs': '320px',
-      }
+      screens: {
+        xs: "320px",
+      },
     },
   },
-  plugins: [],
-}
 
+  corePlugins: {
+    aspectRatio: false,
+  },
+  plugins: [require("@tailwindcss/aspect-ratio")],
+};
