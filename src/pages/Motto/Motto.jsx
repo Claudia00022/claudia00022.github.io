@@ -43,11 +43,11 @@ return (
       style={{
         backgroundColor: "#F4F2ED",
         borderLeft: "5px solid #5F605F",
-        borderRight: "3px solid #5F605F",
-        borderBottom: "3px solid #5F605F",
+        borderRight: "5px solid #5F605F",
+        borderBottom: "5px solid #5F605F",
       }}
     >
-      <div className=" absolute top-0 ms-5 mt-5 z-10  ">
+      <div className=" absolute top-0 ms-10 mt-5 z-10  ">
         <p
           className="text xs:text-base xl:text-2xl"
           style={{ color: "#3F3B37", opacity: 1 }}
@@ -55,7 +55,7 @@ return (
           05/
         </p>
       </div>
-      <div className="flex justify-start min-h-screen ms-5 me-5 flex-wrap">
+      <div className="flex justify-start min-h-screen ms-10 me-10 flex-wrap">
         <div ref={text_container} className=" sm:w-full md:w-5/12 xs:mt-16 xl:mt-0 mb-5">
           <p
             ref={props.contact_section}

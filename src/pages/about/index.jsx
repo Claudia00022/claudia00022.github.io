@@ -49,7 +49,7 @@ function About(props) {
   style={{
     backgroundColor: "#F4F2ED",
     borderLeft: "5px solid #5F605F",
-    borderRight: "3px solid #5F605F",
+    borderRight: "5px solid #5F605F",
   }}
 >
   <div className="w-full">
@@ -91,10 +91,13 @@ function About(props) {
           className="text-base xl:text-2xl"
           style={{ opacity: 1, color: "#3F3B37" }}
         >
-          01/
+          02/
         </p>
         <AnimatedText />
       </div>
+         <div className="absolute bottom-0 w-4/12 text left-10 border-b">
+                Lets have fun
+              </div>
     </div>
   </div>
 </div>
