@@ -77,45 +77,23 @@ const NavBar = (props) => {
   }
 
   return (
-    <div className="fixed z-20  top-0 right-0 w-full h-14 ">
-      <ul className="flex justify-evenly mt-5">
+    <div className=" xs:absolute lg:fixed z-20  top-0 xs: left-0 xs:ps-5 lg:right-0 lg:w-full lg:h-14 ">
+      <ul className="flex xs: flex-col lg:flex-row  justify-evenly mt-5 text xs:text-base lg:text-2xl uppercase font-bold ">
         <li onClick={handleClick}>
-          <Link
-          className="text"
-            to={"/"}
-            onClick={props.handleNameBack}
-            style={{ fontSize: "26px", textTransform: "uppercase" }}
-          >
+          <Link to={"/"} onClick={props.handleNameBack}>
             {toggledLinks}
           </Link>
         </li>
         <li onClick={handleAbout}>
-          <Link
-            className="text"
-            to={"/about"}
-            onClick={props.handleName}
-            style={{ fontSize: "26px", textTransform: "uppercase" }}
-          >
+          <Link to={"/about"} onClick={props.handleName}>
             {toggledAbout}
           </Link>
         </li>
         <li onClick={handleArt}>
-          <Link
-            className="text"
-            to={"/art"}
-            style={{ fontSize: "26px", textTransform: "uppercase" }}
-          >
-            {toggledArt}
-          </Link>
+          <Link to={"/art"}>{toggledArt}</Link>
         </li>
         <li onClick={handleContact}>
-          <Link
-            className="text"
-            to={"/contact"}
-            style={{ fontSize: "26px", textTransform: "uppercase" }}
-          >
-            {toggledContact}
-          </Link>
+          <Link to={"/contact"}>{toggledContact}</Link>
         </li>
       </ul>
     </div>
