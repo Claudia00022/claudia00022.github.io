@@ -37,7 +37,7 @@ export default function SmileFace(props) {
           </p>
           <p className="  text ps-10">Klaudia Krzeminska</p>
           <p className="title  xs:text-5xl lg:text-8xl text-black ps-10 pe-10">
-            Freelancer Fronted Webdeveloper and Webdesigner
+            Fronted Developer and Webdesigner
           </p>{" "}
        
         </div>

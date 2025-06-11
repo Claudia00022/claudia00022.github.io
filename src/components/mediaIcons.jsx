@@ -9,12 +9,12 @@ export default function MediaIcons(props) {
 
 
   return (
-    <div className="fixed bottom-10 right-10 z-50 ">
+    <div className=" xs:hidden lg:block fixed bottom-10 right-10 z-50  ">
       {contactsData.map((con, index) => (
-        <div key={index} className="flex  items-center justify-between w-100">
+        <div key={index} className="flex  items-center justify-between w-100 ">
           <div
             onMouseLeave={() => setHoverContacts(null)}
-            className="  h-10 mt-10 me-24 opacity-80  relative "
+            className="  h-10 mt-10 me-24 opacity-80  relative  "
           >
             <a
               ref={(el) => (props.text_opacity.current[index] = el)}
@@ -49,7 +49,7 @@ export default function MediaIcons(props) {
             />
           </div>
           <MagneticEffect>
-            <div className="w-10 h-10 mt-10 opacity-80  ">
+            <div className="w-10 h-10 mt-10   ">
               <a href={con.link}>
                 <img src={con.img_src} alt="contact photos" />
               </a>

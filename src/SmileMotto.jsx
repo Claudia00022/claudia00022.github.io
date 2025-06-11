@@ -7,7 +7,7 @@ import {
   OrthographicCamera,
 } from "@react-three/drei";
 import imgData from "./smileImgData";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { EffectComposer, Noise } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
 import { geometry } from "maath";
@@ -61,19 +61,41 @@ function MySmile() {
 useGLTF.preload(imgData[8].img);
 
 export default function SmileMotto() {
+  const [zoom, setZoom] = useState(100); // default zoom
+  const [cameraPosition, setCameraPosition] = useState([0, 0, 5]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        // Mobile devices
+        setZoom(40);
+        setCameraPosition([0, 3, 5]);
+      } else if (width < 1024) {
+        // Tablets
+        setZoom(60);
+        setCameraPosition([0, 2, 5]);
+      } else {
+        // Desktop
+        setZoom(100);
+        setCameraPosition([0, 0, 5]);
+      }
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div
-      className=" w-full h-full absolute top-0 left-0 opacity-80  " 
-    >
-      <Canvas>
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full flex items-center justify-center opacity-70">
+      <Canvas style={{ width: "100%", height: "100%" }}>
         <Environment preset="forest" />
-        <OrthographicCamera makeDefault zoom={80} position={[1, 0, 5]} />
-        {/* <ambientLight intensity={6.0} /> */}
+        <OrthographicCamera makeDefault zoom={zoom} position={cameraPosition} />
         <MySmile />
         <EffectComposer>
           <Noise premultiply blendFunction={BlendFunction.SCREEN} />
         </EffectComposer>
-        {/* <OrbitControls autoRotate /> */}
       </Canvas>
     </div>
   );

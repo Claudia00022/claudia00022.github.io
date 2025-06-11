@@ -75,7 +75,7 @@ function App(props) {
   return (
     <>
       <SmoothScroll>
-        {/* <MediaIcons text_opacity = {text_opacity} />  */}
+        <MediaIcons text_opacity = {text_opacity} /> 
         <NavBar />
         <SmileFace />
         <About about_section={about_section}

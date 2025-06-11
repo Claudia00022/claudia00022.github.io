@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import "./motto.style.css";
 import SmileMotto from "../../SmileMotto";
+import MediaIconsSmallDev from "../../components/mediaIconsSmallDev";
 
 export default function Motto(props) {
   const motto_container = useRef(null);
@@ -64,12 +65,16 @@ return (
           >
             Want to reach out?{" "}
           </p>
+         <a href = 'klaudia.forysiak@gmail.com' className=" xs:block lg:hidden text text-lg font-bold block mt-5 underline decoration-wavy ">klaudiaforysiak@gmail.com</a>
         </div>
       </div>
-      <div className=" text absolute bottom-10 left-5  ">
+      <div className=" text absolute bottom-0 left-5  ">
         <p> © 2025</p>
       </div>
       <SmileMotto />
+      <MediaIconsSmallDev />
+     
+      
     </div>
   );
 }
