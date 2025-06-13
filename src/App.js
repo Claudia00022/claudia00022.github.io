@@ -83,7 +83,7 @@ function App(props) {
         />
         {/* <Skills scrollYP={scrollYProgress} /> */}
         {/* <ArtPage /> */}
-        {/* <Work /> */}
+        <Work />
         <Motto contact_section = {contact_section} />
         {/* <Test /> */}
       </SmoothScroll>

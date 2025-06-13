@@ -13,37 +13,37 @@ function Projects({ setActiveMenu, activeProject }) {
   return (
     <>
       <div
-        className="h-screen w-full relative z-10 overflow-hidde"
+        className="min-h-screen xs:min-h-[60vh] md:min-h-[70vh] xl:min-h-screen w-full relative z-10 overflow-y-auto pt-10 pb-10 flex flex-col justify-start xl:gap-12"
         style={{
           backgroundColor: "#EEEFEE",
           borderLeft: "5px solid #5F605F",
-          borderRight: "3px solid #5F605F",
+          borderRight: "5px solid #5F605F",
         }}
       >
-        <div className="w-3/6 absolute top-0 ms-5 mt-16 -z-10">
+
+        <div className="lg:w-3/6 mb-10 pb-5 bg-slate-50 ps-4 pe-4 ">
           <p
-            className="title mb-3 "
-            style={{ color: "#4DB2C8", fontWeight: "bold" }}
+              className="text xs:text-base xl:text-2xl"
+              style={{ color: "#3F3B37", opacity: 1 }}
           >
             04/
           </p>
           <p
-            className="text"
+            className="title text-black"
             style={{ textTransform: "uppercase", fontWeight: "bold" }}
           >
             Stuff I Built<br></br> (That Didn’t <br></br>Fall Apart)
           </p>
         </div>
 
-        <Scene activeProject={activeProject} />
+        {/* <Scene activeProject={activeProject} /> */}
 
         <div
           onMouseLeave={() => {
             setActiveMenu(null);
             setHover(null);
           }}
-          className="absolute center w-full  mt-36 "
-          style={{ width: "calc(100vw - 60px)" }}
+          className="ps-4 pe-4"
         >
           {projects_data.map((project, i) => (
             <motion.div
@@ -52,7 +52,7 @@ function Projects({ setActiveMenu, activeProject }) {
                 setHover(i);
               }}
               key={project.id}
-              className="flex xs:flex-col lg:flex-row items-center justify-between h-36"
+              className="flex xs:flex-col-reverse lg:flex-row items-center justify-between  "
               style={{
                 borderBottom:
                   hover === i ? "4px solid #5F605F" : "2px solid #5F605F",
@@ -60,10 +60,10 @@ function Projects({ setActiveMenu, activeProject }) {
               }}
             >
               {" "}
-              <div className="xs:w-full lg:w-1/2 xs:m-auto lg:ms-5">
+              <div className="xs:w-full lg:w-1/2 xs:m-auto lg:ms-5  pt-3 pb-3">
                 {" "}
                 <a href={project.link}>
-                  <motion.p className="flex space-x-1 title xs:justify-self-center">
+                  <motion.p className="flex space-x-1 title xs:justify-self-start">
                     {project.title.split("").map((char, index) => (
                       <motion.span
                         key={index}
@@ -84,7 +84,8 @@ function Projects({ setActiveMenu, activeProject }) {
                   </motion.p>
                 </a>
               </div>
-              <div className=" xs:flex justify-between items-center lg:hidden w-full mb-5">
+
+              <div className=" xs:flex justify-between items-center lg:hidden w-full pt-2 pb-2  ">
               <div className="w-3/4">
                 <p className="text text-start font-bold">{project.content}</p>
               </div>
@@ -92,7 +93,8 @@ function Projects({ setActiveMenu, activeProject }) {
                <img src={Arrow} alt="arrow"></img>
                </div>
               </div>
-              <div className="flex items-center xs:w-full lg:w-96 xs:m-auto xs:hidden lg:block">
+
+              {/* <div className="flex items-center xs:w-full lg:w-96 xs:m-auto xs:hidden lg:block">
                 {" "}
                 <a
                   className="text text-right font-bold w-64  "
@@ -119,11 +121,11 @@ function Projects({ setActiveMenu, activeProject }) {
                     </motion.span>
                   )}
                 </a>
-              </div>
+              </div> */}
             </motion.div>
           ))}
         </div>
-      </div>
+        </div>
     </>
   );
 }
