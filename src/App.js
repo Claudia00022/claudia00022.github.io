@@ -81,7 +81,7 @@ function App(props) {
         <About about_section={about_section}
           smile_container={smile_container}
         />
-        {/* <Skills scrollYP={scrollYProgress} /> */}
+        <Skills scrollYP={scrollYProgress} />
         {/* <ArtPage /> */}
         <Work />
         <Motto contact_section = {contact_section} />

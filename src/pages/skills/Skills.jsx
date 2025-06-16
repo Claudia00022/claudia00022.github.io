@@ -21,7 +21,7 @@ const projects_data = [
     content:
       "With a focus on 3D graphics, I enjoy experimenting with animations, models, and dynamic scenes that enhance user engagement. ",
     speed: 0.5,
-    backgroundColor: '#F4F2ED'
+    backgroundColor: "#F4F2ED",
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const projects_data = [
     content:
       "Focuses on how things look using tools like CSS, HTML, and JavaScript frameworks.",
     speed: 0.5,
-      backgroundColor: '#D8D8D8'
+    backgroundColor: "#D8D8D8",
   },
   {
     id: 3,
@@ -38,12 +38,11 @@ const projects_data = [
     link: "https://www.jl-gradzkie.pl/",
     content: "Making the website feel more fluid and engaging",
     speed: 0.5,
-      backgroundColor: '#FAEDBC'
+    backgroundColor: "#FAEDBC",
   },
 ];
 
 function Skills(props) {
-  
   const sectionTwoRef = useRef(null);
 
   const container = useRef(null);
@@ -58,48 +57,63 @@ function Skills(props) {
   return (
     <>
       <div
-        className="h-screen w-full relative -z-20 mt-20"
-        style={{ backgroundColor: "#EEEFEE" , border : '5px sollid black' }}
-      > 
-      {/* <p className="title ms-5 mb-3 " style={{opacity: 0.5, fontWeight:'bold', fontSize: '60px'}}>2.</p> */}
-      <div className=" w-3/6  absolute top-0 ms-5 mt-16 bg-slate-50  -z-10">
-          <p className="title mb-3 " style={{opacity:0.5, fontWeight:'bold', fontSize: '60px'}}>03/</p>
-          <p className="title"  style={{fontSize: '4rem'}}>What I Bring<br></br> to the Table<br></br> (Besides Snacks)</p>
+        className="min-h-screen w-full relative -z-20   flex xs: flex-col  "
+        style={{
+          //  backgroundColor: "#EEEFEE" ,
+          borderLeft: "5px solid #5F605F",
+          borderRight: "5px solid #5F605F",
+        }}
+      >
+        <CanvasComponent scrollYP={props.scrollYP} />
+
+        <div className=" xs: w-full lg:w-3/6   mt-10 bg-slate-50  -z-10 ps-5 pb-5 ">
+          <p
+            className="text-base xl:text-2xl "
+            style={{ opacity: 0.5, fontWeight: "bold" }}
+          >
+            03/
+          </p>
+          <p className="title">
+            What I Bring<br></br> to the Table<br></br> (Besides Snacks)
+          </p>
         </div>
-        <div className="absolute center mt-10" ref={sectionTwoRef} style={{width: 'calc(100vw - 60px)'}}>
-          <div className="flex items-center justify-start ms-52 mb-5 ">
-         
-            {/* <p className="text text-right font-bold ">What I Bring to the Table (Besides Snacks)</p> */}
-          </div>
+
+        <div className=" mt-10  " ref={sectionTwoRef}>
+          <div className="flex items-center justify-start ms-52 mb-5 "></div>
 
           {projects_data.map((project) => (
             <div
               ref={container}
               key={project.id}
-              className="flex items-center justify-start border-b"
+              className="flex xs:flex-col-reverse lg:flex-row items-center border-b"
               style={{ borderColor: "grey" }}
             >
-              <p className="text font-bold ms-52 w-64">{project.content}</p>
-              <div className="ms-40 relative ">
-                <motion.p style={{ clipPath: clip }}>
-                  <a href={project.link} className="title " style={{color: '#FFFF99'}}>
-                    {project.title}
-                  </a>
+              <div className="w-full  p-5">
+                <p className="text  ">{project.content}</p>
+              </div>
+
+              <div className="relative top-0  w-full p-5 ">
+                <motion.p
+                  className="text xs:text-5xl"
+                  style={{ clipPath: clip, color: "#FFFF99" }}
+                >
+                  {project.title}
                 </motion.p>
-                <div className="absolute top-0 shadow">
-                  <a
-                    href={project.link}
-                    className="title"
+                <div className="absolute top-0 -z-10 ">
+                  <p
+                    className=" text xs:text-5xl"
                     style={{ color: "black", opacity: 0.7 }}
                   >
+                    {" "}
                     {project.title}
-                  </a>
+                  </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <CanvasComponent scrollYP={props.scrollYP} />
+      
+       
       </div>
     </>
   );

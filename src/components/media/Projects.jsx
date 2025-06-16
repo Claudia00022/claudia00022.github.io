@@ -13,7 +13,7 @@ function Projects({ setActiveMenu, activeProject }) {
   return (
     <>
       <div
-        className="min-h-screen xs:min-h-[60vh] md:min-h-[70vh] xl:min-h-screen w-full relative z-10 overflow-y-auto pt-10 pb-10 flex flex-col justify-start xl:gap-12"
+        className="min-h-screen xs:min-h-[90vh] md:min-h-[80vh] xl:min-h-screen w-full relative z-10 overflow-y-auto pt-10 pb-10 flex flex-col justify-start xl:gap-12"
         style={{
           backgroundColor: "#EEEFEE",
           borderLeft: "5px solid #5F605F",
