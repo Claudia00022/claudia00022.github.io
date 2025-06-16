@@ -59,14 +59,14 @@ function Skills(props) {
       <div
         className="min-h-screen w-full relative -z-20   flex xs: flex-col  "
         style={{
-          //  backgroundColor: "#EEEFEE" ,
+           backgroundColor: "#EEEFEE" ,
           borderLeft: "5px solid #5F605F",
           borderRight: "5px solid #5F605F",
         }}
       >
         <CanvasComponent scrollYP={props.scrollYP} />
 
-        <div className=" xs: w-full lg:w-3/6   mt-10 bg-slate-50  -z-10 ps-5 pb-5 ">
+        <div className=" xs: w-full lg:w-3/6   mt-10 bg-slate-50/50 ps-5 pb-5  ">
           <p
             className="text-base xl:text-2xl "
             style={{ opacity: 0.5, fontWeight: "bold" }}
@@ -85,23 +85,23 @@ function Skills(props) {
             <div
               ref={container}
               key={project.id}
-              className="flex xs:flex-col-reverse lg:flex-row items-center border-b"
+              className="flex xs:flex-col-reverse lg:flex-row items-center border-b ms-5 me-5 mt-10"
               style={{ borderColor: "grey" }}
             >
-              <div className="w-full  p-5">
+              <div className="w-full pb-3 ">
                 <p className="text  ">{project.content}</p>
               </div>
 
-              <div className="relative top-0  w-full p-5 ">
+              <div className="relative top-0  w-full ">
                 <motion.p
-                  className="text xs:text-5xl"
+                  className="text xs:text-5xl pt-3 pb-3 font-bold"
                   style={{ clipPath: clip, color: "#FFFF99" }}
                 >
                   {project.title}
                 </motion.p>
-                <div className="absolute top-0 -z-10 ">
+                <div className="absolute top-0 -z-10  ">
                   <p
-                    className=" text xs:text-5xl"
+                    className=" text xs:text-5xl pt-3 font-bold"
                     style={{ color: "black", opacity: 0.7 }}
                   >
                     {" "}
