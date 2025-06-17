@@ -28,7 +28,6 @@ import "lenis/dist/lenis.css";
 gsap.registerPlugin(ScrollTrigger);
 
 function App(props) {
-
   const scene = useRef(null);
   const contact_section = useRef();
   const text_opacity = useRef([]);
@@ -75,17 +74,17 @@ function App(props) {
   return (
     <>
       <SmoothScroll>
-        <MediaIcons text_opacity = {text_opacity} /> 
+        <MediaIcons text_opacity={text_opacity} />
         <NavBar />
         <SmileFace />
-        <About about_section={about_section}
+        <About
+          about_section={about_section}
           smile_container={smile_container}
         />
         <Skills scrollYP={scrollYProgress} />
-        {/* <ArtPage /> */}
+        <ArtPage />
         <Work />
-        <Motto contact_section = {contact_section} />
-        {/* <Test /> */}
+        <Motto contact_section={contact_section} />
       </SmoothScroll>
     </>
   );

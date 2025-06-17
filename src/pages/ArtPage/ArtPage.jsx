@@ -57,7 +57,7 @@ export default function ArtPage() {
     offset: ["start start", "end end"],
   });
 
-  const scale4 = useTransform(scrollYProgress, [0.70, 0.75, 0.80], [1,2.8, 4]);
+  const scale4 = useTransform(scrollYProgress, [0.70, 0.75, 0.80], [3.5,3.8, 4]);
   // const opacity = useTransform(scrollYProgress, [0.95, 1, 1.05], [1, 1, 0]);
 
   const scale = useSpring(scale4, {
@@ -82,29 +82,34 @@ export default function ArtPage() {
 
   return (
     <>
-      <div ref={container} className="container_art w-full relative mt-20 " style={{backgroundColor:'#F4F2ED'}}>
-        <div className=" w-3/6 right-5  absolute top-0 ms-5 bg-slate-50 z-10">
+      <div ref={container} className="min-h-screen w-full relative pt-10 " style={{backgroundColor:'#F4F2ED',  borderLeft: "5px solid #5F605F",
+    borderRight: "5px solid #5F605F"}}>
+        <div className=" xs:w-full lg:w-3/6 p-5 bg-slate-50 z-10">
           <p
-            className="title mb-3 "
-            style={{ opacity: 0.5, fontWeight: "bold", fontSize: "60px" }}
+            className="text pb-3 "
+            style={{ opacity: 0.5, fontWeight: "bold" }}
           >
             04/
           </p>
-          <p className="title" style={{ fontSize: "4rem" }}>
+          <p className="title" >
             Art is<br></br>my<br></br>{" "}
           </p>
         </div>
-        <div ref={title3} className="absolute top-96 left-5 opacity-100">
-          <p className="title" style={{ fontSize: "14rem" }}>
+
+        <div className="bg-red-200 w-full flex xs:justify-start lg:justify-between p-5">
+        <div ref={title3} className=" opacity-100">
+          <p className="text text-5xl">
             {word}
           </p>
         </div>
-        <div ref={title4} className="absolute top-96 right-5 ">
-          <p className="title" style={{ fontSize: "14rem" }}>
+        <div ref={title4} >
+          <p className="text text-5xl" >
             {word2}
           </p>
         </div>
-        <div className="w-full h-screen sticky top-0  ">
+        </div>
+
+        <div className="w-full h-screen  sticky top-0 bg-green-200  ">
           <div className="w-full h-screen absolute top-0 flex items-center justify-center overflow-hidden">
             {playVideo ? (
               <motion.div
