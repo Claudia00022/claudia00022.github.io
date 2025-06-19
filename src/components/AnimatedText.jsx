@@ -35,7 +35,7 @@ export default function AnimatedText() {
         <span className=" sr-only " >{textFour}</span>
         <motion.div
         ref={ref}
-          className="title text-black"
+          className="title xs:text-5xl lg:text-7xl text-[#A89C89]"
           aria-hidden
           initial="hidden"
           animate= {isInView ? 'visible' : 'hidden'}

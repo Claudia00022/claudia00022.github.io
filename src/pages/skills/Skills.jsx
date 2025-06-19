@@ -59,7 +59,6 @@ function Skills(props) {
       <div
         className="min-h-screen w-full relative -z-20 flex xs: flex-col pb-10 pt-10  "
         style={{
-          backgroundColor: "#1F1F1F",
           borderLeft: "5px solid #5F605F",
           borderRight: "5px solid #5F605F",
         }}
@@ -76,8 +75,6 @@ function Skills(props) {
         </div>
 
         <div className=" mt-10  " ref={sectionTwoRef}>
-          {/* <div className="flex items-center justify-start ms-52 mb-5 "></div> */}
-
           {projects_data.map((project) => (
             <div
               ref={container}

@@ -55,21 +55,43 @@ function App(props) {
     });
   }, []);
 
+  // useLayoutEffect(() => {
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: about_section.current,
+  //       start: "top bottom",
+  //       end: "bottom top",
+  //       scrub: true,
+  //     },
+  //   });
+  //   tl.to(smile_container.current, { y: -600 }, 0);
+  //   return () => {
+  //     tl.scrollTrigger?.kill(); // Kill the ScrollTrigger
+  //     tl.kill(); // Kill the GSAP timeline
+  //   };
+  // }, []);
+
   useLayoutEffect(() => {
+  const ctx = gsap.context(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: about_section.current,
-        start: "top bottom",
-        end: "bottom top",
+        start: "top bottom",      // start animacji, gdy top sekcji dotknie bottom viewportu
+        end: "center center",     // koniec animacji w centrum
         scrub: true,
       },
     });
-    tl.to(smile_container.current, { y: -1075 }, 0);
-    return () => {
-      tl.scrollTrigger?.kill(); // Kill the ScrollTrigger
-      tl.kill(); // Kill the GSAP timeline
-    };
-  }, []);
+
+    tl.fromTo(
+      smile_container.current,
+      { y: 400 },                // wyjściowa pozycja: z dołu
+      { y: -50, ease: "none" }   // docelowa pozycja: na twarzy
+    );
+  });
+
+  return () => ctx.revert(); // czyszczenie GSAP
+}, []);
+
 
   return (
     <>
