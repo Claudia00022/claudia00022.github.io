@@ -57,52 +57,49 @@ function Skills(props) {
   return (
     <>
       <div
-        className="min-h-screen w-full relative -z-20   flex xs: flex-col  "
+        className="min-h-screen w-full relative -z-20 flex xs: flex-col pb-10 pt-10  "
         style={{
-           backgroundColor: "#EEEFEE" ,
+          backgroundColor: "#1F1F1F",
           borderLeft: "5px solid #5F605F",
           borderRight: "5px solid #5F605F",
         }}
       >
         <CanvasComponent scrollYP={props.scrollYP} />
 
-        <div className=" xs: w-full lg:w-3/6   mt-10 bg-slate-50/50 ps-5 pb-5  ">
-          <p
-            className="text-base xl:text-2xl "
-            style={{ opacity: 0.5, fontWeight: "bold" }}
-          >
+        <div className="xs:w-full lg:w-3/6 xs:mt-5 lg:mt-10  ps-5 pb-5">
+          <p className="text-base xl:text-xl text-[#ffeeca] opacity-50 font-[700] ">
             03/
           </p>
-          <p className="title">
+          <p className="title xs:text-5xl lg:text-7xl text-[#A89C89]">
             What I Bring<br></br> to the Table<br></br> (Besides Snacks)
           </p>
         </div>
 
         <div className=" mt-10  " ref={sectionTwoRef}>
-          <div className="flex items-center justify-start ms-52 mb-5 "></div>
+          {/* <div className="flex items-center justify-start ms-52 mb-5 "></div> */}
 
           {projects_data.map((project) => (
             <div
               ref={container}
               key={project.id}
-              className="flex xs:flex-col-reverse lg:flex-row items-center border-b ms-5 me-5 mt-10"
+              className="flex xs:flex-col-reverse lg:flex-row  items-center border-b ms-5 me-5 xs:mt-5 lg:mt-10   lg:justify-evenly "
               style={{ borderColor: "grey" }}
             >
-              <div className="w-full pb-3 ">
-                <p className="text  ">{project.content}</p>
+              <div className="w-full lg:w-1/3 p-3    ">
+                <p className="text text-[#A89C89] ">{project.content}</p>
               </div>
 
-              <div className="relative top-0  w-full ">
+              <div className="relative top-0 w-full lg:w-1/3 ">
                 <motion.p
-                  className="text xs:text-5xl pt-3 pb-3 font-bold"
-                  style={{ clipPath: clip, color: "#FFFF99" }}
+                  className="title xs:text-5xl lg:text-7xl pt-3 pb-3 text-[#f5b061] "
+                  style={{ clipPath: clip }}
                 >
                   {project.title}
                 </motion.p>
                 <div className="absolute top-0 -z-10  ">
                   <p
-                    className=" text xs:text-5xl pt-3 font-bold"
-                    style={{ color: "black", opacity: 0.7 }}
+                    className="title xs:text-5xl lg:text-7xl pt-3 pb-3 text-[#A89C89]"
+                    style={{ opacity: 0.7 }}
                   >
                     {" "}
                     {project.title}
@@ -112,8 +109,6 @@ function Skills(props) {
             </div>
           ))}
         </div>
-      
-       
       </div>
     </>
   );
