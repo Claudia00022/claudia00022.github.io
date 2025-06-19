@@ -20,24 +20,20 @@ export default function SmileFace(props) {
   return (
     <>
       <div
-        className="h-screen w-full relative "
+        className="h-screen w-full relative bg-[#0D0D0D]  "
         style={{
-          backgroundColor: "#EEEFEE",
-          borderLeft: "5px solid #5F605F",
-          borderRight: "5px solid #5F605F",
-          borderTop: "5px solid #5F605F",
+          borderBottom: '2px solid #373737',
         }}
       >
         <div className=" absolute  xs: w-full md:w-2/4 lg:w-1/4  bottom-10 left-0 ">
              <p
-            className="text xs:text-base xl:text-2xl ps-10 "
-            style={{ color: "#3F3B37", opacity: 1 }}
+            className="text-base xl:text-xl text-[#ffeeca] opacity-50 font-[700] ps-5 "
           >
             01/
           </p>
-          <p className="  text ps-10">Klaudia Krzeminska</p>
-          <p className="title  xs:text-5xl lg:text-8xl text-black ps-10 pe-10">
-            Fronted Developer and Webdesigner
+          <p className=" text text-[#f5b061] ps-5">Klaudia Krzeminska</p>
+          <p className="title  xs:text-6xl lg:text-8xl text-[#A89C89] p-5 ">
+            Fronted Developer and Web<br></br>designer
           </p>{" "}
        
         </div>

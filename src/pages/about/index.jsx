@@ -47,8 +47,7 @@ function About(props) {
   ref={props.about_section}
   className="relative min-h-screen -z-10 overflow-y-auto bg-[#0D0D0D] pb-10 pt-10 "
   style={{
-    borderLeft: "5px solid #5F605F",
-    borderRight: "5px solid #5F605F",
+     borderBottom: '2px solid #373737',
   }}
 >
   <div className="w-full">
@@ -96,7 +95,7 @@ function About(props) {
         </p>
         <AnimatedText />
       </div>
-         <div className="absolute xs:bottom-0 lg:bottom-20 w-4/12 text left-10 border-b text-[#f5b061] pb-3">
+         <div className="absolute xs:bottom-0 lg:bottom-20 w-4/12 text left-10 text-[#f5b061] pb-3">
                 Lets have fun
               </div>
     </div>

@@ -59,8 +59,7 @@ function Skills(props) {
       <div
         className="min-h-screen w-full relative -z-20 flex xs: flex-col pb-10 pt-10  "
         style={{
-          borderLeft: "5px solid #5F605F",
-          borderRight: "5px solid #5F605F",
+           borderBottom: '2px solid #373737',
         }}
       >
         <CanvasComponent scrollYP={props.scrollYP} />

@@ -77,7 +77,7 @@ const NavBar = (props) => {
   }
 
   return (
-    <div className=" xs:absolute lg:fixed z-20  top-0 xs: left-0 xs:ps-5 lg:right-0 lg:w-full lg:h-14 ">
+    <div className=" xs:absolute lg:fixed z-20  top-0 xs: right-0 xs:pe-5 lg:right-0 lg:w-full lg:h-14 text-[#f5b061] opacity-80 ">
       <ul className="flex xs: flex-col lg:flex-row  justify-evenly mt-5 text xs:text-base lg:text-2xl uppercase font-bold ">
         <li onClick={handleClick}>
           <Link to={"/"} onClick={props.handleNameBack}>
