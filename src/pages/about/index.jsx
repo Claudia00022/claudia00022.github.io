@@ -10,7 +10,7 @@ import {
 import AnimatedText from "../../components/AnimatedText";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Ja from "../../assets/photos/ja.jpg";
+import Ja from "../../assets/photos/me.jpg";
 import Smile from "../../Smile";
 
 gsap.registerPlugin(ScrollTrigger);
