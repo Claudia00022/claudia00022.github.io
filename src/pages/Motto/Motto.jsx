@@ -40,35 +40,26 @@ useLayoutEffect(() => {
 return (                     
     <div
       ref={motto_container}              
-      className=" h-full w-full relative overflow-hidden"
-      style={{
-        backgroundColor: "#F4F2ED",
-        borderLeft: "5px solid #5F605F",
-        borderRight: "5px solid #5F605F",
-        borderBottom: "5px solid #5F605F",
-      }}
+      className=" h-full w-full relative overflow-hidden bg-[#0D0D0D]"
+     
     >
-      <div className=" absolute top-0 ms-10 mt-5 z-10  ">
-        <p
-          className="text xs:text-base xl:text-2xl"
-          style={{ color: "#3F3B37", opacity: 1 }}
+    
+        <div ref={text_container} className=" w-full  xs:mt-16 xl:mt-0 mb-5 xl:ms-40 ">
+            <p
+          className="text-base xl:text-xl text-[#ffeeca] opacity-50 font-[700] ps-5"
         >
           05/
         </p>
-      </div>
-      <div className="flex justify-start min-h-screen ms-10 me-10 flex-wrap">
-        <div ref={text_container} className=" sm:w-full md:w-5/12 xs:mt-16 xl:mt-0 mb-5">
           <p
             ref={props.contact_section}
-            className="title xs:text-7xl lg:text-9xl text-black"
-            style={{ textAlign: "left", fontWeight: 700 }}
-          >
-            Want to reach out?{" "}
+            className="title  xs:text-6xl lg:text-8xl text-[#A89C89] p-5 "
+           >
+            Want to<br></br> reach out?{" "}
           </p>
-         <a href = 'klaudia.forysiak@gmail.com' className=" xs:block lg:hidden text text-lg font-bold block mt-5 underline decoration-wavy ">klaudiaforysiak@gmail.com</a>
         </div>
-      </div>
-      <div className=" text absolute bottom-0 left-5  ">
+   
+
+      <div className=" text absolute bottom-5 right-5 text-[#A89C89]  ">
         <p> © 2025</p>
       </div>
       <SmileMotto />

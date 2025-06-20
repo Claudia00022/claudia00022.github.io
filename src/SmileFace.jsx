@@ -10,6 +10,9 @@ import Model from "./SmileFaceModel";
 import CamearaAnimation from "./CameraAnimation";
 import { EffectComposer, Noise } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
+import { Smile } from "lucide-react";
+import MagneticEffect from "./components/MagneticEffect";
+
 
 export default function SmileFace(props) {
   function CameraAngle() {
@@ -49,6 +52,11 @@ export default function SmileFace(props) {
             </EffectComposer>
           </Canvas>{" "}
         </div>{" "}
+      
+        <div className="w-10 h-10 bg-[#ffeeca] fixed top-10 left-10 z-50 rounded-full flex items-center justify-center opacity-70 cursor-pointer ">
+         <Smile className="w-8 h-8 text-[#f5b061]  " />
+        </div>
+        
       </div>
     </>
   );

@@ -3,62 +3,47 @@ import contactsData from "../contactsData";
 import MagneticEffect from "./MagneticEffect";
 import { motion } from "framer-motion";
 
-export default function MediaIcons(props) {
-
-  const [hoverContacts, setHoverContacts] = useState(null);
-
+export default function MediaIcons() {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className=" xs:hidden lg:block fixed bottom-10 left-16 z-50  ">
-      {contactsData.map((con, index) => (
-        <div key={index} className="flex  items-center justify-between w-100 ">
+    <div className="xs:hidden lg:block fixed bottom-10 left-10 z-50">
+      {contactsData.map((con, index) => {
+        const Icon = con.icon;
+
+        return (
+          <div key={index} className="flex items-center justify-between w-full">
             <MagneticEffect>
-            <div className="w-10 h-10 mt-10   ">
-              <a href={con.link}>
-                <img src={con.img_src} alt="contact photos" />
-              </a>
-            </div>
-          </MagneticEffect>
-          {/* <div
-            onMouseLeave={() => setHoverContacts(null)}
-            className="  h-10 mt-10 me-24 opacity-80  relative   "
-          >
-            <a
-              ref={(el) => (props.text_opacity.current[index] = el)}
-              onMouseOver={() => setHoverContacts(index)}
-              href={con.link}
-              className="text opacity-0  font-bold " 
-              style={{
-                color: "black",
-                fontWeight: "bold",
-                // fontSize: "30px",
-                textTransform: "lowercase",
-              }}
-            >
-              {con.title}
-            </a>
-            <motion.div
-              style={{
-                position: "absolute",
-                bottom: "0px",
-                left: '-50%',
-                width: "100%",
-                height: "1px",
-                backgroundColor: "black",
-              }}
-              initial={{ scaleX: 0 }}
-              animate={
-                hoverContacts === index
-                  ? { scaleX: 1, x: "100%", opacity: 0 }
-                  : { scaleX: 0 }
-              }
-              transition={{ duration: 1.0, ease: "easeInOut" }}
-            />
-          </div> */}
-      
-        </div>
-      ))}
+              <div
+                className="relative mt-5 p-3 rounded-full"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                {/* Motion background behind icon */}
+                <motion.div
+                  className="absolute inset-0 rounded-full bg-[#f5b061] z-0"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: hoveredIndex === index ? 0.7 : 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                />
+
+                <a
+                  href={con.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative z-10 flex items-center justify-center w-10 h-10"
+                >
+                  <Icon className="w-5 h-5 text-[#ffeeca]" />
+                </a>
+              </div>
+            </MagneticEffect>
+          </div>
+        );
+      })}
     </div>
   );
 }
+
+
+
 

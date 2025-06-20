@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import "./nav.style.css";
 
 const NavBar = (props) => {
-  const [toggledLinks, setToggledLinks] = useState("01/home");
-  const [toggledAbout, setToggledAbout] = useState("02/about");
-  const [toggledContact, setToggledContact] = useState("03/contact");
-  const [toggledArt, setToggledArt] = useState("04/projects");
+  const [toggledLinks, setToggledLinks] = useState("home");
+  const [toggledAbout, setToggledAbout] = useState("about");
+  const [toggledContact, setToggledContact] = useState("contact");
+  const [toggledArt, setToggledArt] = useState("projects");
 
   function handleClick() {
     setToggledLinks(
@@ -77,8 +77,8 @@ const NavBar = (props) => {
   }
 
   return (
-    <div className=" fixed z-20  top-0 right-16 xs:pe-5 lg:h-14 text-[#f5b061] opacity-80 ">
-      <ul className="flex  flex-col mt-5 text xs:text-base lg:text-2xl uppercase font-bold ">
+    <div className=" fixed z-20  top-10 right-10 xs:pe-5 lg:h-14  text-[#ffeeca] opacity-80  ">
+      <ul className="flex  flex-col pt-5 text xs:text-base  tracking-wider ">
         <li onClick={handleClick}>
           <Link to={"/"} onClick={props.handleNameBack}>
             {toggledLinks}

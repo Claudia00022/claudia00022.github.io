@@ -1,25 +1,23 @@
-import InstaIcon from "./assets/photos/insta.png";
-import MailIcon from "./assets/photos/mail.png";
-import LinkIcon from "./assets/photos/linkedin.png";
+import { Mail, Instagram, Linkedin } from "lucide-react";
 
 
 
 const contacts_data = [
     {
       id: 1,
-      img_src: MailIcon,
+      icon: Mail,
       title: "klaudiaforysiak@gmail.com",
       link: "mailto:klaudiaforysiak@gmail.com",
     },
     {
       id: 2,
-      img_src: InstaIcon,
+      icon: Instagram,
       title: "instagram",
       link: "https://www.instagram.com/cla_udiaui/",
     },
     {
       id: 3,
-      img_src: LinkIcon,
+      icon: Linkedin,
       title: "linkedIn",
       link: "https://www.linkedin.com/in/klaudia-forysiak-264895318/",
     },
