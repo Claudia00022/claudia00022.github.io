@@ -25,7 +25,7 @@ export default function SmileFace(props) {
           borderBottom: '2px solid #373737',
         }}
       >
-        <div className=" absolute  xs: w-full md:w-2/4 lg:w-1/4  bottom-10 left-0 ">
+        <div className=" absolute  w-full  bottom-10 left-0 xl:ps-40  ">
              <p
             className="text-base xl:text-xl text-[#ffeeca] opacity-50 font-[700] ps-5 "
           >
@@ -33,7 +33,7 @@ export default function SmileFace(props) {
           </p>
           <p className=" text text-[#f5b061] ps-5">Klaudia Krzeminska</p>
           <p className="title  xs:text-6xl lg:text-8xl text-[#A89C89] p-5 ">
-            Fronted Developer and Web<br></br>designer
+            Fronted<br></br> Developer<br></br> and Web<br></br>designer
           </p>{" "}
        
         </div>

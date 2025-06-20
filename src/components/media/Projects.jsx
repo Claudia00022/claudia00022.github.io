@@ -1,24 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Scene from "./Scene";
 import Arrow from "../../assets/photos/arrow.png";
+import { ArrowRight } from "lucide-react";
 import { projects_data } from "../../projects_data";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+function useIsLargeScreen() {
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsLargeScreen(window.innerWidth >= 1024); // 1024px to Tailwind 'lg'
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  return isLargeScreen;
+}
+
 function Projects({ setActiveMenu, activeProject }) {
   const [hover, setHover] = useState(null);
+  const isLargeScreen = useIsLargeScreen();
+  const MotionRightArrow = motion(ArrowRight);
 
   return (
     <>
       <div
-        className="min-h-screen xs:min-h-[90vh] md:min-h-[80vh] xl:min-h-screen w-full relative z-10 overflow-y-auto pt-10 pb-10 flex flex-col justify-start xl:gap-12 bg-[#0D0D0D]"
+        className="min-h-screen w-full relative z-10 overflow-y-auto pt-10 pb-10 flex flex-col justify-start xl:gap-12 bg-[#0D0D0D]"
         style={{
           borderBottom: "2px solid #373737",
         }}
       >
-        <div className="lg:w-3/6 mb-10 pb-5 ps-4 pe-4 ">
+        {/* title */}
+        <div className="lg:w-3/6 mb-10 pb-5 xl:ps-48 pe-4 ">
           <p className="text-base xl:text-xl text-[#ffeeca] opacity-50 font-[700] ">
             04/
           </p>
@@ -26,7 +46,7 @@ function Projects({ setActiveMenu, activeProject }) {
             Stuff I Built<br></br> (That Didn’t <br></br>Fall Apart)
           </p>
         </div>
-
+        {/* animation with images */}
         <Scene activeProject={activeProject} />
 
         <div
@@ -34,7 +54,6 @@ function Projects({ setActiveMenu, activeProject }) {
             setActiveMenu(null);
             setHover(null);
           }}
-          className="ps-4 pe-4"
         >
           {projects_data.map((project, i) => (
             <motion.div
@@ -43,19 +62,18 @@ function Projects({ setActiveMenu, activeProject }) {
                 setHover(i);
               }}
               key={project.id}
-              className="flex xs:flex-col lg:flex-row items-center   "
+              className="w-full flex xs:flex-col lg:flex-row justify-start xl:ps-48 items-center"
               style={{
                 borderBottom:
-                  hover === i ? "4px solid #5F605F" : "2px solid #5F605F",
+                  hover === i ? "2px solid #373737" : "1px solid #373737",
                 cursor: "pointer",
               }}
             >
-              {/* Project title animation */}
-              {" "}
-              <div className="xs:w-full lg:w-1/3 xs:m-auto lg:ms-5  pt-3 pb-3 ">
+              {/* Project title animation */}{" "}
+              <div className="xs:w-full lg:w-1/3 pt-3 pb-3  ">
                 {" "}
                 <a href={project.link}>
-                  <motion.p className="flex space-x-0.5  xs:justify-self-start title xs:text-5xl lg:text-7xl pt-3 pb-3 text-[#f5b061]">
+                  <motion.p className=" space-x-0.5 title xs:text-5xl lg:text-7xl pt-3 pb-3 text-[#f5b061]">
                     {project.title.split("").map((char, index) => (
                       <motion.span
                         key={index}
@@ -67,8 +85,8 @@ function Projects({ setActiveMenu, activeProject }) {
                         }}
                         style={{
                           display: "inline-block",
-                          color: hover === i ? "#f5b061" : "#A89C89",
-                        }} 
+                          color: hover === i ? "#A89C89" : "#f5b061",
+                        }}
                       >
                         {char}
                       </motion.span>
@@ -76,45 +94,46 @@ function Projects({ setActiveMenu, activeProject }) {
                   </motion.p>
                 </a>
               </div>
-
-              {/* Small device project content */}
-              <div className=" xs:flex justify-between items-center lg:hidden w-full pt-2 pb-2  ">
-                <div className="w-3/4">
-                  <p className="text text-start font-bold">{project.content}</p>
-                </div>
-                <div className="w-7">
-                  <img src={Arrow} alt="arrow"></img>
-                </div>
-              </div>
               {/* Large device project content */}
-              <div className="flex items-center xs:w-full lg:w-1/3 xs:m-auto xs:hidden lg:block justify-center  ">
+              <div className=" xs:w-full lg:w-1/3 xs:hidden lg:block  ">
                 {" "}
                 <a
-                  className="text text-[#A89C89] text-right "
+                  className=" flex justify-around items-center  text text-[#A89C89]"
                   href={project.link}
                 >
-                  {hover === i ? (
-                    <motion.img
-                      className="w-10 h-10 absolute right-5 bg-blue-500 "
-                      src={Arrow}
-                      alt="arrow"
-                      initial={{ opacity: 0, x: 20 }}
+                  <motion.span
+                    className={`transition-colors duration-300 ${
+                      hover === i ? "text-[#f5b061]" : "text-[#A89C89]"
+                    }`}
+                    initial={{ opacity: 1 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 1 }}
+                  >
+                    {project.content}
+                  </motion.span>
+
+                  {hover === i && isLargeScreen && (
+                    <MotionRightArrow
+                      className="w-10 h-10 inline-block text-[#A89C89] "
+                      initial={{ opacity: 0, x: 10 }}
                       animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -20 }}
-                      transition={{ duration: 0.5, ease: "easeInOut" }}
-                    ></motion.img>
-                  ) : (
-                    <motion.span
-                      initial={{ opacity: 1 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 1 }}
-                      transition={{ duration: 0.5, ease: "easeInOut" }}
-                    >
-                      {project.content}
-                    </motion.span>
+                      exit={{ opacity: 0, x: -10 }}
+                      transition={{ duration: 0.5 }}
+                    />
                   )}
                 </a>
               </div>
+
+               {/* Small device project content */}
+               <div className=" xs:flex justify-between items-center lg:hidden w-full pt-2 pb-2  ">
+                 <div className="w-3/4">
+                   <p className="text text-start font-bold">{project.content}</p>
+                 </div>
+                 <div className="w-7">
+                   <img src={Arrow} alt="arrow"></img>
+                 </div>
+               </div>
+           
             </motion.div>
           ))}
         </div>
@@ -124,3 +143,5 @@ function Projects({ setActiveMenu, activeProject }) {
 }
 
 export default Projects;
+
+  

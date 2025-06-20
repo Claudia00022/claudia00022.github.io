@@ -57,14 +57,14 @@ function Skills(props) {
   return (
     <>
       <div
-        className="min-h-screen w-full relative -z-20 flex xs: flex-col pb-10 pt-10  "
+        className="min-h-screen w-full relative -z-20 flex xs: flex-col pb-10 pt-10   "
         style={{
            borderBottom: '2px solid #373737',
         }}
       >
         <CanvasComponent scrollYP={props.scrollYP} />
 
-        <div className="xs:w-full lg:w-3/6 xs:mt-5 lg:mt-10  ps-5 pb-5">
+        <div className="xs:w-full lg:w-3/6 xs:mt-5 lg:mt-10  ps-48 pb-5">
           <p className="text-base xl:text-xl text-[#ffeeca] opacity-50 font-[700] ">
             03/
           </p>
@@ -78,7 +78,7 @@ function Skills(props) {
             <div
               ref={container}
               key={project.id}
-              className="flex xs:flex-col-reverse lg:flex-row  items-center border-b ms-5 me-5 xs:mt-5 lg:mt-10   lg:justify-evenly "
+              className="flex xs:flex-col-reverse lg:flex-row  items-center border-b ms-48 me-48 xs:mt-5 lg:mt-10   lg:justify-between  "
               style={{ borderColor: "grey" }}
             >
               <div className="w-full lg:w-1/3 p-3    ">

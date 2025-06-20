@@ -104,7 +104,7 @@ function App(props) {
           smile_container={smile_container}
         />
         <Skills scrollYP={scrollYProgress} />
-        <ArtPage />
+        {/* <ArtPage /> */}
         <Work />
         <Motto contact_section={contact_section} />
       </SmoothScroll>

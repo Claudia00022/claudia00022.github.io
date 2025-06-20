@@ -50,7 +50,7 @@ function About(props) {
      borderBottom: '2px solid #373737',
   }}
 >
-  <div className="w-full">
+  <div className="w-full  xl:ps-40 xl:pe-40">
     <div className="flex flex-col-reverse lg:flex-row-reverse justify-around">
       <div className="w-full lg:w-5/6 p-5">
         <div className="flex flex-col-reverse lg:flex-row justify-around lg:justify-end lg:items-end mt-10 pt-5 lg:mt-0 gap-4   ">
@@ -95,7 +95,7 @@ function About(props) {
         </p>
         <AnimatedText />
       </div>
-         <div className="absolute xs:bottom-0 lg:bottom-20 w-4/12 text left-10 text-[#f5b061] pb-3">
+         <div className="absolute xs:bottom-0 lg:bottom-20 w-4/12 text xl:left-48 text-[#f5b061] pb-3">
                 Lets have fun
               </div>
     </div>
