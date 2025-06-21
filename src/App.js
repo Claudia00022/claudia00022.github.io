@@ -12,7 +12,7 @@ import Contact from "./pages/contactOriginal/Contact";
 import Motto from "./pages/Motto/Motto";
 import SmileFace from "./SmileFace";
 import Test from "./test/Test";
-import Connect from "./pages/Connect/Connect";
+
 
 import Name from "./components/name/name";
 import MediaIcons from "./components/mediaIcons";
@@ -115,7 +115,6 @@ function App(props) {
         <div id="contact">
           <Motto contact_section={contact_section} />
         </div>
-        <Connect />
       </SmoothScroll>
     </>
   );
