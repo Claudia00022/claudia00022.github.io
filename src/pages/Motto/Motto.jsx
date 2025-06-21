@@ -40,7 +40,8 @@ useLayoutEffect(() => {
 return (                     
     <div
       ref={motto_container}              
-      className=" h-full w-full relative overflow-hidden bg-[#0D0D0D]"
+      className="min-h-screen w-full relative overflow-hidden bg-[#0D0D0D]"
+      style={{borderBottom: '2px solid #373737'}}
      
     >
     
@@ -59,9 +60,7 @@ return (
         </div>
    
 
-      <div className=" text absolute bottom-5 right-5 text-[#A89C89]  ">
-        <p> © 2025</p>
-      </div>
+     
       <SmileMotto />
       <MediaIconsSmallDev />
      

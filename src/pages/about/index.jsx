@@ -72,7 +72,7 @@ function About(props) {
           </div>
 
           {/* OBRAZEK */}
-          <div className="relative w-full lg:w-1/2 lg:mt-5 overflow-hidden">
+          <div className="relative w-full lg:w-1/2 lg:mt-5 overflow-hidden rounded">
             <img
               src={Ja}
               alt="myImage"

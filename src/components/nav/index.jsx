@@ -2,99 +2,27 @@ import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import "./nav.style.css";
 
-const NavBar = (props) => {
-  const [toggledLinks, setToggledLinks] = useState("home");
-  const [toggledAbout, setToggledAbout] = useState("about");
-  const [toggledContact, setToggledContact] = useState("contact");
-  const [toggledArt, setToggledArt] = useState("projects");
-
-  function handleClick() {
-    setToggledLinks(
-      <div
-        style={{
-          width: "5px",
-          height: "5px",
-          backgroundColor: "white",
-          display: "inline-block",
-        }}
-        className="me-2"
-      ></div>
-    );
-    setToggledAbout("about");
-    setToggledContact("contact");
-    setToggledArt("art");
-  }
-
-  function handleAbout() {
-    setToggledAbout(
-      <div
-        style={{
-          width: "5px",
-          height: "5px",
-          backgroundColor: "white",
-          display: "inline-block",
-        }}
-        className="me-2"
-      ></div>
-    );
-    setToggledLinks("home");
-    setToggledContact("contact");
-    setToggledArt("art");
-  }
-
-  function handleContact() {
-    setToggledContact(
-      <div
-        style={{
-          width: "5px",
-          height: "5px",
-          backgroundColor: "white",
-          display: "inline-block",
-        }}
-        className="me-2"
-      ></div>
-    );
-    setToggledAbout("about");
-    setToggledLinks("home");
-    setToggledArt("art");
-  }
-
-  function handleArt() {
-    setToggledArt(
-      <div
-        style={{
-          width: "5px",
-          height: "5px",
-          backgroundColor: "white",
-          display: "inline-block",
-        }}
-        className="me-2"
-      ></div>
-    );
-    setToggledAbout("about");
-    setToggledContact("contact");
-    setToggledLinks("home");
-  }
+const NavBar = () => {
 
   return (
     <div className=" fixed z-20  top-10 right-10 xs:pe-5 lg:h-14  text-[#ffeeca] opacity-80  ">
       <ul className="flex  flex-col pt-5 text xs:text-base  tracking-wider ">
-        <li onClick={handleClick}>
-          <Link to={"/"} onClick={props.handleNameBack}>
-            {toggledLinks}
+       
+        {/* <li >
+          <Link to={"/about"} >
+           about
           </Link>
         </li>
-        <li onClick={handleAbout}>
-          <Link to={"/about"} onClick={props.handleName}>
-            {toggledAbout}
-          </Link>
+        <li >
+          <Link to={"/art"}> work</Link>
         </li>
-        <li onClick={handleArt}>
-          <Link to={"/art"}>{toggledArt}</Link>
-        </li>
-        <li onClick={handleContact}>
-          <Link to={"/contact"}>{toggledContact}</Link>
-        </li>
+        <li >
+          <Link to={"/contact"}> contact</Link>
+        </li> */}
+
+          <li><a href="#about">about</a></li>
+    <li><a href="#work">work</a></li>
+    <li><a href="#contact">contact</a></li>
       </ul>
     </div>
   );

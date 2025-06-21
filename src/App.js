@@ -12,6 +12,7 @@ import Contact from "./pages/contactOriginal/Contact";
 import Motto from "./pages/Motto/Motto";
 import SmileFace from "./SmileFace";
 import Test from "./test/Test";
+import Connect from "./pages/Connect/Connect";
 
 import Name from "./components/name/name";
 import MediaIcons from "./components/mediaIcons";
@@ -72,26 +73,25 @@ function App(props) {
   // }, []);
 
   useLayoutEffect(() => {
-  const ctx = gsap.context(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: about_section.current,
-        start: "top bottom",      // start animacji, gdy top sekcji dotknie bottom viewportu
-        end: "center center",     // koniec animacji w centrum
-        scrub: true,
-      },
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: about_section.current,
+          start: "top bottom", // start animacji, gdy top sekcji dotknie bottom viewportu
+          end: "center center", // koniec animacji w centrum
+          scrub: true,
+        },
+      });
+
+      tl.fromTo(
+        smile_container.current,
+        { y: 400 }, // wyjściowa pozycja: z dołu
+        { y: -50, ease: "none" } // docelowa pozycja: na twarzy
+      );
     });
 
-    tl.fromTo(
-      smile_container.current,
-      { y: 400 },                // wyjściowa pozycja: z dołu
-      { y: -50, ease: "none" }   // docelowa pozycja: na twarzy
-    );
-  });
-
-  return () => ctx.revert(); // czyszczenie GSAP
-}, []);
-
+    return () => ctx.revert(); // czyszczenie GSAP
+  }, []);
 
   return (
     <>
@@ -99,14 +99,23 @@ function App(props) {
         <MediaIcons text_opacity={text_opacity} />
         <NavBar />
         <SmileFace />
-        <About
-          about_section={about_section}
-          smile_container={smile_container}
-        />
+        <div id="about">
+          {" "}
+          <About
+            about_section={about_section}
+            smile_container={smile_container}
+          />
+        </div>
+
         <Skills scrollYP={scrollYProgress} />
         {/* <ArtPage /> */}
-        <Work />
-        <Motto contact_section={contact_section} />
+        <div id="work">
+          <Work />
+        </div>
+        <div id="contact">
+          <Motto contact_section={contact_section} />
+        </div>
+        <Connect />
       </SmoothScroll>
     </>
   );
