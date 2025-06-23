@@ -64,7 +64,7 @@ function Skills(props) {
       >
         <CanvasComponent scrollYP={props.scrollYP} />
 
-        <div className="xs:w-full lg:w-3/6 xs:mt-5 lg:mt-10  ps-48 pb-5">
+        <div className="xs:w-full lg:w-3/6 xs:mt-5 lg:mt-10 xs:ps-3  xl:ps-48 pb-5">
           <p className="text-base xl:text-xl text-[#ffeeca] opacity-50 font-[700] ">
             03/
           </p>
@@ -78,7 +78,7 @@ function Skills(props) {
             <div
               ref={container}
               key={project.id}
-              className="flex xs:flex-col-reverse lg:flex-row  items-center border-b ms-48 me-48 xs:mt-5 lg:mt-10   lg:justify-between  "
+              className="flex xs:flex-col-reverse lg:flex-row  items-center border-b xs:ms-3 xl:ms-48 xs:me-3 xl:me-48 xs:mt-5 lg:mt-10   lg:justify-between  "
               style={{ borderColor: "grey" }}
             >
               <div className="w-full lg:w-1/3 p-3    ">

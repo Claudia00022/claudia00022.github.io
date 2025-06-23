@@ -38,7 +38,7 @@ function Projects({ setActiveMenu, activeProject }) {
         }}
       >
         {/* title */}
-        <div className="lg:w-3/6 mb-10 pb-5 xl:ps-48 pe-4 ">
+        <div className="lg:w-3/6 mb-10 pb-5 xs:ps-3 xl:ps-48 pe-4 ">
           <p className="text-base xl:text-xl text-[#ffeeca] opacity-50 font-[700] ">
             04/
           </p>
@@ -62,7 +62,7 @@ function Projects({ setActiveMenu, activeProject }) {
                 setHover(i);
               }}
               key={project.id}
-              className="w-full flex xs:flex-col lg:flex-row justify-start xl:ps-48 items-center"
+              className="w-full flex xs:flex-col lg:flex-row justify-start xs:ps-3 xl:ps-48 items-center"
               style={{
                 borderBottom:
                   hover === i ? "2px solid #373737" : "1px solid #373737",
@@ -125,13 +125,13 @@ function Projects({ setActiveMenu, activeProject }) {
               </div>
 
                {/* Small device project content */}
-               <div className=" xs:flex justify-between items-center lg:hidden w-full pt-2 pb-2  ">
+               <div className=" xs:flex justify-between items-center lg:hidden w-full pt-2 pb-2  text-[#A89C89] pe-3  ">
                  <div className="w-3/4">
                    <p className="text text-start font-bold">{project.content}</p>
                  </div>
-                 <div className="w-7">
-                   <img src={Arrow} alt="arrow"></img>
-                 </div>
+                  <MotionRightArrow
+                      className="w-10 h-10 inline-block text-[#A89C89] "
+                    />
                </div>
            
             </motion.div>

@@ -56,6 +56,9 @@ export default function SmileFace(props) {
         <div className="w-10 h-10 bg-[#ffeeca] fixed top-10 left-10 z-50 rounded-full flex items-center justify-center opacity-70 cursor-pointer ">
          <Smile className="w-8 h-8 text-[#f5b061]  " />
         </div>
+                <div className="absolute bottom-0 right-5 text text-[#A89C89] ">
+        <p>©2025</p>
+      </div>
         
       </div>
     </>

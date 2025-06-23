@@ -12,6 +12,7 @@ import Contact from "./pages/contactOriginal/Contact";
 import Motto from "./pages/Motto/Motto";
 import SmileFace from "./SmileFace";
 import Test from "./test/Test";
+import Vignette from "./assets/photos/vignette.png"
 
 
 import Name from "./components/name/name";
@@ -96,6 +97,9 @@ function App(props) {
   return (
     <>
       <SmoothScroll>
+      <div className="fixed top-0 left-0 w-full h-screen  z-20 bg-white bg-cover bg-center "   style={{ backgroundImage: `url(${Vignette})` }}>
+       
+       </div>
         <MediaIcons text_opacity={text_opacity} />
         <NavBar />
         <SmileFace />

@@ -61,7 +61,7 @@ function MySmile() {
 useGLTF.preload(imgData[8].img);
 
 export default function SmileMotto() {
-  const [zoom, setZoom] = useState(100); // default zoom
+  const [zoom, setZoom] = useState(80); // default zoom
   const [cameraPosition, setCameraPosition] = useState([0, 0, 5]);
 
   useEffect(() => {
@@ -77,7 +77,7 @@ export default function SmileMotto() {
         setCameraPosition([0, 2, 5]);
       } else {
         // Desktop
-        setZoom(100);
+        setZoom(80);
         setCameraPosition([0, 0, 5]);
       }
     };
@@ -88,7 +88,7 @@ export default function SmileMotto() {
   }, []);
 
   return (
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full flex items-center justify-center opacity-70">
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full flex items-center justify-center opacity-70 ">
       <Canvas style={{ width: "100%", height: "100%" }}>
         <Environment preset="forest" />
         <OrthographicCamera makeDefault zoom={zoom} position={cameraPosition} />
