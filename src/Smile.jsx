@@ -13,7 +13,7 @@ function MySmile() {
    useEffect(() => {
     gltf.scene.traverse((child) => {
       if (child.isMesh && child.material) {
-        child.material.color = new THREE.Color('#f5b061'); // ⬅️ zmień na dowolny kolor
+        child.material.color = new THREE.Color('#EB5939'); // ⬅️ zmień na dowolny kolor
 
         child.material.needsUpdate = true;
         child.material.transparent = true;

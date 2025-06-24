@@ -76,7 +76,7 @@ function Skills(props) {
             <div
               ref={container}
               key={project.id}
-              className="flex xs:flex-col-reverse lg:flex-row  items-center border-b xs:ms-3 xl:ms-48 xs:me-3 xl:me-48 xs:mt-5 lg:mt-10   lg:justify-between  "
+              className="flex xs:flex-col-reverse lg:flex-row-reverse  items-center border-b xs:ms-3 xl:ms-48 xs:me-3 xl:me-48 xs:mt-5 lg:mt-10   lg:justify-between  "
               style={{ borderColor: "grey" }}
             >
               <div className="w-full lg:w-1/3 p-3    ">
@@ -85,14 +85,14 @@ function Skills(props) {
 
               <div className="relative top-0 w-full lg:w-1/3 ">
                 <motion.p
-                  className="title xs:text-5xl lg:text-7xl pt-3 pb-3 text-[#f5b061] "
+                  className="title xs:text-5xl lg:text-8xl pt-3 pb-3 text-[#f5b061] "
                   style={{ clipPath: clip }}
                 >
                   {project.title}
                 </motion.p>
                 <div className="absolute top-0 -z-10  ">
                   <p
-                    className="title xs:text-5xl lg:text-7xl pt-3 pb-3 text-[#A89C89]"
+                    className="title xs:text-5xl lg:text-8xl pt-3 pb-3 text-[#A89C89]"
                     style={{ opacity: 0.7 }}
                   >
                     {" "}

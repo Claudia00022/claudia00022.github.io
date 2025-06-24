@@ -71,7 +71,7 @@ function Projects({ setActiveMenu, activeProject }) {
               <div className="xs:w-full lg:w-1/2 pt-3 pb-3  ">
                 {" "}
                 <a href={project.link}>
-                  <motion.p className=" space-x-0.5 title xs:text-5xl lg:text-7xl pt-3 pb-3 text-[#f5b061]">
+                  <motion.p className=" space-x-0.5 title xs:text-5xl lg:text-8xl pt-3 pb-3">
                     {project.title.split("").map((char, index) => (
                       <motion.span
                         key={index}
@@ -83,7 +83,7 @@ function Projects({ setActiveMenu, activeProject }) {
                         }}
                         style={{
                           display: "inline-block",
-                          color: hover === i ? "#A89C89" : "#f5b061",
+                          color: hover === i ? "#A89C89" : "#EB5939",
                         }}
                       >
                         {char}
@@ -101,7 +101,7 @@ function Projects({ setActiveMenu, activeProject }) {
                 >
                   <motion.span
                     className={`transition-colors duration-300 ${
-                      hover === i ? "text-[#f5b061]" : "text-[#A89C89]"
+                      hover === i ? "text-[#EB5939]" : "text-[#A89C89]"
                     }`}
                     initial={{ opacity: 1 }}
                     animate={{ opacity: 1 }}
