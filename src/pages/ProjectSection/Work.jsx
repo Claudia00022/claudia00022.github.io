@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Projects from "./Projects";
-import Scene from "../../components/media/Scene";
 
 export default function Work(){
     const [activeProject, setActiveProject] = useState(null);
@@ -8,7 +7,6 @@ export default function Work(){
         <main>
         <div>
             <Projects setActiveMenu = {setActiveProject} activeProject={activeProject} />
-            {/* <Scene activeProject={activeProject} /> */}
         </div>
     </main>
     )

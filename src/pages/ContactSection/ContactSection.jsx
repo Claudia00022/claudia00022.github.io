@@ -43,7 +43,7 @@ export default function ContactSection(props) {
         ref={text_container}
         className=" w-full xs:pt-5 xl:pt-0 xs:ms-5 xl:ms-40 absolute"
       >
-        <p className="text-base xl:text-xl text-[#ffeeca] opacity-50 font-[700]">
+        <p className="text-base xl:text-xl text-[#EB5939] opacity-50 font-[700]">
           05/
         </p>
         <p
@@ -75,7 +75,7 @@ export default function ContactSection(props) {
                   hover: { width: "100%" },
                 }}
                 transition={{ duration: 0.3 }}
-                className="h-[1px] bg-[#A89C89] absolute bottom-[-2px] left-0"
+                className="h-[1px] bg-[#EB5939] absolute bottom-[-2px] left-0"
               />
             </motion.div>
           ))}

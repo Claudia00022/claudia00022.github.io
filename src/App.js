@@ -2,10 +2,10 @@
 "use client";
 import "./assets/fonts/fonts.css";
 import React, { useState, useRef, useLayoutEffect } from "react";
-import About from "./pages/about";
+import About from "./pages/AboutSection";
 import NavBar from "./components/nav";
 import Work from "./pages/ProjectSection/Work";
-import Skills from "./pages/skills/Skills";
+import Skills from "./pages/SkillsSection/Skills";
 import ArtPage from "./pages/ArtPage/ArtPage";
 import CanvasComponent from "./components/CanvasComponent";
 import Contact from "./pages/contactOriginal/Contact";

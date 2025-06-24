@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef } from "react";
-import "../../pages/about/about.style.css";
+// import "../../pages/AboutSection/about.style.css";
 import AnimatedText from "../AnimatedText";
 import {
   useScroll,

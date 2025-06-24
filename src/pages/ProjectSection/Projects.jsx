@@ -1,43 +1,27 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Scene from "../../components/media/Scene";
-import Arrow from "../../assets/photos/arrow.png";
+import Scene from "./media/Scene";
 import { ArrowRight } from "lucide-react";
 import { projects_data } from "../../projects_data";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-function useIsLargeScreen() {
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
-
-  useEffect(() => {
-    const checkScreen = () => {
-      setIsLargeScreen(window.innerWidth >= 1024); // 1024px to Tailwind 'lg'
-    };
-
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
-
-  return isLargeScreen;
-}
 
 function Projects({ setActiveMenu, activeProject }) {
   const [hover, setHover] = useState(null);
-  const isLargeScreen = useIsLargeScreen();
   const MotionRightArrow = motion(ArrowRight);
 
   return (
     <>
       <div
         className="min-h-screen w-full relative z-10 overflow-y-auto xs:pt-5 lg:pt-10  flex flex-col justify-start xl:gap-12 bg-[#0D0D0D]"
+        style={{borderBottom: '1px solid  #373737'}}
       
       >
         {/* title */}
         <div className="lg:w-3/6 mb-10 pb-5 xs:ps-3 xl:ps-40 pe-4 ">
-          <p className="text-base xl:text-xl text-[#ffeeca] opacity-50 font-[700] ">
+          <p className="text-base xl:text-xl text-[#EB5939] opacity-50 font-[700] ">
             04/
           </p>
           <p className="title xs:text-5xl lg:text-7xl text-[#A89C89]">
@@ -62,8 +46,7 @@ function Projects({ setActiveMenu, activeProject }) {
               key={project.id}
               className=" flex xs:flex-col lg:flex-row justify-between xs:ms-3 xl:ms-40 xl:me-40 xs:me-3 items-center"
               style={{
-                borderBottom:
-                 "1px solid #373737",
+                  borderBottom: i === 0 ? "1px solid #373737" : "none",
                 cursor: "pointer",
               }}
             >
@@ -83,7 +66,7 @@ function Projects({ setActiveMenu, activeProject }) {
                         }}
                         style={{
                           display: "inline-block",
-                          color: hover === i ? "#A89C89" : "#EB5939",
+                          color: hover === i ? "#EB5939" : "#A89C89" ,
                         }}
                       >
                         {char}
@@ -93,14 +76,14 @@ function Projects({ setActiveMenu, activeProject }) {
                 </a>
               </div>
               {/* Large device project content */}
-              <div className=" xs:w-full lg:w-1/3 xs:hidden lg:block  ">
+              <div className=" xs:w-full lg:w-1/3 xs:hidden lg:block">
                 {" "}
                 <a
-                  className=" flex justify-around items-center  text text-[#A89C89]"
+                  className="text text-[#A89C89] font-bold"
                   href={project.link}
                 >
                   <motion.span
-                    className={`transition-colors duration-300 ${
+                    className={`transition-colors duration-500 ${
                       hover === i ? "text-[#EB5939]" : "text-[#A89C89]"
                     }`}
                     initial={{ opacity: 1 }}
@@ -109,16 +92,6 @@ function Projects({ setActiveMenu, activeProject }) {
                   >
                     {project.content}
                   </motion.span>
-
-                  {/* {hover === i && isLargeScreen && (
-                    <MotionRightArrow
-                      className="w-10 h-10 inline-block text-[#A89C89] "
-                      initial={{ opacity: 0, x: 10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -10 }}
-                      transition={{ duration: 0.5 }}
-                    />
-                  )} */}
                 </a>
               </div>
 

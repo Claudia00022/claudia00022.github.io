@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef, useState, useEffect } from "react";
-import "./about.style.css";
+
 import {
   useScroll,
   motion,
@@ -12,6 +12,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Ja from "../../assets/photos/me.jpg";
 import Smile from "../../Smile";
+import { SmilePlus } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,7 +48,7 @@ function About(props) {
   ref={props.about_section}
   className="relative min-h-screen -z-10 overflow-y-auto bg-[#0D0D0D] pb-10 pt-10 "
   style={{
-     borderBottom: '2px solid #373737',
+     borderBottom: '1px solid #373737',
   }}
 >
   <div className="w-full  xl:ps-40 xl:pe-40">
@@ -55,9 +56,9 @@ function About(props) {
       <div className="w-full lg:w-5/6 p-5">
         <div className="flex flex-col-reverse lg:flex-row justify-around lg:justify-end lg:items-end mt-10 pt-5 lg:mt-0 gap-4   ">
           {/* TEKST */}
-          <div className="w-full lg:w-5/12  overflow-y-auto max-h-[60vh] text text-[#A89C89] ">
+          <div className="w-full lg:w-5/12  overflow-y-auto max-h-[60vh] text text-[#A89C89]  ">
             <p className="text ">
-              ****I am <span className="text-[#f5b061]">FREELANCE </span> frontend developer
+              ****I am <span className="text-[#EB5939]">FREELANCE </span> frontend developer
               with a passion for creating dynamic and responsive web applications
               using the React framework.
               <br />
@@ -86,18 +87,21 @@ function About(props) {
       </div>
 
       {/* SEKCJA 01 + TEKST ANIMOWANY */}
-      <div className="w-full lg:w-3/6 mt-10 ps-5 md:pb-5 md:pt-5 self-start">
+      <div className="w-full lg:w-3/6 mt-10  md:pb-5 md:pt-5 self-start">
         <p
-          className="text-base xl:text-xl text-[#ffeeca] opacity-50 font-[700] "
+          className="text-base xl:text-xl text-[#EB5939] opacity-50 font-[700] "
 
         >
           02/
         </p>
         <AnimatedText />
+        <div className="flex mt-10">
+         <SmilePlus className="text-[#A89C89]" />
+          <p className="text font-bold text-[#EB5939] p-3 "> Let's have a  fun</p>
+        </div>
+        
       </div>
-         <div className="absolute xs:bottom-0 lg:bottom-20 w-4/12 text xl:left-48 text-[#f5b061] pb-3">
-                Lets have fun
-              </div>
+         
     </div>
   </div>
 </div>
