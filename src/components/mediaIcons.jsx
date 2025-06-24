@@ -7,7 +7,7 @@ export default function MediaIcons() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="xs:hidden lg:block fixed bottom-10 left-10 z-50">
+    <div className="xs:hidden lg:block fixed bottom-5 left-5 z-50 ">
       {contactsData.map((con, index) => {
         const Icon = con.icon;
 
@@ -43,7 +43,3 @@ export default function MediaIcons() {
     </div>
   );
 }
-
-
-
-

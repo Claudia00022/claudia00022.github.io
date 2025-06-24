@@ -4,12 +4,12 @@ import "./assets/fonts/fonts.css";
 import React, { useState, useRef, useLayoutEffect } from "react";
 import About from "./pages/about";
 import NavBar from "./components/nav";
-import Work from "./components/media/Work";
+import Work from "./pages/ProjectSection/Work";
 import Skills from "./pages/skills/Skills";
 import ArtPage from "./pages/ArtPage/ArtPage";
 import CanvasComponent from "./components/CanvasComponent";
 import Contact from "./pages/contactOriginal/Contact";
-import Motto from "./pages/Motto/Motto";
+import ContactSection from "./pages/ContactSection/ContactSection";
 import SmileFace from "./SmileFace";
 import Test from "./test/Test";
 import Vignette from "./assets/photos/vignette.png"
@@ -97,9 +97,9 @@ function App(props) {
   return (
     <>
       <SmoothScroll>
-      <div className="fixed top-0 left-0 w-full h-screen  z-20 bg-white bg-cover bg-center "   style={{ backgroundImage: `url(${Vignette})` }}>
+      {/* <div className="fixed top-0 left-0 w-full h-screen  z-20 bg-white bg-cover bg-center "   style={{ backgroundImage: `url(${Vignette})` }}>
        
-       </div>
+       </div> */}
         <MediaIcons text_opacity={text_opacity} />
         <NavBar />
         <SmileFace />
@@ -117,7 +117,7 @@ function App(props) {
           <Work />
         </div>
         <div id="contact">
-          <Motto contact_section={contact_section} />
+          <ContactSection contact_section={contact_section} />
         </div>
       </SmoothScroll>
     </>

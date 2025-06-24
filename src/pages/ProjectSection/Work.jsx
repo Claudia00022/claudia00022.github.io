@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Projects from "./Projects";
-import Scene from "./Scene";
+import Scene from "../../components/media/Scene";
 
 export default function Work(){
     const [activeProject, setActiveProject] = useState(null);
