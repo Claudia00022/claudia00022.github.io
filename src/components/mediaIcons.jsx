@@ -21,7 +21,7 @@ export default function MediaIcons() {
               >
                 {/* Motion background behind icon */}
                 <motion.div
-                  className="absolute inset-0 rounded-full bg-[#f5b061] z-0"
+                  className="absolute inset-0 rounded-full bg-[#EB5939] z-0"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: hoveredIndex === index ? 0.7 : 0 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}

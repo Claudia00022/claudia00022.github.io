@@ -6,14 +6,12 @@ import About from "./pages/AboutSection";
 import NavBar from "./components/nav";
 import Work from "./pages/ProjectSection/Work";
 import Skills from "./pages/SkillsSection/Skills";
-import ArtPage from "./pages/ArtPage/ArtPage";
+import ArtPage from "./test/ArtPage/ArtPage";
 import CanvasComponent from "./components/CanvasComponent";
-import Contact from "./pages/contactOriginal/Contact";
 import ContactSection from "./pages/ContactSection/ContactSection";
-import SmileFace from "./SmileFace";
+import SmileFace from "./pages/MainSection/SmileFace";
 import Test from "./test/Test";
-import Vignette from "./assets/photos/vignette.png"
-
+import Vignette from "./assets/photos/vignette.png";
 
 import Name from "./components/name/name";
 import MediaIcons from "./components/mediaIcons";
@@ -24,7 +22,7 @@ import { motion } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useScroll } from "framer-motion";
 import SmoothScroll from "./components/smoothScroll";
-import "./pages/contact/contact.style.css";
+import "./test/contact/contact.style.css";
 
 import "lenis/dist/lenis.css";
 gsap.registerPlugin(ScrollTrigger);
@@ -97,12 +95,15 @@ function App(props) {
   return (
     <>
       <SmoothScroll>
-      {/* <div className="fixed top-0 left-0 w-full h-screen  z-20 bg-white bg-cover bg-center "   style={{ backgroundImage: `url(${Vignette})` }}>
+        <div className='xs:block lg:hidden gradient-frame' >
        
-       </div> */}
+       </div>
         <MediaIcons text_opacity={text_opacity} />
         <NavBar />
-        <SmileFace />
+        <div id="home">
+          <SmileFace />
+        </div>
+
         <div id="about">
           {" "}
           <About

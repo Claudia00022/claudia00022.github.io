@@ -1,4 +1,4 @@
-import imgData from "./smileImgData";
+import imgData from "../../smileImgData";
 import { useLoader } from "@react-three/fiber";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";

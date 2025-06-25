@@ -7,11 +7,11 @@ import {
   Environment,
 } from "@react-three/drei";
 import Model from "./SmileFaceModel";
-import CamearaAnimation from "./CameraAnimation";
+import CamearaAnimation from "../../CameraAnimation";
 import { EffectComposer, Noise } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
 import { Smile } from "lucide-react";
-import MagneticEffect from "./components/MagneticEffect";
+import MagneticEffect from "../../components/MagneticEffect";
 
 
 export default function SmileFace(props) {
@@ -30,12 +30,12 @@ export default function SmileFace(props) {
       >
         <div className=" absolute  w-full  bottom-10 left-0 xl:ps-40  ">
              <p
-            className="text-base xl:text-xl text-[#ffeeca] opacity-50 font-[700] ps-5 "
+            className="text-base xl:text-xl text-[#EB5939] opacity-50 font-[700]  "
           >
             01/
           </p>
-          <p className=" text text-[#f5b061] ps-5">Klaudia Krzeminska</p>
-          <p className="title  xs:text-6xl lg:text-8xl text-[#A89C89] p-5 ">
+          <p className=" text text-[#EB5939] font-bold">Klaudia Krzeminska</p>
+          <p className="title  xs:text-6xl lg:text-8xl text-[#A89C89] pt-5 ">
             Fronted<br></br> Developer<br></br> and Web<br></br>designer
           </p>{" "}
        
@@ -53,8 +53,9 @@ export default function SmileFace(props) {
           </Canvas>{" "}
         </div>{" "}
       
-        <div className="w-10 h-10 bg-[#ffeeca] fixed top-10 left-10 z-50 rounded-full flex items-center justify-center opacity-70 cursor-pointer ">
-         <Smile className="w-8 h-8 text-[#f5b061]  " />
+        <div className="w-10 h-10 bg-[#ffeeca] fixed top-10 left-10 z-50 rounded-full flex items-center justify-center opacity-70 cursor-pointer mt-3 ">
+        <a href = '#home'> <Smile className="w-8 h-8 text-[#EB5939]  " /></a>
+        
         </div>
                 <div className="absolute bottom-0 right-5 text text-[#A89C89] ">
         <p>©2025</p>

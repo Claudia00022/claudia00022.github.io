@@ -1,25 +1,36 @@
-import { React, useState } from "react";
-import { Link } from "react-router-dom";
-import "./nav.style.css";
+import { motion } from "framer-motion";
+import useScrollSpy from "../useScrollSpy";
 
 const NavBar = () => {
-  return (
-   
-    <div className=" fixed z-20 top-0 right-0 text-[#ffeeca]  xs:p-3 xl:p-10 ">
+  const sectionIds = ["about", "work", "contact"];
+  const activeId = useScrollSpy(sectionIds);
 
-      <ul className="flex  flex-col text xs:text-base  tracking-wider items-end ">
-        <li>
-          <a href="#about">about</a>
-        </li>
-        <li>
-          <a href="#work">work</a>
-        </li>
-        <li>
-          <a href="#contact">contact</a>
-        </li>
+  return (
+    <div className="fixed z-20 top-0 right-0 text-[#ffeeca] xs:p-3 xl:p-10  uppercase opacity-70 ">
+      <ul className="flex flex-col text xs:text-sm tracking-wider items-end">
+        {sectionIds.map((id) => (
+          <li key={id}>
+            <motion.a
+              href={`#${id}`}
+              initial={{ opacity: 0 }}
+              animate={{
+                color: activeId === id ? "#EB5939" : "#ffeeca",
+                opacity: 1,
+              }}
+              whileHover={{
+                opacity: 0.7,
+              }}
+              transition={{
+                duration: 0.3,
+              }}
+              className="transition-colors font-bold tracking-wider block transform mt-3"
+            >
+              {id}
+            </motion.a>
+          </li>
+        ))}
       </ul>
     </div>
-   
   );
 };
 

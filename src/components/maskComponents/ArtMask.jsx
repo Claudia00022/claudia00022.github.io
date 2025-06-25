@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef } from "react";
-import "../../pages/ArtPage/artPage.css";
+import "../../test/ArtPage/artPage.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import arts_data_mask from "../../artsDataMask";
