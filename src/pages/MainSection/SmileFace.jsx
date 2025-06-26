@@ -40,7 +40,7 @@ export default function SmileFace(props) {
         <div className="w-10 h-10 bg-[#ffeeca] fixed xs:top-3 xs:left-3 lg:top-10 lg:left-10 z-50 rounded-full flex items-center justify-center opacity-70 cursor-pointer mt-3 ">
           <a href="#home">
             {" "}
-            <Smile className="w-8 h-8 text-[#EB5939]  " />
+            <Smile className="w-8 h-8 text-[#19b9e6]  " />
           </a>
         </div>
         <div className="absolute bottom-0 right-5 text text-[#A89C89] font-bold">

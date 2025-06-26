@@ -7,7 +7,8 @@
       content: "Apr 2023/Design & Dev",
       speed: 0.5,
       src: '/img/vPmuWeb.jpg',
-      color: 'red'
+      color: 'red',
+         hoverColor: "#19b9e6",
     },
     {
       id: 2,
@@ -16,7 +17,8 @@
       content: "Sep 2022/Design",
       speed: 0.5,
       src:'/img/j&l.jpg',
-      color: 'green'
+      color: 'green',
+       hoverColor: "#19b9e6",
     },
   ];
 

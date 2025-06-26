@@ -8,7 +8,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-function Projects({ setActiveMenu, activeProject }) {
+function Projects({ setActiveMenu, activeProject, hoverColor }) {
   const [hover, setHover] = useState(null);
   const MotionRightArrow = motion(ArrowRight);
   const sectionRef = useRef(null);
@@ -30,7 +30,8 @@ function Projects({ setActiveMenu, activeProject }) {
           </p>
         </div>
         {/* animation with images */}
-        <Scene activeProject={activeProject} />
+        <Scene activeProject={activeProject}
+        hoverColor={projects_data[activeProject]?.hoverColor} />
 
         <div
           onMouseLeave={() => {
@@ -46,7 +47,7 @@ function Projects({ setActiveMenu, activeProject }) {
               }}
               ref={sectionRef}
               key={project.id}
-              className=" flex xs:flex-col lg:flex-row justify-between xs:ms-3 xl:ms-40 xl:me-40 xs:me-3 items-center hover:opacity-70 "
+              className=" flex xs:flex-col lg:flex-row justify-between xs:ms-3 xl:ms-40 xl:me-40 xs:me-3 items-center hover:opacity-100 opacity-90 "
               style={{
                 borderBottom: i === 0 ? "1px solid #373737" : "none",
                 cursor: "pointer",
@@ -54,7 +55,7 @@ function Projects({ setActiveMenu, activeProject }) {
             >
            
               {/* Project title{" "} */}
-              <div className="xs:w-full lg:w-1/2 pt-3 pb-3 hover:translate-x-[-10px] transition-transform duration-300   ">
+              <div className="xs:w-full lg:w-1/2 pt-3 pb-3   ">
                 {" "}
                 <a href={project.link}>
                   <p className=" space-x-0.5 title xs:text-5xl lg:text-8xl pt-3 pb-3  text-[#0D0D0D]  ">
@@ -70,9 +71,7 @@ function Projects({ setActiveMenu, activeProject }) {
                   href={project.link}
                 >
                   <motion.p
-                    initial={{ x:0 }}
-                    animate={{   x: hover === i ? 10 : 0 }}
-                     transition={{ duration: 0.3, ease: "easeInOut" }}
+                   
                   >
                     {project.content}
                   </motion.p>
