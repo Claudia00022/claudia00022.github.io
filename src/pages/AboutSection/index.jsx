@@ -12,7 +12,7 @@ function About(props) {
     <>
       <div
         ref={props.about_section}
-        className="relative min-h-screen -z-10 overflow-y-auto bg-[#0D0D0D] pb-10 pt-10 "
+        className="relative min-h-screen -z-10 overflow-y-auto bg-[#0D0D0D] pb-10 lg:pt-10 "
         style={{
           borderBottom: "1px solid #373737",
         }}
@@ -22,8 +22,8 @@ function About(props) {
             <div className="w-full lg:w-5/6 p-5">
               <div className="flex flex-col-reverse lg:flex-row justify-around lg:justify-end lg:items-end mt-10 pt-5 lg:mt-0 gap-4   ">
                 {/* TEKST */}
-                <div className="w-full lg:w-5/12  overflow-y-auto max-h-[60vh] text text-[#A89C89]  ">
-                  <p className="text ">
+                <div className="w-full lg:w-5/12  overflow-y-auto max-h-[60vh] text text-[#A89C89]   ">
+                  <p className="text font-bold">
                     ****I am <span className="text-[#EB5939]">FREELANCE </span>{" "}
                     frontend developer with a passion for creating dynamic and
                     responsive web applications using the React framework.
@@ -53,7 +53,7 @@ function About(props) {
             </div>
 
             {/* SEKCJA 01 + TEKST ANIMOWANY */}
-            <div className="w-full lg:w-3/6 mt-10  md:pb-5 md:pt-5 self-start">
+            <div className="w-full lg:w-3/6 mt-10  md:pb-5 md:pt-5 self-start ps-3">
               <p className="text-base xl:text-xl text-[#EB5939] opacity-50 font-[700] ">
                 02/
               </p>

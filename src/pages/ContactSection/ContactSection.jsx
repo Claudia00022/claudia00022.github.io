@@ -41,7 +41,7 @@ export default function ContactSection(props) {
     >
       <div
         ref={text_container}
-        className=" w-full xs:pt-5 xl:pt-0 xs:ms-5 xl:ms-40 absolute"
+        className=" w-full xs:pt-10 xl:pt-0 xs:ms-5 xl:ms-40 absolute"
       >
         <p className="text-base xl:text-xl text-[#EB5939] opacity-50 font-[700]">
           05/

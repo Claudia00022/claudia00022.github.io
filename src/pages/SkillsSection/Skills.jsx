@@ -56,7 +56,7 @@ function Skills(props) {
       >
         <CanvasComponent scrollYP={props.scrollYP} />
 
-        <div className="xs:w-full lg:w-3/6 xs:mt-5 lg:mt-10 xs:ps-3  xl:ps-40 pb-5">
+        <div className="xs:w-full lg:w-3/6  lg:mt-10 xs:ps-3  xl:ps-40 pb-5">
           <p className="text-base xl:text-xl text-[#EB5939] opacity-50 font-[700] ">
             03/
           </p>
