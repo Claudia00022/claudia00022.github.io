@@ -10,6 +10,7 @@ import ArtPage from "./test/ArtPage/ArtPage";
 import CanvasComponent from "./components/CanvasComponent";
 import ContactSection from "./pages/ContactSection/ContactSection";
 import SmileFace from "./pages/MainSection/SmileFace";
+
 import Test from "./test/Test";
 import Vignette from "./assets/photos/vignette.png";
 
