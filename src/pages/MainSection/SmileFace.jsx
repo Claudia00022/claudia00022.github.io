@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import { Canvas } from "@react-three/fiber";
 import { OrthographicCamera, Environment } from "@react-three/drei";
 import Model from "./SmileFaceModel";
@@ -31,7 +31,9 @@ export default function SmileFace(props) {
             <Environment preset="forest" />
             <OrthographicCamera makeDefault zoom={70} position={[18, -1, 5]} />
             <CamearaAnimation />
+
             <Model />
+
             <EffectComposer>
               <Noise premultiply blendFunction={BlendFunction.SCREEN} />
             </EffectComposer>
@@ -44,7 +46,9 @@ export default function SmileFace(props) {
           </a>
         </div>
         <div className="absolute bottom-0 right-5 text text-[#A89C89] font-bold">
-          <p><span className="pe-1">©</span>2025</p>
+          <p>
+            <span className="pe-1">©</span>2025
+          </p>
         </div>
       </div>
     </>

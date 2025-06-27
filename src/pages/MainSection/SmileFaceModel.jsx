@@ -4,7 +4,15 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader";
 
+
+
 export default function Model() {
+
+
+  
+
+
+
   const modelRefs = useRef([]);
   const modelOne = useLoader(GLTFLoader, imgData[0].img);
   const modelTwo = useLoader(GLTFLoader, imgData[1].img);
@@ -46,6 +54,8 @@ export default function Model() {
       }
     });
   });
+
+
 
   return models.map((model, index) => (
     <primitive

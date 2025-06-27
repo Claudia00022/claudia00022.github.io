@@ -79,7 +79,7 @@ export default function PixelBackground() {
     return delay.map((randomDelay, i) => (
       <motion.div
         key={i}
-        className="h-[5vw] w-full bg-[#EB5939]"
+        className="h-[5vw] w-full bg-[#EB5939] pb-10"
         variants={anim}
         initial="initial"
         animate={sectionActive ? "open" : "closed"}

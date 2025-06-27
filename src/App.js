@@ -1,30 +1,19 @@
 //Components
 "use client";
 import "./assets/fonts/fonts.css";
-import React, { useState, useRef, useLayoutEffect } from "react";
-import About from "./pages/AboutSection";
-import NavBar from "./components/nav";
-import Work from "./pages/ProjectSection/Work";
-import Skills from "./pages/SkillsSection/Skills";
-import ArtPage from "./test/ArtPage/ArtPage";
-import CanvasComponent from "./components/CanvasComponent";
-import ContactSection from "./pages/ContactSection/ContactSection";
-import SmileFace from "./pages/MainSection/SmileFace";
-
-import Test from "./test/Test";
-import Vignette from "./assets/photos/vignette.png";
-
-import Name from "./components/name/name";
-import MediaIcons from "./components/mediaIcons";
-import useMousePosition from "./components/useMOusePOsition";
-import MaskComponent from "./components/maskComponents/AppMask";
+import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
 import gsap from "gsap";
-import { motion } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useScroll } from "framer-motion";
 import SmoothScroll from "./components/smoothScroll";
-import "./test/contact/contact.style.css";
-
+import LoadingPage from "./components/loading/loading";
+import SmileFace from "./pages/MainSection/SmileFace";
+import NavBar from "./components/nav";
+import MediaIcons from "./components/mediaIcons";
+import About from "./pages/AboutSection";
+import Skills from "./pages/SkillsSection/Skills";
+import Work from "./pages/ProjectSection/Work";
+import ContactSection from "./pages/ContactSection/ContactSection";
 import "lenis/dist/lenis.css";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,6 +23,28 @@ function App(props) {
   const text_opacity = useRef([]);
   const about_section = useRef();
   const smile_container = useRef();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isExiting, setIsExiting] = useState(false);
+  const homeSection = document.getElementById("home");
+
+  if (homeSection) {
+    homeSection.scrollIntoView({ behavior: "instant" }); //Za kazdym razem kiedy strona jest odswizana wraca do homeSection
+  }
+
+
+   useEffect(() => {
+    // Ustawienie timera na 3 sekundy
+    const timer = setTimeout(() => {
+      setIsExiting(true); // Rozpocznij animację wyjścia
+      
+      // Po zakończeniu animacji usuń loading
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 800); // 800ms na animację slide-down
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: scene,
@@ -55,22 +66,6 @@ function App(props) {
       tl.to(ref, { opacity: 1 }, 0); // Animate opacity for each element
     });
   }, []);
-
-  // useLayoutEffect(() => {
-  //   const tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: about_section.current,
-  //       start: "top bottom",
-  //       end: "bottom top",
-  //       scrub: true,
-  //     },
-  //   });
-  //   tl.to(smile_container.current, { y: -600 }, 0);
-  //   return () => {
-  //     tl.scrollTrigger?.kill(); // Kill the ScrollTrigger
-  //     tl.kill(); // Kill the GSAP timeline
-  //   };
-  // }, []);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -96,9 +91,15 @@ function App(props) {
   return (
     <>
       <SmoothScroll>
-        <div className='xs:block lg:hidden gradient-frame' >
-       
-       </div>
+        {isLoading && (
+          <div className={`fixed inset-0 z-[1000] transition-transform duration-1000 ease-in-out ${
+          isExiting ? 'transform translate-y-[-100%]' : 'transform translate-y-0'
+        }`}>
+            <LoadingPage />
+          </div>
+        )}
+        <div className="xs:block lg:hidden gradient-frame"></div>
+     
         <MediaIcons text_opacity={text_opacity} />
         <NavBar />
         <div id="home">
@@ -112,15 +113,14 @@ function App(props) {
             smile_container={smile_container}
           />
         </div>
-
         <Skills scrollYP={scrollYProgress} />
-        {/* <ArtPage /> */}
         <div id="work">
           <Work />
         </div>
         <div id="contact">
           <ContactSection contact_section={contact_section} />
         </div>
+       
       </SmoothScroll>
     </>
   );

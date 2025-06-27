@@ -9,6 +9,7 @@
       src: '/img/vPmuWeb.jpg',
       color: 'red',
          hoverColor: "#19b9e6",
+         number:'01'
     },
     {
       id: 2,
@@ -19,6 +20,7 @@
       src:'/img/j&l.jpg',
       color: 'green',
        hoverColor: "#19b9e6",
+         number:'02'
     },
   ];
 

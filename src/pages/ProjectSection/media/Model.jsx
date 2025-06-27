@@ -151,7 +151,7 @@ export default function Model({ activeProject }) {
         }}
         className="w-28 h-28 rounded-full bg-[#19b9e6] flex items-center justify-center text-white text font-bold  pointer-events-none tracking-wider"
       >
-        view
+       click
       </motion.div>
     </Html>
   )}

@@ -24,7 +24,7 @@ function About(props) {
                 {/* TEKST */}
                 <div className="w-full lg:w-5/12  overflow-y-auto max-h-[60vh] text text-[#A89C89]   ">
                   <p className="text font-bold">
-                    ****I am <span className="text-[#EB5939]">FREELANCE </span>{" "}
+                    ****I am <span className="text-[#19b9e6]">FREELANCE </span>{" "}
                     frontend developer with a passion for creating dynamic and
                     responsive web applications using the React framework.
                     <br />

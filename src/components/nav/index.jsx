@@ -14,7 +14,7 @@ const NavBar = () => {
               href={`#${id}`}
               initial={{ opacity: 0 }}
               animate={{
-                color: activeId === id ? "#19b9e6" : "#ffeeca",
+                color: activeId === id ? "#19b9e6 " : "#ffeeca",
                 opacity: 1,
               }}
               whileHover={{
