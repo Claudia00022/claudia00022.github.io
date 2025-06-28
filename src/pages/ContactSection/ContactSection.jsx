@@ -7,7 +7,24 @@ import FooterSmallDev from "./FooterSmallDev";
 export default function ContactSection(props) {
   const motto_container = useRef(null);
   const text_container = useRef(null);
-  const links = ["LinkedIn", "Instagram", "Behance", "Dribble"];
+  const links = [
+    {
+      title: "LinkedIn",
+      link: "https://www.linkedin.com/in/klaudia-forysiak-264895318/",
+    },
+    {
+      title: "Instagram",
+      link: "https://www.instagram.com/cla_udiaui/",
+    },
+    {
+      title: "Dribbble",
+      link: "https://dribbble.com/Claudia00022",
+    },
+    {
+      title: "Behance",
+      link: "https://www.instagram.com/cla_udiaui/",
+    },
+  ];
 
   useLayoutEffect(() => {
     const context = gsap.context(() => {
@@ -56,7 +73,7 @@ export default function ContactSection(props) {
       {/* Footer Large Device */}
       <div className="absolute bottom-10 left-0 z-10 w-full text-[#A89C89] cursor-pointer  xs:hidden lg:block">
         <div className="w-ful flex items-center justify-around ps-48 pe-48 text-lg font-bold">
-          {links.map((text, index) => (
+          {links.map((link, index) => (
             <motion.div
               key={index}
               className="relative flex flex-col items-center"
@@ -68,7 +85,9 @@ export default function ContactSection(props) {
                 hover: {},
               }}
             >
-              <span>{text}</span>
+              <a href={link.link} target="_blank" rel="noopener noreferrer">
+                {link.title}
+              </a>
               <motion.span
                 variants={{
                   rest: { width: 0 },

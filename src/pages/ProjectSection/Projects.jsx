@@ -73,7 +73,7 @@ function Projects({ setActiveMenu, activeProject, hoverColor }) {
                 </a>
                 <p
                   className={`xs: hidden lg:block absolute  -top-10 left-0 w-full h-full text text-[#A89C89] font-bold  text-9xl -z-10 transition-all duration-500 ease-out ${
-                    hover === i ? "translate-x-2" : "translate-x-0"
+                    hover === i ? "-translate-x-3" : "translate-x-0"
                   }`}
                 >
                   {project.number}
@@ -86,13 +86,11 @@ function Projects({ setActiveMenu, activeProject, hoverColor }) {
                   className="text text-[#0D0D0D] font-bold flex justify-between items-center"
                   href={project.link}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer" 
                 >
                   <motion.p>{project.content}</motion.p>
                   <MoveUpRight
-                    className={`w-10 h-10 inline-block text-[#0D0D0D] transition-transform duration-500 ease-out ${
-                      hover === i ? "rotate-[45deg]" : "rotate-0"
-                    }`}
+                    className="w-10 h-10 inline-block text-[#0D0D0D] "
                   />
                 </div>
               </div>

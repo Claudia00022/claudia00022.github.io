@@ -24,18 +24,14 @@ function About(props) {
                 {/* TEKST */}
                 <div className="w-full lg:w-5/12  overflow-y-auto max-h-[60vh] text text-[#A89C89]   ">
                   <p className="text font-bold">
-                    ****I am <span className="text-[#19b9e6]">FREELANCE </span>{" "}
-                    frontend developer with a passion for creating dynamic and
+                    ****I am frontend developer with a passion for creating dynamic and
                     responsive web applications using the React framework.
                     <br />
-                    I have honed my skills in building user-friendly interfaces
-                    and implementing best practices in web development.
+                    I have a deep love for design and art, using tools like Figma and others to bring concepts to life with creativity and precision.
                     <br />
                     My commitment to staying updated with the latest
                     technologies ensures that I deliver modern and efficient
-                    solutions to my clients. With a passion for art, I thrive on
-                    collaborating with individuals and businesses that value
-                    aesthetics and recognize the power of simplicity.
+                    solutions to my clients. 
                   </p>
                 </div>
 
@@ -62,7 +58,7 @@ function About(props) {
                 <SmilePlus className="text-[#A89C89]" />
                 <p className="text font-bold text-[#EB5939] p-3 ">
                   {" "}
-                  Let's have a fun
+                  Get ready to Smile
                 </p>
               </div>
             </div>

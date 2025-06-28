@@ -9,6 +9,7 @@ import { BlendFunction } from "postprocessing";
 import { Smile } from "lucide-react";
 
 export default function SmileFace(props) {
+  const year = new Date().getFullYear();
   return (
     <>
       <div
@@ -47,7 +48,8 @@ export default function SmileFace(props) {
         </div>
         <div className="absolute bottom-0 right-5 text text-[#A89C89] font-bold">
           <p>
-            <span className="pe-1">©</span>2025
+            <span className="pe-1">©</span>
+            {year}
           </p>
         </div>
       </div>
