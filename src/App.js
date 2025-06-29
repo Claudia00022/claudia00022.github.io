@@ -1,18 +1,9 @@
 //Components
 "use client";
-import React, {
-  useState,
-  useRef,
-  useLayoutEffect,
-  useEffect
-} from "react";
+import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
 import gsap from "gsap";
-import {
-  ScrollTrigger
-} from "gsap/ScrollTrigger";
-import {
-  useScroll
-} from "framer-motion";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useScroll } from "framer-motion";
 import SmoothScroll from "./components/smoothScroll";
 import LoadingPage from "./components/loading/loading";
 import SmileFace from "./pages/MainSection/SmileFace";
@@ -37,10 +28,9 @@ function App(props) {
 
   if (homeSection) {
     homeSection.scrollIntoView({
-      behavior: "instant"
+      behavior: "instant",
     }); //Za kazdym razem kiedy strona jest odswizana wraca do homeSection
   }
-
 
   useEffect(() => {
     // Ustawienie timera na 3 sekundy
@@ -56,9 +46,7 @@ function App(props) {
     return () => clearTimeout(timer);
   }, []);
 
-  const {
-    scrollYProgress
-  } = useScroll({
+  const { scrollYProgress } = useScroll({
     target: scene,
     offset: ["start end", "end start"],
   });
@@ -75,9 +63,13 @@ function App(props) {
 
     // Apply animation to all elements in the `text_opacity` array
     text_opacity.current.forEach((ref, index) => {
-      tl.to(ref, {
-        opacity: 1
-      }, 0); // Animate opacity for each element
+      tl.to(
+        ref,
+        {
+          opacity: 1,
+        },
+        0
+      ); // Animate opacity for each element
     });
   }, []);
 
@@ -93,12 +85,13 @@ function App(props) {
       });
 
       tl.fromTo(
-        smile_container.current, {
-          y: 400
+        smile_container.current,
+        {
+          y: 400,
         }, // wyjściowa pozycja: z dołu
         {
           y: -50,
-          ease: "none"
+          ease: "none",
         } // docelowa pozycja: na twarzy
       );
     });
@@ -106,69 +99,42 @@ function App(props) {
     return () => ctx.revert(); // czyszczenie GSAP
   }, []);
 
-  return ( <
-    >
-    <
-    SmoothScroll > {
-      isLoading && ( <
-        div className = {
-          `fixed inset-0 z-[1000] transition-transform duration-1000 ease-in-out ${
-          isExiting ? 'transform translate-y-[-100%]' : 'transform translate-y-0'
-        }`
-        } >
-        <
-        LoadingPage / >
-        <
-        /div>
-      )
-    } <
-    div className = "xs:block lg:hidden gradient-frame" > < /div>
-
-    <
-    MediaIcons text_opacity = {
-      text_opacity
-    }
-    /> <
-    NavBar / >
-    <
-    div id = "home" >
-    <
-    SmileFace / >
-    <
-    /div>
-
-    <
-    div id = "about" > {
-      " "
-    } <
-    About about_section = {
-      about_section
-    }
-    smile_container = {
-      smile_container
-    }
-    /> <
-    /div> <
-    Skills scrollYP = {
-      scrollYProgress
-    }
-    /> <
-    div id = "work" >
-    <
-    Work / >
-    <
-    /div> <
-    div id = "contact" >
-    <
-    ContactSection contact_section = {
-      contact_section
-    }
-    /> <
-    /div>
-
-    <
-    /SmoothScroll> <
-    />
+  return (
+    <>
+      <SmoothScroll>
+        {" "}
+        {isLoading && (
+          <div
+            className={`fixed inset-0 z-[1000] transition-transform duration-1000 ease-in-out ${
+              isExiting
+                ? "transform translate-y-[-100%]"
+                : "transform translate-y-0"
+            }`}
+          >
+            <LoadingPage />
+          </div>
+        )}{" "}
+        <div className="xs:block lg:hidden gradient-frame"> </div>
+        <MediaIcons text_opacity={text_opacity} /> <NavBar />
+        <div id="home">
+          <SmileFace />
+        </div>
+        <div id="about">
+          {" "}
+          <About
+            about_section={about_section}
+            smile_container={smile_container}
+          />{" "}
+        </div>{" "}
+        <Skills scrollYP={scrollYProgress} />{" "}
+        <div id="work">
+          <Work />
+        </div>{" "}
+        <div id="contact">
+          <ContactSection contact_section={contact_section} />{" "}
+        </div>
+      </SmoothScroll>{" "}
+    </>
   );
 }
 

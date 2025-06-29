@@ -3,7 +3,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrthographicCamera, Environment } from "@react-three/drei";
 import Model from "./SmileFaceModel";
-import CamearaAnimation from "../../CameraAnimation";
+import CamearaAnimation from "./CameraAnimation";
 import { EffectComposer, Noise } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
 import { Smile } from "lucide-react";

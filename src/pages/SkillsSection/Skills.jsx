@@ -5,7 +5,7 @@ import {
   useTransform,
   useMotionTemplate,
 } from "framer-motion";
-import CanvasComponent from "../../components/CanvasComponent";
+import CanvasComponent from "./CanvasComponent";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);

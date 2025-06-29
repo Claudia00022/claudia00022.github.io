@@ -8,7 +8,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-function Projects({ setActiveMenu, activeProject, hoverColor }) {
+function Projects({ setActiveMenu, activeProject }) {
   const [hover, setHover] = useState(null);
   // const MotionRightArrow = motion(ArrowRight);
   const sectionRef = useRef(null);
@@ -33,7 +33,6 @@ function Projects({ setActiveMenu, activeProject, hoverColor }) {
         {/* animation with images */}
         <Scene
           activeProject={activeProject}
-          hoverColor={projects_data[activeProject]?.hoverColor}
         />
 
         <div
@@ -44,6 +43,7 @@ function Projects({ setActiveMenu, activeProject, hoverColor }) {
         >
           {projects_data.map((project, i) => (
             <a href={project.link}
+            key={i}
                 target="_blank"
                   rel="noopener noreferrer">
             <motion.div
@@ -62,15 +62,11 @@ function Projects({ setActiveMenu, activeProject, hoverColor }) {
               {/* Project title{" "} */}
               <div className="xs:w-full lg:w-1/2 pt-3 pb-3 relative ">
                 {" "}
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+               
                   <p className=" space-x-0.5 title xs:text-5xl lg:text-8xl pt-3 pb-3  lg:ms-20 text-[#0D0D0D]  ">
                     {project.title}
                   </p>
-                </a>
+              
                 <p
                   className={`xs: hidden lg:block absolute  -top-10 left-0 w-full h-full text text-[#A89C89] font-bold  text-9xl -z-10 transition-all duration-500 ease-out ${
                     hover === i ? "-translate-x-3" : "translate-x-0"
@@ -84,9 +80,7 @@ function Projects({ setActiveMenu, activeProject, hoverColor }) {
                 {" "}
                 <div
                   className="text text-[#0D0D0D] font-bold flex justify-between items-center"
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer" 
+      
                 >
                   <motion.p>{project.content}</motion.p>
                   <MoveUpRight

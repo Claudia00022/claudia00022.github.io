@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef} from "react";
 import { motion, useInView } from "framer-motion";
 
 const text = "Who’s";
@@ -20,8 +20,6 @@ const defaultAnimations = {
 export default function AnimatedText() {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5, once: true });
-  const [hover, setHover] = useState(false);
-  const titleColor = hover ? "red" : "black";
 
   return (
     <>
@@ -37,7 +35,6 @@ export default function AnimatedText() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           transition={{ staggerChildren: 0.1 }}
-          // style={{fontSize: '4rem'}}
         >
           {text.split("").map((char, index) => (
             <motion.p
